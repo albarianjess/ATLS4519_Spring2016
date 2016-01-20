@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-dN-g7M">
+                                <rect key="frame" x="75" y="457" width="450" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HQ3-6m-XdG">
+                                <rect key="frame" x="123" y="242" width="355" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="355" id="ISe-HQ-hjn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of wine do you like?" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPP-zI-HQP">
+                                <rect key="frame" x="165" y="28" width="270" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="ZMc-tZ-eJK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4Z-gl-E7g">
+                                <rect key="frame" x="0.0" y="66" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="X0U-dq-R26"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="H8t-u5-7GZ"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GPP-zI-HQP" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="1xE-3A-tjh"/>
+                            <constraint firstItem="d4Z-gl-E7g" firstAttribute="centerX" secondItem="Pjs-dN-g7M" secondAttribute="centerX" id="5ad-Bk-WPY"/>
+                            <constraint firstItem="d4Z-gl-E7g" firstAttribute="centerX" secondItem="GPP-zI-HQP" secondAttribute="centerX" id="8Ev-Qg-xpa"/>
+                            <constraint firstItem="d4Z-gl-E7g" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" constant="-126" id="DqS-uT-n5t"/>
+                            <constraint firstAttribute="trailing" secondItem="d4Z-gl-E7g" secondAttribute="trailing" id="PEY-hc-ssy"/>
+                            <constraint firstItem="Pjs-dN-g7M" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="55" id="QXk-yQ-e9M"/>
+                            <constraint firstItem="HQ3-6m-XdG" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" constant="0.5" id="R5J-h5-MO1"/>
+                            <constraint firstItem="HQ3-6m-XdG" firstAttribute="top" secondItem="d4Z-gl-E7g" secondAttribute="bottom" constant="-40" id="RHR-FY-We3"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Pjs-dN-g7M" secondAttribute="bottom" constant="73" id="Sn3-rm-Vrl"/>
+                            <constraint firstItem="d4Z-gl-E7g" firstAttribute="top" secondItem="GPP-zI-HQP" secondAttribute="bottom" constant="-1" id="aVG-Zq-3oD"/>
+                            <constraint firstItem="Pjs-dN-g7M" firstAttribute="top" secondItem="d4Z-gl-E7g" secondAttribute="bottom" constant="175" id="erc-6v-UE5"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="HQ3-6m-XdG" secondAttribute="bottom" constant="18" id="scd-4p-cES"/>
+                            <constraint firstItem="d4Z-gl-E7g" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="vG3-w1-zRV"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="choiceLabel" destination="Pjs-dN-g7M" id="aEc-PE-7Mh"/>
+                        <outlet property="winePic" destination="HQ3-6m-XdG" id="Cpq-mj-qGF"/>
+                        <outlet property="winePicker" destination="d4Z-gl-E7g" id="3gX-AX-y9p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7u-3t-xp9">
+                                <rect key="frame" x="0.0" y="113" width="600" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What type of food do you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-qr-En9">
+                                <rect key="frame" x="184" y="69" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ1-ad-geX">
+                                <rect key="frame" x="170" y="412" width="260" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="choiceLabel" destination="tZ1-ad-geX" id="gZ7-57-7z5"/>
+                        <outlet property="foodPicker" destination="s7u-3t-xp9" id="X4m-h0-Jfq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="fEN-ol-Fb2">
+            <objects>
+                <viewController id="qtP-Kn-fVY" customClass="ThirdViewController" customModule="Lab1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gDF-F3-1cd"/>
+                        <viewControllerLayoutGuide type="bottom" id="IQB-kr-kSr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xvm-AB-7e3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="37b-5M-Yqd">
+                                <rect key="frame" x="0.0" y="171" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="474923478.65016502">
+                                    <!--2016-01-19 19:11:18 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ZW2-hI-Zdb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDO-V6-B93" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="744" y="1051"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="qtP-Kn-fVY" kind="relationship" relationship="viewControllers" id="XqU-8X-B1a"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="575" height="431"/>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>

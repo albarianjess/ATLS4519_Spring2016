@@ -15,6 +15,7 @@
 		7D46D0241C4E98EF00EE45E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D46D0221C4E98EF00EE45E3 /* LaunchScreen.storyboard */; };
 		7D46D02F1C4E98EF00EE45E3 /* MusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46D02E1C4E98EF00EE45E3 /* MusicTests.swift */; };
 		7D46D03A1C4E98EF00EE45E3 /* MusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D46D0391C4E98EF00EE45E3 /* MusicUITests.swift */; };
+		7DB972E21C4EAE8500A32688 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB972E11C4EAE8500A32688 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7D46D0351C4E98EF00EE45E3 /* MusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D46D0391C4E98EF00EE45E3 /* MusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicUITests.swift; sourceTree = "<group>"; };
 		7D46D03B1C4E98EF00EE45E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DB972E11C4EAE8500A32688 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7D46D0191C4E98EF00EE45E3 /* FirstViewController.swift */,
 				7D46D01B1C4E98EF00EE45E3 /* SecondViewController.swift */,
 				7D46D01D1C4E98EF00EE45E3 /* Main.storyboard */,
+				7DB972E11C4EAE8500A32688 /* ThirdViewController.swift */,
 				7D46D0201C4E98EF00EE45E3 /* Assets.xcassets */,
 				7D46D0221C4E98EF00EE45E3 /* LaunchScreen.storyboard */,
 				7D46D0251C4E98EF00EE45E3 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				7D46D01C1C4E98EF00EE45E3 /* SecondViewController.swift in Sources */,
 				7D46D0181C4E98EF00EE45E3 /* AppDelegate.swift in Sources */,
+				7DB972E21C4EAE8500A32688 /* ThirdViewController.swift in Sources */,
 				7D46D01A1C4E98EF00EE45E3 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +490,7 @@
 				7D46D0401C4E98EF00EE45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D46D0411C4E98EF00EE45E3 /* Build configuration list for PBXNativeTarget "MusicTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				7D46D0431C4E98EF00EE45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7D46D0441C4E98EF00EE45E3 /* Build configuration list for PBXNativeTarget "MusicUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +508,7 @@
 				7D46D0461C4E98EF00EE45E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
