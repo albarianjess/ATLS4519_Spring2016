@@ -16,6 +16,7 @@
 		7DB972BE1C4E9F0C00A32688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB972BC1C4E9F0C00A32688 /* LaunchScreen.storyboard */; };
 		7DB972C91C4E9F0C00A32688 /* Lab1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB972C81C4E9F0C00A32688 /* Lab1Tests.swift */; };
 		7DB972D41C4E9F0C00A32688 /* Lab1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB972D31C4E9F0C00A32688 /* Lab1UITests.swift */; };
+		7DE09BFA1C4F694C00A60985 /* pairing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DE09BF91C4F694C00A60985 /* pairing.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		7DB972CF1C4E9F0C00A32688 /* Lab1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB972D31C4E9F0C00A32688 /* Lab1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1UITests.swift; sourceTree = "<group>"; };
 		7DB972D51C4E9F0C00A32688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DE09BF91C4F694C00A60985 /* pairing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pairing.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		7DB972B01C4E9F0C00A32688 /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
+				7DE09BF91C4F694C00A60985 /* pairing.plist */,
 				7DB972B11C4E9F0C00A32688 /* AppDelegate.swift */,
 				7DB972B31C4E9F0C00A32688 /* FirstViewController.swift */,
 				7DB972B51C4E9F0C00A32688 /* SecondViewController.swift */,
@@ -238,6 +241,7 @@
 				7DB972BE1C4E9F0C00A32688 /* LaunchScreen.storyboard in Resources */,
 				7DB972BB1C4E9F0C00A32688 /* Assets.xcassets in Resources */,
 				7DB972B91C4E9F0C00A32688 /* Main.storyboard in Resources */,
+				7DE09BFA1C4F694C00A60985 /* pairing.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

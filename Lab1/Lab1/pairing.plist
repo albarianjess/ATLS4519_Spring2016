@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IPA</key>
+	<array>
+		<string>Finkle &amp; Garfs</string>
+		<string>Mountain Sun</string>
+		<string>Fate</string>
+	</array>
+	<key>Stout</key>
+	<array>
+		<string>Finkle &amp; Garfs</string>
+		<string>Mountain Sun</string>
+		<string>Twisted Pine</string>
+	</array>
+	<key>Porters</key>
+	<array>
+		<string>Denver Beer Co</string>
+		<string>Old Chicago</string>
+		<string>Averys</string>
+	</array>
+	<key>Wheats</key>
+	<array>
+		<string>Finkle &amp; Garfs</string>
+		<string>Old Chicago</string>
+		<string>Averys</string>
+	</array>
+	<key>Lager</key>
+	<array>
+		<string>Finkel &amp; Garfs</string>
+		<string>Old Chicago</string>
+		<string>Averys</string>
+	</array>
+	<key>Hefeweizen</key>
+	<array>
+		<string>Murpheys</string>
+		<string>Old Chicago</string>
+		<string>Biergarten</string>
+	</array>
+	<key>Pilsner</key>
+	<array>
+		<string>Boulder Beer</string>
+		<string>Averys</string>
+		<string>Biergarten</string>
+	</array>
+</dict>
+</plist>
