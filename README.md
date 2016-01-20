@@ -1,7 +1,8 @@
-# ATLS4519_Spring2016
-ATLS4519 Android and iOS mobile app class projects
+#University of Colorado Boulder ATLAS Institute
+ATLS4519 Advanced Mobile App Development Spring 2016
 
-##iOS Labs
-Music - using tabbed controller and UIViewPicker
+##My Android and iOS mobile app class projects
+##iOS Projects
+Music - learning tabbed controller and UIViewPicker
 Lab1 - using tabbed controller and UIViewPicker
-
+##Android Projects
