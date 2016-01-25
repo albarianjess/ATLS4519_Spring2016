@@ -17,14 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="vdG-Ax-Ela">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="vdG-Ax-Ela">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-hx-vWD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="s8N-hx-vWD">
                                 <rect key="frame" x="158" y="146" width="285" height="153"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="mSj-SY-4zV"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdG-Ax-Ela" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9qX-gr-Gfu"/>
+                            <constraint firstItem="vdG-Ax-Ela" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="B3I-8Y-XxE"/>
+                            <constraint firstItem="vdG-Ax-Ela" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Sx7-jo-lEz"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="s8N-hx-vWD" secondAttribute="bottom" constant="301" id="hhD-Dm-Xu6"/>
+                            <constraint firstItem="s8N-hx-vWD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sGW-QY-5VM"/>
+                            <constraint firstItem="vdG-Ax-Ela" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="t41-vX-UJd"/>
+                            <constraint firstItem="s8N-hx-vWD" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="126" id="ufU-i2-UMQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
