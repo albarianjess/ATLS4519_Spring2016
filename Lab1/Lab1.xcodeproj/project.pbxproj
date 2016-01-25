@@ -16,6 +16,7 @@
 		7DB972BE1C4E9F0C00A32688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB972BC1C4E9F0C00A32688 /* LaunchScreen.storyboard */; };
 		7DB972C91C4E9F0C00A32688 /* Lab1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB972C81C4E9F0C00A32688 /* Lab1Tests.swift */; };
 		7DB972D41C4E9F0C00A32688 /* Lab1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB972D31C4E9F0C00A32688 /* Lab1UITests.swift */; };
+		7DD29B891C52BD72004744E7 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD29B881C52BD72004744E7 /* FourthViewController.swift */; };
 		7DE09BFA1C4F694C00A60985 /* pairing.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DE09BF91C4F694C00A60985 /* pairing.plist */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		7DB972CF1C4E9F0C00A32688 /* Lab1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB972D31C4E9F0C00A32688 /* Lab1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab1UITests.swift; sourceTree = "<group>"; };
 		7DB972D51C4E9F0C00A32688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DD29B881C52BD72004744E7 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		7DE09BF91C4F694C00A60985 /* pairing.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pairing.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				7DB972B31C4E9F0C00A32688 /* FirstViewController.swift */,
 				7DB972B51C4E9F0C00A32688 /* SecondViewController.swift */,
 				7DB972B71C4E9F0C00A32688 /* Main.storyboard */,
+				7DD29B881C52BD72004744E7 /* FourthViewController.swift */,
 				7D5349A81C4EC19C0071AB47 /* ThirdViewController.swift */,
 				7DB972BA1C4E9F0C00A32688 /* Assets.xcassets */,
 				7DB972BC1C4E9F0C00A32688 /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 				7DB972B21C4E9F0C00A32688 /* AppDelegate.swift in Sources */,
 				7D5349A91C4EC19C0071AB47 /* ThirdViewController.swift in Sources */,
 				7DB972B41C4E9F0C00A32688 /* FirstViewController.swift in Sources */,
+				7DD29B891C52BD72004744E7 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

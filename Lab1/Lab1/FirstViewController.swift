@@ -53,18 +53,19 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     // PickerView selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         let wineRow = pickerView.selectedRowInComponent(0)
         let dryRow = pickerView.selectedRowInComponent(1)
         let aromaRow = pickerView.selectedRowInComponent(2)
-        choiceLabel.text = "You chose \(dry[dryRow]), \(aroma[aromaRow), \(wine[wineRow])!"
+        choiceLabel.text = "You like \(dry[dryRow]), \(aroma[aromaRow), \(wine[wineRow])!"
         
-        // Image Change
-        if (wine[wineRow] == "Red") {
-            // add red wine pic
-            winePic.image=UIImage(named: "redWine")
-        } else {
-            winePic.image=UIImage(named: "whiteWine")
-        }
+//        // Image Change
+//        if (wine[wineRow] == "Red") {
+//            // add red wine pic
+//            winePic.image=UIImage(named: "redWine")
+//        } else {
+//            winePic.image=UIImage(named: "whiteWine")
+//        }
     }
     
 

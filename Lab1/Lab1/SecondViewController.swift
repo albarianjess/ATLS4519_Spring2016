@@ -10,9 +10,8 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    
+    // Variables
     @IBOutlet weak var foodPicker: UIPickerView!
-    
     @IBOutlet weak var choiceLabel: UILabel!
     
     //PickerView data
@@ -47,6 +46,7 @@ class SecondViewController: UIViewController {
     
     // PickerView selection
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         let spicyRow = pickerView.selectedRowInComponent(0)
         let typeRow = pickerView.selectedRowInComponent(1)
         choiceLabel.text = "You like \(spicy[spicyRow]), \(type[typeRow) food!"
