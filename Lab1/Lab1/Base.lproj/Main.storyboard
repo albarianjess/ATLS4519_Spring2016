@@ -98,37 +98,40 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of food do you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymR-qr-En9">
                                 <rect key="frame" x="44" y="42" width="233" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="ieu-BZ-Vjf"/>
+                                    <constraint firstAttribute="height" constant="32" id="TzQ-5K-PiG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="ibN-6E-Izu">
+                                <rect key="frame" x="44" y="361" width="233" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="1vq-mH-HGj"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ1-ad-geX">
-                                <rect key="frame" x="30" y="396" width="260" height="21"/>
+                                <rect key="frame" x="30" y="321" width="260" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fdf-X4-uTC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="ibN-6E-Izu">
-                                <rect key="frame" x="44" y="361" width="233" height="146"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PJP-4Q-0tH" firstAttribute="top" secondItem="tZ1-ad-geX" secondAttribute="bottom" constant="102" id="7CY-9a-934"/>
-                            <constraint firstItem="ymR-qr-En9" firstAttribute="top" secondItem="lfg-aI-5Iv" secondAttribute="bottom" constant="22" id="ASG-qr-r0a"/>
-                            <constraint firstItem="s7u-3t-xp9" firstAttribute="top" secondItem="ymR-qr-En9" secondAttribute="bottom" constant="23" id="BOQ-jT-R5g"/>
-                            <constraint firstItem="tZ1-ad-geX" firstAttribute="top" secondItem="s7u-3t-xp9" secondAttribute="bottom" constant="83" id="Prf-uR-LQJ"/>
-                            <constraint firstItem="ymR-qr-En9" firstAttribute="trailing" secondItem="ibN-6E-Izu" secondAttribute="trailing" id="RNF-vd-3iV"/>
-                            <constraint firstItem="PJP-4Q-0tH" firstAttribute="top" secondItem="ibN-6E-Izu" secondAttribute="bottom" constant="12" id="RX9-f1-t9h"/>
-                            <constraint firstItem="tZ1-ad-geX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="14" id="SBO-1x-bfk"/>
-                            <constraint firstItem="ibN-6E-Izu" firstAttribute="centerX" secondItem="tZ1-ad-geX" secondAttribute="centerX" id="UpE-r5-E1p"/>
-                            <constraint firstItem="ymR-qr-En9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="28" id="Y0A-cm-hxd"/>
-                            <constraint firstItem="ibN-6E-Izu" firstAttribute="top" secondItem="s7u-3t-xp9" secondAttribute="bottom" constant="48" id="Yaa-NL-Pk4"/>
-                            <constraint firstItem="ymR-qr-En9" firstAttribute="leading" secondItem="ibN-6E-Izu" secondAttribute="leading" id="Yjx-Ol-7tW"/>
-                            <constraint firstAttribute="trailing" secondItem="s7u-3t-xp9" secondAttribute="trailing" id="cDE-U4-amY"/>
-                            <constraint firstItem="ymR-qr-En9" firstAttribute="centerX" secondItem="s7u-3t-xp9" secondAttribute="centerX" id="ouM-XZ-ZwC"/>
+                            <constraint firstItem="tZ1-ad-geX" firstAttribute="centerX" secondItem="ibN-6E-Izu" secondAttribute="centerX" id="GhD-as-OzG"/>
+                            <constraint firstItem="tZ1-ad-geX" firstAttribute="top" secondItem="s7u-3t-xp9" secondAttribute="bottom" constant="8" symbolic="YES" id="b0v-ac-2fz"/>
+                            <constraint firstItem="ibN-6E-Izu" firstAttribute="top" secondItem="tZ1-ad-geX" secondAttribute="bottom" constant="19" id="ffF-m2-ieV"/>
+                            <constraint firstItem="tZ1-ad-geX" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="14" id="plg-2G-plE"/>
+                            <constraint firstItem="s7u-3t-xp9" firstAttribute="centerX" secondItem="tZ1-ad-geX" secondAttribute="centerX" id="q9L-aS-w3g"/>
+                            <constraint firstItem="ymR-qr-En9" firstAttribute="top" secondItem="lfg-aI-5Iv" secondAttribute="bottom" constant="22" id="rX6-PT-Y11"/>
+                            <constraint firstItem="ymR-qr-En9" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="28" id="uzT-lL-CXB"/>
+                            <constraint firstItem="PJP-4Q-0tH" firstAttribute="top" secondItem="ibN-6E-Izu" secondAttribute="bottom" constant="12" id="wBZ-tg-nra"/>
+                            <constraint firstAttribute="trailing" secondItem="s7u-3t-xp9" secondAttribute="trailing" id="wgF-0U-JdP"/>
+                            <constraint firstItem="ymR-qr-En9" firstAttribute="leading" secondItem="ibN-6E-Izu" secondAttribute="leading" id="wp6-VW-VF0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food" image="second" id="cPa-gy-q4n"/>
@@ -154,48 +157,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQQ-C2-sPs">
-                                <rect key="frame" x="0.0" y="179" width="320" height="184"/>
+                                <rect key="frame" x="0.0" y="97" width="320" height="184"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qtP-Kn-fVY" id="4KM-Ez-xPK"/>
                                     <outlet property="delegate" destination="qtP-Kn-fVY" id="yzk-OZ-IjE"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cel-iM-ezI">
-                                <rect key="frame" x="38" y="419" width="245" height="21"/>
+                                <rect key="frame" x="38" y="289" width="245" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="ERV-S6-CqO"/>
+                                    <constraint firstAttribute="height" constant="21" id="4Qb-mU-eqG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of beer do you like?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T42-8v-uvt">
-                                <rect key="frame" x="44" y="89" width="233" height="35"/>
+                                <rect key="frame" x="44" y="54" width="233" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="coT-lD-PSl"/>
+                                    <constraint firstAttribute="height" constant="35" id="8FC-na-e8D"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="CdB-14-Dwc">
-                                <rect key="frame" x="40" y="383" width="240" height="128"/>
+                                <rect key="frame" x="40" y="368" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="dQe-aL-vxG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CdB-14-Dwc" firstAttribute="centerX" secondItem="xvm-AB-7e3" secondAttribute="centerX" id="23j-hX-bJD"/>
-                            <constraint firstItem="T42-8v-uvt" firstAttribute="top" secondItem="8OC-hq-08x" secondAttribute="bottom" constant="69" id="6Bu-Ov-eXz"/>
-                            <constraint firstItem="Cel-iM-ezI" firstAttribute="top" secondItem="BQQ-C2-sPs" secondAttribute="bottom" constant="56" id="8qK-4T-CoK"/>
-                            <constraint firstItem="BQQ-C2-sPs" firstAttribute="centerX" secondItem="T42-8v-uvt" secondAttribute="centerX" id="XdL-2Z-8KX"/>
-                            <constraint firstItem="yt3-Nr-vT6" firstAttribute="top" secondItem="CdB-14-Dwc" secondAttribute="bottom" constant="8" symbolic="YES" id="YOc-A8-EEN"/>
-                            <constraint firstItem="BQQ-C2-sPs" firstAttribute="leading" secondItem="xvm-AB-7e3" secondAttribute="leading" id="b5S-p9-zLn"/>
-                            <constraint firstItem="Cel-iM-ezI" firstAttribute="leading" secondItem="xvm-AB-7e3" secondAttribute="leadingMargin" constant="22" id="bgI-a6-dpt"/>
-                            <constraint firstItem="CdB-14-Dwc" firstAttribute="top" secondItem="BQQ-C2-sPs" secondAttribute="bottom" constant="20" id="cHe-B7-zwa"/>
-                            <constraint firstItem="yt3-Nr-vT6" firstAttribute="top" secondItem="Cel-iM-ezI" secondAttribute="bottom" constant="79" id="dDL-1Q-g2p"/>
-                            <constraint firstItem="CdB-14-Dwc" firstAttribute="leading" secondItem="xvm-AB-7e3" secondAttribute="leadingMargin" constant="24" id="hKa-Mv-xnd"/>
-                            <constraint firstItem="BQQ-C2-sPs" firstAttribute="centerX" secondItem="Cel-iM-ezI" secondAttribute="centerX" id="sXM-kT-JLd"/>
-                            <constraint firstItem="BQQ-C2-sPs" firstAttribute="top" secondItem="T42-8v-uvt" secondAttribute="bottom" constant="55" id="yF6-gh-Y9x"/>
+                            <constraint firstItem="CdB-14-Dwc" firstAttribute="top" secondItem="Cel-iM-ezI" secondAttribute="bottom" constant="58" id="1fN-bg-Uqz"/>
+                            <constraint firstItem="Cel-iM-ezI" firstAttribute="top" secondItem="BQQ-C2-sPs" secondAttribute="bottom" constant="8" symbolic="YES" id="4BF-hx-z47"/>
+                            <constraint firstAttribute="trailing" secondItem="BQQ-C2-sPs" secondAttribute="trailing" id="5Ek-Ho-wKO"/>
+                            <constraint firstItem="BQQ-C2-sPs" firstAttribute="top" secondItem="T42-8v-uvt" secondAttribute="bottom" constant="8" symbolic="YES" id="8mi-lO-Eqh"/>
+                            <constraint firstItem="CdB-14-Dwc" firstAttribute="leading" secondItem="xvm-AB-7e3" secondAttribute="leadingMargin" constant="24" id="ALu-Yg-PHC"/>
+                            <constraint firstItem="T42-8v-uvt" firstAttribute="centerX" secondItem="BQQ-C2-sPs" secondAttribute="centerX" id="QVO-2k-WKv"/>
+                            <constraint firstItem="T42-8v-uvt" firstAttribute="top" secondItem="8OC-hq-08x" secondAttribute="bottom" constant="34" id="UL6-od-ipH"/>
+                            <constraint firstItem="Cel-iM-ezI" firstAttribute="leading" secondItem="xvm-AB-7e3" secondAttribute="leadingMargin" constant="22" id="arZ-ea-Cup"/>
+                            <constraint firstItem="Cel-iM-ezI" firstAttribute="centerX" secondItem="BQQ-C2-sPs" secondAttribute="centerX" id="n8Y-rq-mj3"/>
+                            <constraint firstItem="Cel-iM-ezI" firstAttribute="centerX" secondItem="CdB-14-Dwc" secondAttribute="centerX" id="vI6-hL-YMC"/>
+                            <constraint firstItem="yt3-Nr-vT6" firstAttribute="top" secondItem="CdB-14-Dwc" secondAttribute="bottom" constant="23" id="xEs-vh-vI4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Beer" image="second" id="ZW2-hI-Zdb"/>
