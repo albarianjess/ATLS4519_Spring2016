@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D2B65801C59D7E9009A24B7"
-               BuildableName = "Lab2.app"
-               BlueprintName = "Lab2"
-               ReferencedContainer = "container:Lab2.xcodeproj">
+               BlueprintIdentifier = "7D2B65C41C5A858B009A24B7"
+               BuildableName = "Countries.app"
+               BlueprintName = "Countries"
+               ReferencedContainer = "container:Countries.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D2B65941C59D7E9009A24B7"
-               BuildableName = "Lab2Tests.xctest"
-               BlueprintName = "Lab2Tests"
-               ReferencedContainer = "container:Lab2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7D2B659F1C59D7E9009A24B7"
-               BuildableName = "Lab2UITests.xctest"
-               BlueprintName = "Lab2UITests"
-               ReferencedContainer = "container:Lab2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D2B65801C59D7E9009A24B7"
-            BuildableName = "Lab2.app"
-            BlueprintName = "Lab2"
-            ReferencedContainer = "container:Lab2.xcodeproj">
+            BlueprintIdentifier = "7D2B65C41C5A858B009A24B7"
+            BuildableName = "Countries.app"
+            BlueprintName = "Countries"
+            ReferencedContainer = "container:Countries.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D2B65801C59D7E9009A24B7"
-            BuildableName = "Lab2.app"
-            BlueprintName = "Lab2"
-            ReferencedContainer = "container:Lab2.xcodeproj">
+            BlueprintIdentifier = "7D2B65C41C5A858B009A24B7"
+            BuildableName = "Countries.app"
+            BlueprintName = "Countries"
+            ReferencedContainer = "container:Countries.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7D2B65801C59D7E9009A24B7"
-            BuildableName = "Lab2.app"
-            BlueprintName = "Lab2"
-            ReferencedContainer = "container:Lab2.xcodeproj">
+            BlueprintIdentifier = "7D2B65C41C5A858B009A24B7"
+            BuildableName = "Countries.app"
+            BlueprintName = "Countries"
+            ReferencedContainer = "container:Countries.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

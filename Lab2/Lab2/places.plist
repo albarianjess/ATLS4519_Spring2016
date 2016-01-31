@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Libraries</key>
+	<array>
+		<string>Gemmill</string>
+		<string>Norlin</string>
+	</array>
+	<key>Coffee Shops</key>
+	<array>
+		<string>Celestial Seasonings</string>
+		<string>Pekoes</string>
+		<string>Laughing Goat</string>
+		<string>The Bakery</string>
+	</array>
+	<key>Buildings</key>
+	<array>
+		<string>ATLAS</string>
+		<string>Benson Earth Sciences</string>
+		<string>Jennie Smoly Caruthers Biotechnology</string>
+		<string>C4C</string>
+		<string>Clare</string>
+		<string>Coors Event Center</string>
+		<string>Cristol Chemistry</string>
+		<string>DLC</string>
+		<string>Duane Physics</string>
+		<string>Eaton Humanities</string>
+		<string>Economics</string>
+		<string>Education</string>
+		<string>Ekeley Sciences</string>
+		<string>Engineering Center</string>
+		<string>Environmental Design</string>
+		<string>Fiske Planetarium</string>
+		<string>Fleming</string>
+		<string>Guggenheim Geography</string>
+		<string>Hale Science</string>
+		<string>Hellems Arts and Sciences</string>
+		<string>Imig Music</string>
+		<string>Ketchum</string>
+		<string>Koelbel</string>
+		<string>Macky Auditorium</string>
+		<string>Mathematics</string>
+		<string>McKenna Languages</string>
+		<string>Muenzinger Psychology</string>
+		<string>Porter Biosciences</string>
+		<string>Ramaley Biology</string>
+		<string>Regent Administrative Center</string>
+		<string>Folsom Stadium</string>
+		<string>University Club</string>
+		<string>University Memorial Center</string>
+		<string>University Theatre</string>
+		<string>Visual Arts Complex</string>
+		<string>Wardenburg Health Center</string>
+	</array>
+	<key>Dorms</key>
+	<array>
+		<string>Aden Hall</string>
+		<string>Andrews Hall</string>
+		<string>Arnett Hall</string>
+		<string>Athens Court</string>
+		<string>Baker Hall</string>
+		<string>Brackett Hall</string>
+		<string>Buckingham Hall</string>
+		<string>Cheyenne Arapaho Hall</string>
+		<string>Cockerell Hall</string>
+		<string>Crosman Hall</string>
+		<string>Darley North</string>
+		<string>Darley South</string>
+		<string>Farrand Hall</string>
+		<string>Hallett Hall</string>
+		<string>Kittredge Central</string>
+		<string>Kittredge West</string>
+		<string>Libby Hall</string>
+		<string>Newton Court</string>
+		<string>Reed Hall</string>
+		<string>Sewall Hall</string>
+		<string>Smiley Court</string>
+		<string>Smith Hall</string>
+		<string>Stearns East</string>
+		<string>Stearns West</string>
+		<string>Williard Hall</string>
+		<string>Williams Village</string>
+	</array>
+</dict>
+</plist>
