@@ -65,18 +65,28 @@ class ViewController: UITableViewController {
 //                let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
 //                self.navigationController!.pushViewController(secondViewController, animated: true)
                 
-            } else if (name == "Libraries"){
+            } else if (wordsSection[indexPath.row] == "Norlin Library"){
                 cell.detailTextLabel?.text=""
-                cell.imageView?.image = UIImage(named: "library.png")
-                
-            } else if (name == "Coffee Shops"){
-                cell.imageView?.image = UIImage(named: "coffee.jpg")
+                cell.imageView?.image = UIImage(named: "norlin.jpg")
+            } else if (wordsSection[indexPath.row] == "Gemmill Library"){
                 cell.detailTextLabel?.text=""
-                
+                cell.imageView?.image = UIImage(named: "norlin.jpg")
+            } else if (wordsSection[indexPath.row] == "Pekoes"){
+                cell.imageView?.image = UIImage(named: "pekoes.png")
+                cell.detailTextLabel?.text=""
+            } else if(wordsSection[indexPath.row] == "Celestial Seasonings"){
+                cell.imageView?.image = UIImage(named: "cel.jpg")
+                cell.detailTextLabel?.text=""
+            } else if(wordsSection[indexPath.row] == "Laughing Goat"){
+                cell.imageView?.image = UIImage(named: "goat.jpg")
+                cell.detailTextLabel?.text=""
             } else if (name == "Dorms"){
                 cell.imageView?.image = UIImage(named: "dorms.jpg")
                 cell.detailTextLabel?.text=""
             }
+            
+            
+            
 
             /*
             // Set titles
