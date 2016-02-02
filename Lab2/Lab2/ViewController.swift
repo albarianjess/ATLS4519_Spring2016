@@ -24,7 +24,6 @@ class ViewController: UITableViewController {
     
     let choice = CUBoulder()
     
-    
     @IBAction func unwindSegue (segue:UIStoryboardSegue){
         
     }
