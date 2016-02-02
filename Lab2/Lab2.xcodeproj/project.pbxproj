@@ -21,7 +21,6 @@
 		7D84B74E1C5CC8AA0042E092 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D84B74D1C5CC8AA0042E092 /* MapViewController.swift */; };
 		7D84B7501C5CC9490042E092 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D84B74F1C5CC9490042E092 /* MapKit.framework */; };
 		7D84B7521C5CC9540042E092 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D84B7511C5CC9540042E092 /* CoreLocation.framework */; };
-		7DCE5D801C5D97A600EC86EF /* latlong.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DCE5D7F1C5D97A600EC86EF /* latlong.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		7D84B74D1C5CC8AA0042E092 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D84B74F1C5CC9490042E092 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D84B7511C5CC9540042E092 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7DCE5D7F1C5D97A600EC86EF /* latlong.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = latlong.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +123,6 @@
 				7D2B65881C59D7E9009A24B7 /* Main.storyboard */,
 				7D84B74D1C5CC8AA0042E092 /* MapViewController.swift */,
 				7D2B65B31C59E830009A24B7 /* places.plist */,
-				7DCE5D7F1C5D97A600EC86EF /* latlong.plist */,
 				7D2B658B1C59D7E9009A24B7 /* Assets.xcassets */,
 				7D2B658D1C59D7E9009A24B7 /* LaunchScreen.storyboard */,
 				7D2B65901C59D7E9009A24B7 /* Info.plist */,
@@ -256,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2B65B51C59E830009A24B7 /* places.plist in Resources */,
-				7DCE5D801C5D97A600EC86EF /* latlong.plist in Resources */,
 				7D2B658F1C59D7E9009A24B7 /* LaunchScreen.storyboard in Resources */,
 				7D2B658C1C59D7E9009A24B7 /* Assets.xcassets in Resources */,
 				7D2B658A1C59D7E9009A24B7 /* Main.storyboard in Resources */,

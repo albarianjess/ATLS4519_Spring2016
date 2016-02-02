@@ -22,9 +22,11 @@ class ViewController: UITableViewController {
 //    let request = HTTPRequest(fileURLWithPath: "http://52.32.184.198/humanesociety/dogdata.json")
 
     
+    let choice = CUBoulder()
     
     
     @IBAction func unwindSegue (segue:UIStoryboardSegue){
+        
     }
     
     
@@ -53,11 +55,15 @@ class ViewController: UITableViewController {
             
             
             
-            
-            // Set subtitle
+            /*
+            // Set subtitle and images
+            */
             if (name == "Buildings"){
                 cell.detailTextLabel?.text=""
                 cell.imageView?.image = UIImage(named: "building.jpeg")
+                
+//                let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+//                self.navigationController!.pushViewController(secondViewController, animated: true)
                 
             } else if (name == "Libraries"){
                 cell.detailTextLabel?.text=""
@@ -72,26 +78,15 @@ class ViewController: UITableViewController {
                 cell.detailTextLabel?.text=""
             }
 
+            /*
             // Set titles
+            */
             cell.textLabel?.text = wordsSection[indexPath.row]
             return cell
     }
     
-//  CREATE THIS FOR MAP VIEW
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath
-//        indexPath: NSIndexPath) {
-//            let section = indexPath.section
-//            let name = titles[section]
-//            let wordsSection = allwords[name]! as [String]
-//            let alert = UIAlertController(title: "Row selected", message: "You selected \(wordsSection[indexPath.row])", preferredStyle:
-//                UIAlertControllerStyle.Alert)
-//            let okaction = UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler:nil)
-//            alert.addAction(okaction)
-//            
-//            presentViewController(alert, animated: true, completion: nil)
-//            tableView.deselectRowAtIndexPath(indexPath, animated: false)
-//            
-//    }
+//  ADD THIS FOR LATER
+
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -107,12 +102,14 @@ class ViewController: UITableViewController {
             return titles[section]
     }
     
+    
     /*
     adds side bar with titles
     */
 //    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
 //        return titles
 //    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

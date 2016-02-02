@@ -38,7 +38,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5B4-wj-TFY" kind="presentation" id="rAr-8g-t3o"/>
+                                    <segue destination="5B4-wj-TFY" kind="presentation" identifier="choice" id="rAr-8g-t3o"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

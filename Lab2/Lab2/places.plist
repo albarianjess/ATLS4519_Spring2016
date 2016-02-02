@@ -4,15 +4,14 @@
 <dict>
 	<key>Libraries</key>
 	<array>
-		<string>Gemmill</string>
-		<string>Norlin</string>
+		<string>Norlin Library</string>
+		<string>Gemmill Library</string>
 	</array>
 	<key>Coffee Shops</key>
 	<array>
 		<string>Celestial Seasonings</string>
 		<string>Pekoes</string>
 		<string>Laughing Goat</string>
-		<string>The Bakery</string>
 	</array>
 	<key>Buildings</key>
 	<array>
@@ -52,35 +51,6 @@
 		<string>University Theatre</string>
 		<string>Visual Arts Complex</string>
 		<string>Wardenburg Health Center</string>
-	</array>
-	<key>Dorms</key>
-	<array>
-		<string>Aden Hall</string>
-		<string>Andrews Hall</string>
-		<string>Arnett Hall</string>
-		<string>Athens Court</string>
-		<string>Baker Hall</string>
-		<string>Brackett Hall</string>
-		<string>Buckingham Hall</string>
-		<string>Cheyenne Arapaho Hall</string>
-		<string>Cockerell Hall</string>
-		<string>Crosman Hall</string>
-		<string>Darley North</string>
-		<string>Darley South</string>
-		<string>Farrand Hall</string>
-		<string>Hallett Hall</string>
-		<string>Kittredge Central</string>
-		<string>Kittredge West</string>
-		<string>Libby Hall</string>
-		<string>Newton Court</string>
-		<string>Reed Hall</string>
-		<string>Sewall Hall</string>
-		<string>Smiley Court</string>
-		<string>Smith Hall</string>
-		<string>Stearns East</string>
-		<string>Stearns West</string>
-		<string>Williard Hall</string>
-		<string>Williams Village</string>
 	</array>
 </dict>
 </plist>
