@@ -12,6 +12,11 @@
 		7D62260F1C649CEA00F4A478 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D62260D1C649CEA00F4A478 /* Main.storyboard */; };
 		7D6226111C649CEA00F4A478 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6226101C649CEA00F4A478 /* Assets.xcassets */; };
 		7D6226141C649CEA00F4A478 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D6226121C649CEA00F4A478 /* LaunchScreen.storyboard */; };
+		7D62261C1C649F5D00F4A478 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D62261B1C649F5D00F4A478 /* Places.swift */; };
+		7D62261E1C64A0E600F4A478 /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D62261D1C64A0E600F4A478 /* Places.plist */; };
+		7D6226221C64B02600F4A478 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6226211C64B02600F4A478 /* AddViewController.swift */; };
+		7D6226241C64B50E00F4A478 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6226231C64B50E00F4A478 /* InfoViewController.swift */; };
+		7D6226261C64B7C100F4A478 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6226251C64B7C100F4A478 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		7D6226101C649CEA00F4A478 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D6226131C649CEA00F4A478 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D6226151C649CEA00F4A478 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D62261B1C649F5D00F4A478 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		7D62261D1C64A0E600F4A478 /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
+		7D6226211C64B02600F4A478 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		7D6226231C64B50E00F4A478 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		7D6226251C64B7C100F4A478 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +64,14 @@
 		7D6226081C649CEA00F4A478 /* Lab3 */ = {
 			isa = PBXGroup;
 			children = (
+				7D62261D1C64A0E600F4A478 /* Places.plist */,
 				7D6226091C649CEA00F4A478 /* AppDelegate.swift */,
 				7D62260B1C649CEA00F4A478 /* ViewController.swift */,
 				7D62260D1C649CEA00F4A478 /* Main.storyboard */,
+				7D6226231C64B50E00F4A478 /* InfoViewController.swift */,
+				7D6226211C64B02600F4A478 /* AddViewController.swift */,
+				7D6226251C64B7C100F4A478 /* DetailsViewController.swift */,
+				7D62261B1C649F5D00F4A478 /* Places.swift */,
 				7D6226101C649CEA00F4A478 /* Assets.xcassets */,
 				7D6226121C649CEA00F4A478 /* LaunchScreen.storyboard */,
 				7D6226151C649CEA00F4A478 /* Info.plist */,
@@ -124,6 +139,7 @@
 			files = (
 				7D6226141C649CEA00F4A478 /* LaunchScreen.storyboard in Resources */,
 				7D6226111C649CEA00F4A478 /* Assets.xcassets in Resources */,
+				7D62261E1C64A0E600F4A478 /* Places.plist in Resources */,
 				7D62260F1C649CEA00F4A478 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6226221C64B02600F4A478 /* AddViewController.swift in Sources */,
 				7D62260C1C649CEA00F4A478 /* ViewController.swift in Sources */,
 				7D62260A1C649CEA00F4A478 /* AppDelegate.swift in Sources */,
+				7D62261C1C649F5D00F4A478 /* Places.swift in Sources */,
+				7D6226261C64B7C100F4A478 /* DetailsViewController.swift in Sources */,
+				7D6226241C64B50E00F4A478 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
