@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Coffee Shops</key>
+	<array>
+		<string>Celestial Seasonings</string>
+		<string>Pekoes</string>
+		<string>Laughing Goat</string>
+	</array>
+	<key>Buildings</key>
+	<array>
+		<string>Roser ATLAS</string>
+		<string>Engineering Center</string>
+		<string>Mathematics</string>
+	<array/>
+	<key>Libraries</key>
+	<array>
+		<string>Norlin Library</string>
+		<string>Gemmill Library</string>
+	</array>
+</dict>
+</plist>
