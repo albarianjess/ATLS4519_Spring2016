@@ -92,8 +92,7 @@ class ViewController: UITableViewController {
         let app = UIApplication.sharedApplication()
         //subscribe to the UIApplicationWillResignActiveNotification notification
         NSNotificationCenter.defaultCenter().addObserver(self, selector:
-            "applicationWillResignActive:", name:
-            "UIApplicationWillResignActiveNotification", object: app)
+            "applicationWillResignActive:", name: "UIApplicationWillResignActiveNotification", object: app)
     }
 
     func applicationWillResignActive(notification: NSNotification){

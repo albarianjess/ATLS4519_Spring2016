@@ -114,7 +114,7 @@
         <!--Title-->
         <scene sceneID="NSj-Fv-JTe">
             <objects>
-                <tableViewController id="oE9-S5-2Yr" customClass="DetailViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oE9-S5-2Yr" customClass="DetailsViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Eto-4A-GKd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
