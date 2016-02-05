@@ -8,15 +8,13 @@
 
 import Foundation
 
-//class Countries {
-//    var continentData = [String : [String]]() //empty dictionary
-//    var continents = [String]() //empty array
-//    
-//    
-//}
-
-
-class CUBoulder {
-    var placesData = [String : [String]]() //empty dictionary
-    var places = [String]() //empty array
+class Continents {
+    var continentData = [String : [String]]()
+    var continents = [String]()
 }
+
+//
+//class CUBoulder {
+//    var placesData = [String : [String]]() //empty dictionary
+//    var places = [String]() //empty array
+//}

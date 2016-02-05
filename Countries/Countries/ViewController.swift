@@ -12,12 +12,13 @@ class ViewController: UITableViewController {
 
     
     
-    var placesList = CUBoulder()
+    var continentList = Continents()
+    
     
     //Number of rows in the section
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-            return placesList.placesData.count
+            return continentList.continentData.count
     }
     
     // Displays table view cells
@@ -25,19 +26,36 @@ class ViewController: UITableViewController {
         indexPath: NSIndexPath) -> UITableViewCell {
             //configure the cell
             let cell =
-            tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath:
-                indexPath)
-            cell.textLabel?.text = placesList.places[indexPath.row]
+            tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath:indexPath)
+            cell.textLabel?.text = continentList.continents[indexPath.row]
             return cell
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender:
+        AnyObject?) {
+            if segue.identifier == "countrySegue" {
+                let detailVC = segue.destinationViewController as!DetailTableViewController
+                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+                //sets the data for the destination controller
+                detailVC.title = continentList.continents[indexPath.row]
+                detailVC.continentListDetail=continentList
+                detailVC.selectedContinent = indexPath.row
+            }
+    }
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let path = NSBundle.mainBundle().pathForResource("continents", ofType: "plist")
-        placesList.placesData = NSDictionary(contentsOfFile: path!)
-            as! [String : [String]]
-        placesList.places = Array(placesList.placesData.keys)
+        continentList.continentData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
+        continentList.continents = Array(continentList.continentData.keys)
     }
 
     override func didReceiveMemoryWarning() {

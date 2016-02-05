@@ -5,22 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="gsT-lN-6Ky">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tkR-kT-XiR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ndk-gm-zLl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbx-iA-hsH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="656" y="312"/>
-        </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="jCk-ff-e76">
             <objects>
                 <tableViewController id="N0L-s7-snT" customClass="ViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,13 +14,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="jsw-jv-e8v">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" id="jsw-jv-e8v">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jsw-jv-e8v" id="wHg-Ue-RSG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="CYq-8n-k3o" kind="show" identifier="CellIdentifier" trigger="accessoryAction" id="Et2-eI-Hfj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,11 +31,40 @@
                             <outlet property="delegate" destination="N0L-s7-snT" id="sYx-xB-EiE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xeK-V7-EZ0"/>
+                    <navigationItem key="navigationItem" title="Title" id="l0v-fB-GrM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7N-VT-Xw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2912" y="-9"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="gSp-34-Qoa">
+            <objects>
+                <tableViewController id="CYq-8n-k3o" customClass="DetailTableViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wAQ-Ue-Qqy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="KWg-hB-psL">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KWg-hB-psL" id="coI-1r-0KP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CYq-8n-k3o" id="t2k-2I-6xx"/>
+                            <outlet property="delegate" destination="CYq-8n-k3o" id="6Hf-WH-fZT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="JOf-Qp-BK8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oCS-Yu-2dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3563" y="-9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="osc-1d-9Dn">
