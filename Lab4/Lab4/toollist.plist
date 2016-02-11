@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>tools</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Gmail</string>
+			<key>url</key>
+			<string>https://mail.google.com/mail/u/0/</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Desire2Learn</string>
+			<key>url</key>
+			<string>https://learn.colorado.edu/</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Moodle</string>
+			<key>url</key>
+			<string>https://moodle.cs.colorado.edu/</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>WebAssign</string>
+			<key>url</key>
+			<string>https://www.webassign.net/colorado/login.html</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Google Drive</string>
+			<key>url</key>
+			<string>https://drive.google.com/</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Twitter</string>
+			<key>url</key>
+			<string>https://twitter.com/</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Facebook</string>
+			<key>url</key>
+			<string>https://www.facebook.com/</string>
+		</dict>
+	</array>
+</dict>
+</plist>
