@@ -16,7 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="NQZ-Dg-npb">
+                                <rect key="frame" x="180" y="177" width="240" height="246"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessie's Resources" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSx-MZ-z5C">
+                                <rect key="frame" x="180" y="132" width="240" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="s3p-fb-OJo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="WSx-MZ-z5C" firstAttribute="leading" secondItem="NQZ-Dg-npb" secondAttribute="leading" id="6ii-wZ-NVd"/>
+                            <constraint firstItem="NQZ-Dg-npb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Scp-gd-iRA"/>
+                            <constraint firstItem="NQZ-Dg-npb" firstAttribute="top" secondItem="WSx-MZ-z5C" secondAttribute="bottom" constant="8" symbolic="YES" id="TTk-xq-kaR"/>
+                            <constraint firstItem="NQZ-Dg-npb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="a0f-vg-NNn"/>
+                            <constraint firstItem="WSx-MZ-z5C" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="112" id="aYr-Ul-MnP"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NQZ-Dg-npb" secondAttribute="bottom" constant="177" id="bns-jE-dce"/>
+                            <constraint firstItem="WSx-MZ-z5C" firstAttribute="trailing" secondItem="NQZ-Dg-npb" secondAttribute="trailing" id="p8K-Eh-ld1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="167" height="167"/>
+    </resources>
 </document>
