@@ -24,7 +24,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 0...13 {
+        for i in 1...12 {
             images.append("kitten" + String(i+1))
         }
         
@@ -78,9 +78,11 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         if !images.isEmpty {
             print("share images")
             
-            for imageName in images{
-                imageArray.append(UIImage(named: imageName)!)
-            }
+            
+                for imageName in images{
+                    imageArray.append(UIImage(named: imageName)!)
+                }
+            
             
             let shareScreen = UIActivityViewController(activityItems: imageArray, applicationActivities: nil)
             shareScreen.modalPresentationStyle = .Popover

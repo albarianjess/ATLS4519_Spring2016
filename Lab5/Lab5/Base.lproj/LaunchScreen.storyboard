@@ -17,18 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitten3" translatesAutoresizingMaskIntoConstraints="NO" id="nvp-ha-ck9">
-                                <rect key="frame" x="145" y="78" width="310" height="340"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kitten Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YY7-oI-QOl">
+                                <rect key="frame" x="224" y="204" width="153" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="310" id="lai-Bt-ifE"/>
+                                    <constraint firstAttribute="width" constant="153" id="48T-8n-ZpS"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="nvp-ha-ck9" secondAttribute="bottom" constant="182" id="JEi-9w-Mqm"/>
-                            <constraint firstItem="nvp-ha-ck9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mpa-FS-7lX"/>
-                            <constraint firstItem="nvp-ha-ck9" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="58" id="kAA-PN-rfr"/>
+                            <constraint firstItem="YY7-oI-QOl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8fO-1Y-R5X"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YY7-oI-QOl" secondAttribute="bottom" constant="375" id="gCb-VA-Bwc"/>
+                            <constraint firstItem="YY7-oI-QOl" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="184" id="iQd-ev-HZS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,7 +40,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="kitten3" width="550" height="410"/>
-    </resources>
 </document>
