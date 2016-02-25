@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "kitten4-2.png",
+      "filename" : "kitten3.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "kitten4.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "kitten4-1.png",
       "scale" : "3x"
     }
   ],
