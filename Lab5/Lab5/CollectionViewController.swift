@@ -24,7 +24,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for i in 1...12 {
+        for i in 0...12 {
             images.append("kitten" + String(i+1))
         }
         
