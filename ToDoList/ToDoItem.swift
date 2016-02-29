@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class TodoItem {
     var name : String
     var reminderDate : NSDate
@@ -23,3 +22,4 @@ class TodoItem {
         return (NSDate().compare(self.reminderDate) == NSComparisonResult.OrderedDescending)
     }
 }
+

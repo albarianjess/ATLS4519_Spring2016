@@ -12,6 +12,19 @@ class ToDoTableViewController: UITableViewController {
 
     
     var items = [TodoItem]()
+//    let kfilename = "data.plist"
+//    
+//
+//    
+//    
+//    func docFilePath(filename: String) -> String?{
+//        //locate the documents directory
+//        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,NSSearchPathDomainMask.AllDomainsMask, true)
+//        let dir = path[0] as NSString //document directory
+//        //creates the full path to our data file
+//        return dir.stringByAppendingPathComponent(filename)
+//    }
+    
     
     
     @IBAction func unwindSegue(segue:UIStoryboardSegue){
@@ -23,10 +36,11 @@ class ToDoTableViewController: UITableViewController {
                 addNotification(newItem)
                 tableView.reloadData()
             }
+    
         }
-
     }
     
+
     
     
     func addNotification(item: TodoItem){
@@ -56,8 +70,6 @@ class ToDoTableViewController: UITableViewController {
             UIApplication.sharedApplication().scheduledLocalNotifications! as
                 [UILocalNotification]{
                     if notification.userInfo!["UUID"] as! String == item.id {
-                        //cancel the notification
-                        
                         UIApplication.sharedApplication().cancelLocalNotification(notification)
                     }
         }
@@ -68,12 +80,38 @@ class ToDoTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.reloadData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "ListShouldRefresh", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("ListShouldRefresh", object: self)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        let path:String?
+//        let filePath = docFilePath(kfilename) //path to data file
+//        //if the data file exists, use it
+//        if NSFileManager.defaultManager().fileExistsAtPath(filePath!){
+//            path = filePath
+//            print(path)
+//        }
+//        else {
+//            path = NSBundle.mainBundle().pathForResource("Items",
+//                ofType: "plist")
+//            print(path)
+//        }
+//        
+//        //load the data of the plist file into the dictionary
+//        itemList.name = NSDictionary(contentsOfFile: path!)
+//            as! [String : [String]]
+//        //puts all the continents in an array
+//        itemList.continents = Array(itemList.continentData.keys)
+        
+        //application instance
+        let app = UIApplication.sharedApplication()
+        //subscribe to the UIApplicationWillResignActiveNotification notification
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:
+            "applicationWillResignActive:", name:
+            "UIApplicationWillResignActiveNotification", object: app)
     }
 
     override func didReceiveMemoryWarning() {
@@ -141,11 +179,22 @@ class ToDoTableViewController: UITableViewController {
                 badgeNumber++
             }
         }
-        // assign to the app icon badge number
         UIApplication.sharedApplication().applicationIconBadgeNumber = badgeNumber
     }
 
-
+    
+//    
+//    func applicationWillResignActive(notification: NSNotification){
+//        let filePath = docFilePath(kfilename)
+//        let data = NSMutableDictionary()
+//        //adds our whole dictionary to the data dictionary
+//        data.addEntriesFromDictionary(continentList.continentData)
+//        print(data)
+//        //write the contents of the array to our plist file
+//        data.writeToFile(filePath!, atomically: true)
+//    }
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7D7FA1391C7CC1E100A0360D /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7FA1391C7CC1E100A0360D /* Lab6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D7FA13C1C7CC1E100A0360D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D7FA1411C7CC1E100A0360D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D7FA1431C7CC1E100A0360D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		7D7FA13A1C7CC1E100A0360D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D7FA1391C7CC1E100A0360D /* ToDoList.app */,
+				7D7FA1391C7CC1E100A0360D /* Lab6.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7D7FA1381C7CC1E100A0360D /* ToDoList */ = {
+		7D7FA1381C7CC1E100A0360D /* Lab6 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D7FA14B1C7CC1E100A0360D /* Build configuration list for PBXNativeTarget "ToDoList" */;
+			buildConfigurationList = 7D7FA14B1C7CC1E100A0360D /* Build configuration list for PBXNativeTarget "Lab6" */;
 			buildPhases = (
 				7D7FA1351C7CC1E100A0360D /* Sources */,
 				7D7FA1361C7CC1E100A0360D /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = ToDoList;
+			name = Lab6;
 			productName = ToDoList;
-			productReference = 7D7FA1391C7CC1E100A0360D /* ToDoList.app */;
+			productReference = 7D7FA1391C7CC1E100A0360D /* Lab6.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,10 +102,11 @@
 				TargetAttributes = {
 					7D7FA1381C7CC1E100A0360D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 32C86W6J58;
 					};
 				};
 			};
-			buildConfigurationList = 7D7FA1341C7CC1E100A0360D /* Build configuration list for PBXProject "ToDoList" */;
+			buildConfigurationList = 7D7FA1341C7CC1E100A0360D /* Build configuration list for PBXProject "Lab6" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D7FA1381C7CC1E100A0360D /* ToDoList */,
+				7D7FA1381C7CC1E100A0360D /* Lab6 */,
 			);
 		};
 /* End PBXProject section */
@@ -255,10 +256,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jessie.ToDoList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jessie.Lab6;
+				PRODUCT_NAME = Lab6;
 			};
 			name = Debug;
 		};
@@ -266,17 +268,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = jessie.ToDoList;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jessie.Lab6;
+				PRODUCT_NAME = Lab6;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D7FA1341C7CC1E100A0360D /* Build configuration list for PBXProject "ToDoList" */ = {
+		7D7FA1341C7CC1E100A0360D /* Build configuration list for PBXProject "Lab6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D7FA1491C7CC1E100A0360D /* Debug */,
@@ -285,13 +288,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D7FA14B1C7CC1E100A0360D /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
+		7D7FA14B1C7CC1E100A0360D /* Build configuration list for PBXNativeTarget "Lab6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7D7FA14C1C7CC1E100A0360D /* Debug */,
 				7D7FA14D1C7CC1E100A0360D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

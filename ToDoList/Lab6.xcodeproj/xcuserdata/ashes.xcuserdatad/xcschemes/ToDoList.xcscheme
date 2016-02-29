@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D7FA1381C7CC1E100A0360D"
-               BuildableName = "ToDoList.app"
-               BlueprintName = "ToDoList"
-               ReferencedContainer = "container:ToDoList.xcodeproj">
+               BuildableName = "Lab6.app"
+               BlueprintName = "Lab6"
+               ReferencedContainer = "container:Lab6.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D7FA1381C7CC1E100A0360D"
-            BuildableName = "ToDoList.app"
-            BlueprintName = "ToDoList"
-            ReferencedContainer = "container:ToDoList.xcodeproj">
+            BuildableName = "Lab6.app"
+            BlueprintName = "Lab6"
+            ReferencedContainer = "container:Lab6.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D7FA1381C7CC1E100A0360D"
-            BuildableName = "ToDoList.app"
-            BlueprintName = "ToDoList"
-            ReferencedContainer = "container:ToDoList.xcodeproj">
+            BuildableName = "Lab6.app"
+            BlueprintName = "Lab6"
+            ReferencedContainer = "container:Lab6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7D7FA1381C7CC1E100A0360D"
-            BuildableName = "ToDoList.app"
-            BlueprintName = "ToDoList"
-            ReferencedContainer = "container:ToDoList.xcodeproj">
+            BuildableName = "Lab6.app"
+            BlueprintName = "Lab6"
+            ReferencedContainer = "container:Lab6.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

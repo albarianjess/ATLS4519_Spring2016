@@ -16,7 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="SFj-uj-rdi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To - Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jY6-Q4-x3H">
+                                <rect key="frame" x="168" y="73" width="264" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="Qlp-JI-T06"/>
+                                    <constraint firstAttribute="width" constant="264" id="VqJ-7d-Kzn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="G0m-MP-5Yd">
+                                <rect key="frame" x="180" y="214" width="240" height="229"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="APi-ZN-g39"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jY6-Q4-x3H" firstAttribute="centerX" secondItem="SFj-uj-rdi" secondAttribute="centerX" id="DSz-GV-b27"/>
+                            <constraint firstItem="dJQ-8y-8DQ" firstAttribute="top" secondItem="G0m-MP-5Yd" secondAttribute="bottom" constant="157" id="K1X-W8-f6F"/>
+                            <constraint firstItem="G0m-MP-5Yd" firstAttribute="centerX" secondItem="jY6-Q4-x3H" secondAttribute="centerX" id="N2g-KL-67i"/>
+                            <constraint firstItem="G0m-MP-5Yd" firstAttribute="top" secondItem="jY6-Q4-x3H" secondAttribute="bottom" constant="32" id="SWs-GP-ILh"/>
+                            <constraint firstItem="jY6-Q4-x3H" firstAttribute="top" secondItem="x6O-EW-zPB" secondAttribute="bottom" constant="53" id="ura-7d-ekZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oth-g2-pXz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +49,7 @@
             <point key="canvasLocation" x="413" y="395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pen" width="1300" height="1300"/>
+    </resources>
 </document>
