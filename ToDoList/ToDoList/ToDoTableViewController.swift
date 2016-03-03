@@ -10,20 +10,18 @@ import UIKit
 
 class ToDoTableViewController: UITableViewController {
 
-    
     var items = [TodoItem]()
-//    let kfilename = "data.plist"
-//    
-//
-//    
-//    
-//    func docFilePath(filename: String) -> String?{
-//        //locate the documents directory
-//        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,NSSearchPathDomainMask.AllDomainsMask, true)
-//        let dir = path[0] as NSString //document directory
-//        //creates the full path to our data file
-//        return dir.stringByAppendingPathComponent(filename)
-//    }
+    
+
+    let kfilename = "data.plist"
+    
+    func docFilePath(filename: String) -> String?{
+        //locate the documents directory
+        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,NSSearchPathDomainMask.AllDomainsMask, true)
+        let dir = path[0] as NSString //document directory
+        //creates the full path to our data file
+        return dir.stringByAppendingPathComponent(filename)
+    }
     
     
     
@@ -39,8 +37,6 @@ class ToDoTableViewController: UITableViewController {
     
         }
     }
-    
-
     
     
     func addNotification(item: TodoItem){
@@ -80,7 +76,10 @@ class ToDoTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.reloadData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList", name: "ListShouldRefresh", object: nil)
+        
+    
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

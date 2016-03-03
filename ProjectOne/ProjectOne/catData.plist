@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Snuggles</key>
+	<array>
+		<string>Adopt Me</string>
+		<string>&lt;image&gt;</string>
+		<string>Female</string>
+		<string>Domestic Shorthair</string>
+		<string>Purebred</string>
+		<string>1 year</string>
+	</array>
+	<key>Patches</key>
+	<array>
+		<string>On Hold</string>
+		<string>&lt;image&gt;</string>
+		<string>Female</string>
+		<string>Domestic Shorthair</string>
+		<string>Purebred</string>
+		<string>6 months</string>
+	</array>
+	<key>Mocha</key>
+	<array>
+		<string>Adopt Me</string>
+		<string>&lt;image&gt;</string>
+		<string>Male</string>
+		<string>Domestic Shorthair</string>
+		<string>Purebred</string>
+		<string>5 years</string>
+	</array>
+</dict>
+</plist>
