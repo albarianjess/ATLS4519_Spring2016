@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7D0905601C85FC0500EE9A8B /* catData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D09055F1C85FC0500EE9A8B /* catData.plist */; };
-		7D0905621C85FE8800EE9A8B /* continents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D0905611C85FE8800EE9A8B /* continents.plist */; };
 		7D101E641C84D7E700E51F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D101E631C84D7E700E51F31 /* AppDelegate.swift */; };
 		7D101E661C84D7E700E51F31 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D101E651C84D7E700E51F31 /* FirstViewController.swift */; };
 		7D101E681C84D7E700E51F31 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D101E671C84D7E700E51F31 /* SecondViewController.swift */; };
@@ -16,15 +15,17 @@
 		7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D101E6E1C84D7E700E51F31 /* LaunchScreen.storyboard */; };
 		7D101E781C84E07F00E51F31 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D101E771C84E07F00E51F31 /* MapKit.framework */; };
 		7D101E7A1C84E08500E51F31 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D101E791C84E08500E51F31 /* CoreLocation.framework */; };
-		7D504D841C855DB200452FAC /* animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D504D831C855DB200452FAC /* animal.swift */; };
+		7D504D841C855DB200452FAC /* dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D504D831C855DB200452FAC /* dog.swift */; };
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
 		7D89B6B41C880293004C9AE2 /* dogData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D89B6B31C880293004C9AE2 /* dogData.plist */; };
+		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
+		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
+		7DCA81AC1C8898EC00284CC4 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D09055F1C85FC0500EE9A8B /* catData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = catData.plist; sourceTree = "<group>"; };
-		7D0905611C85FE8800EE9A8B /* continents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = continents.plist; sourceTree = "<group>"; };
 		7D101E601C84D7E700E51F31 /* ProjectOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D101E631C84D7E700E51F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D101E651C84D7E700E51F31 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -34,10 +35,13 @@
 		7D101E711C84D7E700E51F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D101E771C84E07F00E51F31 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D101E791C84E08500E51F31 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		7D504D831C855DB200452FAC /* animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animal.swift; sourceTree = "<group>"; };
+		7D504D831C855DB200452FAC /* dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dog.swift; sourceTree = "<group>"; };
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7D89B6B31C880293004C9AE2 /* dogData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dogData.plist; sourceTree = "<group>"; };
+		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
+		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
+		7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +78,15 @@
 		7D101E621C84D7E700E51F31 /* ProjectOne */ = {
 			isa = PBXGroup;
 			children = (
+				7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */,
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
-				7D0905611C85FE8800EE9A8B /* continents.plist */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
 				7D101E651C84D7E700E51F31 /* FirstViewController.swift */,
 				7D101E671C84D7E700E51F31 /* SecondViewController.swift */,
 				7D8302AA1C860341007CBACB /* DogViewController.swift */,
-				7D504D831C855DB200452FAC /* animal.swift */,
+				7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */,
+				7D504D831C855DB200452FAC /* dog.swift */,
+				7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */,
 				7D101E6C1C84D7E700E51F31 /* Assets.xcassets */,
 				7D101E6E1C84D7E700E51F31 /* LaunchScreen.storyboard */,
 				7D101E711C84D7E700E51F31 /* Info.plist */,
@@ -150,7 +156,6 @@
 			files = (
 				7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */,
 				7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */,
-				7D0905621C85FE8800EE9A8B /* continents.plist in Resources */,
 				7D101E6D1C84D7E700E51F31 /* Assets.xcassets in Resources */,
 				7D0905601C85FC0500EE9A8B /* catData.plist in Resources */,
 				7D89B6B41C880293004C9AE2 /* dogData.plist in Resources */,
@@ -164,9 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */,
 				7D101E681C84D7E700E51F31 /* SecondViewController.swift in Sources */,
-				7D504D841C855DB200452FAC /* animal.swift in Sources */,
+				7D504D841C855DB200452FAC /* dog.swift in Sources */,
 				7D101E641C84D7E700E51F31 /* AppDelegate.swift in Sources */,
+				7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */,
+				7DCA81AC1C8898EC00284CC4 /* CellTableViewCell.swift in Sources */,
 				7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */,
 				7D101E661C84D7E700E51F31 /* FirstViewController.swift in Sources */,
 			);

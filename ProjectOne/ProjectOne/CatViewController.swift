@@ -8,20 +8,22 @@
 
 import UIKit
 
-class DogViewController: UIViewController {
-
+class CatViewController: UIViewController {
+    
     
     var properties = [String]()
-    var selectedDog = 0
-    var dogList = Dog()
+    var selectedCat = 0
+    var catList = Cat()
     
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var breedLabel: UILabel!
-    @IBOutlet weak var sexLabel: UILabel!
-    @IBOutlet weak var pedigreeLabel: UILabel!
-    @IBOutlet weak var pic: UIImageView!
+
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var breedLabel: UILabel!
+    @IBOutlet var sexLabel: UILabel!
+    @IBOutlet var pedigreeLabel: UILabel!
+    @IBOutlet var pic: UIImageView!
+    
     
     
     override func viewDidLoad() {
@@ -32,42 +34,42 @@ class DogViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        dogList.names =
-            Array(dogList.dogData.keys)
-        let chosenDog = dogList.names[selectedDog]
-        properties = dogList.dogData[chosenDog]! as [String]
+        catList.names =
+            Array(catList.catData.keys)
+        let chosenCat = catList.names[selectedCat]
+        properties = catList.catData[chosenCat]! as [String]
         
-        nameLabel.text = chosenDog
+        nameLabel.text = chosenCat
         statusLabel.text = properties[0]
         sexLabel.text = properties[2]
         breedLabel.text = properties[3]
         pedigreeLabel.text = properties[4]
         
-        if (chosenDog == "Moose"){
-            pic.image = UIImage(named: "dog1")
-        } else if (chosenDog == "Blanco"){
-            pic.image = UIImage(named: "dog2")
+        if (chosenCat == "Snuggles"){
+            pic.image = UIImage(named: "cat1")
+        } else if (chosenCat == "Patches"){
+            pic.image = UIImage(named: "cat2")
         } else {
-            pic.image = UIImage(named: "dog3")
+            pic.image = UIImage(named: "cat3")
         }
         
-
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
