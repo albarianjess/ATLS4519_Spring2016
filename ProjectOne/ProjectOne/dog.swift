@@ -22,6 +22,14 @@ class Dog {
     var age : String?
     var id : String?
     
+    var nameList = [String]()
+    var statusList = [String]()
+    var sexList = [String]()
+    var pedigreeList = [String]()
+    var breedList = [String]()
+    var ageList = [String]()
+    var idList = [String]()
+    
     
 //    init(name : String){
 //        self.name = name

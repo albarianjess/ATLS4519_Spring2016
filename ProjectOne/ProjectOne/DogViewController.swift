@@ -22,7 +22,7 @@ class DogViewController: UIViewController {
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var pedigreeLabel: UILabel!
     @IBOutlet weak var pic: UIImageView!
-    
+    @IBOutlet var ageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,27 +32,24 @@ class DogViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        dogList.names =
-            Array(dogList.dogData.keys)
-        let chosenDog = dogList.names[selectedDog]
-        properties = dogList.dogData[chosenDog]! as [String]
+//        dogList.names = Array(dogList.dogData.keys)
+//        let chosenDog = dogList.names[selectedDog]
+//        
+//        properties = dogList.dogData[chosenDog]! as [String]
         
-        nameLabel.text = chosenDog
-        statusLabel.text = properties[0]
-        sexLabel.text = properties[2]
-        breedLabel.text = properties[3]
-        pedigreeLabel.text = properties[4]
+//        nameLabel.text = chosenDog
+//        statusLabel.text = properties[0]
+//        sexLabel.text = properties[2]
+//        breedLabel.text = properties[3]
+//        pedigreeLabel.text = properties[4]
         
-        if (chosenDog == "Moose"){
-            pic.image = UIImage(named: "dog1")
-        } else if (chosenDog == "Blanco"){
-            pic.image = UIImage(named: "dog2")
-        } else {
-            pic.image = UIImage(named: "dog3")
-        }
-        
-
-        
+//        if (chosenDog == "Moose"){
+//            pic.image = UIImage(named: "dog1")
+//        } else if (chosenDog == "Blanco"){
+//            pic.image = UIImage(named: "dog2")
+//        } else {
+//            pic.image = UIImage(named: "dog3")
+//        }
     }
 
     override func didReceiveMemoryWarning() {

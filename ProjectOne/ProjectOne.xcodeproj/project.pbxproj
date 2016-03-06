@@ -19,6 +19,7 @@
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
 		7D89B6B41C880293004C9AE2 /* dogData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D89B6B31C880293004C9AE2 /* dogData.plist */; };
+		7DBABE971C8C0024002098A1 /* dogData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBABE961C8C0024002098A1 /* dogData.json */; };
 		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
 		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
 		7DCA81AC1C8898EC00284CC4 /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7D89B6B31C880293004C9AE2 /* dogData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dogData.plist; sourceTree = "<group>"; };
+		7DBABE961C8C0024002098A1 /* dogData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogData.json; sourceTree = "<group>"; };
 		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
 		7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		7D101E621C84D7E700E51F31 /* ProjectOne */ = {
 			isa = PBXGroup;
 			children = (
+				7DBABE961C8C0024002098A1 /* dogData.json */,
 				7DCA81AB1C8898EC00284CC4 /* CellTableViewCell.swift */,
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
@@ -156,6 +159,7 @@
 			files = (
 				7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */,
 				7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */,
+				7DBABE971C8C0024002098A1 /* dogData.json in Resources */,
 				7D101E6D1C84D7E700E51F31 /* Assets.xcassets in Resources */,
 				7D0905601C85FC0500EE9A8B /* catData.plist in Resources */,
 				7D89B6B41C880293004C9AE2 /* dogData.plist in Resources */,

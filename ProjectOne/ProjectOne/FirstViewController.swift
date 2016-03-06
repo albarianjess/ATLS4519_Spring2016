@@ -9,26 +9,6 @@
 import UIKit
 
 
-
-//class Dog {
-//    
-//    var dogData = [String : [String]]()
-//    var names : [String]!
-//    
-//    lazy var name : String?
-//    var status : String?
-//    var code : String?
-//    var pedigree : String?
-//    var breed : String?
-//    var sex : String?
-//    var age : String?
-//    var id : String?
-//}
-
-var petList = [String]()
-
-
-
 class FirstViewController: UITableViewController {
 
     
@@ -38,7 +18,8 @@ class FirstViewController: UITableViewController {
     //----------
     // Create data storage object
     var data = NSMutableData()
-    var selectedAnimal = 0
+    var selectedDog = 0
+    // For passing onto next view controller
     var animalList = Dog()
     
 
@@ -73,7 +54,7 @@ class FirstViewController: UITableViewController {
            let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
             
             // Format labels
-            cell.textLabel?.text = petList[0]
+            cell.textLabel?.text = animalList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
             return cell
@@ -92,9 +73,14 @@ class FirstViewController: UITableViewController {
     // Customize the number of rows in the section
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-            return petList.count
+            return animalList.nameList.count
     }
     
+    
+    
+    //------------------------
+    // Get JSON data from file
+    //------------------------
     func getData(){
         if let path = NSBundle.mainBundle().pathForResource("dogData", ofType: "json") {
             do {
@@ -104,8 +90,22 @@ class FirstViewController: UITableViewController {
                     if let animals : [NSDictionary] = jsonResult["animals"] as? [NSDictionary] {
                         for item in animals {
                             if let name = item["name"] as? String {
-                                petList.append(name)
-                                print(name)
+                                animalList.nameList.append(name)
+                            }
+                            if let status = item["status"] as? String {
+                                animalList.statusList.append(status)
+                            }
+                            if let sex = item["sex"] as? String {
+                                animalList.statusList.append(sex)
+                            }
+                            if let pedigree = item["pedigree"] as? String {
+                                animalList.pedigreeList.append(pedigree)
+                            }
+                            if let breed = item["breed"] as? String {
+                                animalList.breedList.append(breed)
+                            }
+                            if let age = item["age"] as? String {
+                                animalList.ageList.append(age)
                             }
                         }
                     }
@@ -115,76 +115,11 @@ class FirstViewController: UITableViewController {
     }
     
     
+    
+    //---------------
+    // View Did Load
+    //---------------
     override func viewDidLoad() {
-//        //----------------------
-//        // Get JSON data from URL
-//        // Code block from http://www.learnswiftonline.com/mini-tutorials/how-to-download-and-read-json/
-//        //----------------------
-//        func startConnection() -> [String] {
-//            let requestURL: NSURL = NSURL(string: "https://www.jessiealbarian.com/dogdata.json")!
-//            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-//            let session = NSURLSession.sharedSession()
-//            
-//            var petList = [String]()
-//            
-//            let task = session.dataTaskWithRequest(urlRequest) {
-//                (data, response, error) -> Void in
-//                
-//                let httpResponse = response as! NSHTTPURLResponse
-//                let statusCode = httpResponse.statusCode
-//                
-//                if (statusCode == 200) {
-//                    do{
-//                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-//                        
-//                        
-//                        if let items = json["animals"] as? [[String: AnyObject]] {
-//                            for item in items {
-//                                if let name = item["name"] as? String {
-//                                    petList.append(name)
-//                                }
-//                                //                            if let status = item["status"] as? String {
-//                                //                                petObject.status = status
-//                                //                            }
-//                                //                            if let sex = item["sex"] as? String {
-//                                //                                petObject.sex = sex
-//                                //                            }
-//                                //                            if let pedigree = item["pedigree"] as? String {
-//                                //                                petObject.pedigree = pedigree
-//                                //                            }
-//                                //                            if let breed = item["breed"] as? String {
-//                                //                                petObject.breed = breed
-//                                //                            }
-//                                //                            if let age = item["age"] as? String {
-//                                //                                petObject.age = age
-//                                //                            }
-//                                //                            if let id = item["id"] as? String {
-//                                //                                petObject.id = id
-//                                //                            }
-//                            }
-//                        }
-//                    }catch {
-//                        print("Error with Json: \(error)")
-//                    }
-//                }
-//            }
-//            task.resume()
-//            
-//            for item in petList {
-//                print(item)
-//            }
-//            return petList
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         getData()
         super.viewDidLoad()
     }
