@@ -32,24 +32,22 @@ class DogViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-//        dogList.names = Array(dogList.dogData.keys)
-//        let chosenDog = dogList.names[selectedDog]
-//        
-//        properties = dogList.dogData[chosenDog]! as [String]
+        let chosenDog = dogList.nameList[selectedDog]
         
-//        nameLabel.text = chosenDog
-//        statusLabel.text = properties[0]
-//        sexLabel.text = properties[2]
-//        breedLabel.text = properties[3]
-//        pedigreeLabel.text = properties[4]
+        // Set label information
+        nameLabel.text = "Name: " + chosenDog
+        statusLabel.text = "Status: " + dogList.statusList[selectedDog]
+        breedLabel.text = "Breed: " + dogList.breedList[selectedDog]
+        pedigreeLabel.text = "Pedigree: " + dogList.pedigreeList[selectedDog]
+        sexLabel.text = "Sex: " + dogList.sexList[selectedDog]
+        ageLabel.text = "Age: " + dogList.ageList[selectedDog]
         
-//        if (chosenDog == "Moose"){
-//            pic.image = UIImage(named: "dog1")
-//        } else if (chosenDog == "Blanco"){
-//            pic.image = UIImage(named: "dog2")
-//        } else {
-//            pic.image = UIImage(named: "dog3")
-//        }
+        // Decode base64 to use as image
+        let plainString = dogList.picList[selectedDog]
+        let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+        let decodedimage = UIImage(data: decodedData!)
+        print(decodedimage)
+        pic.image = decodedimage! as UIImage
     }
 
     override func didReceiveMemoryWarning() {

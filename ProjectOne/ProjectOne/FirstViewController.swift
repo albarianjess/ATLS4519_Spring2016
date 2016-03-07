@@ -1,10 +1,5 @@
-//
-//  FirstViewController.swift
-//  ProjectOne
-//
-//  Created by Jessie Albarian on 2/29/16.
-//  Copyright © 2016 babyllama. All rights reserved.
-//
+
+
 
 import UIKit
 
@@ -13,31 +8,25 @@ class FirstViewController: UITableViewController {
 
     
 
-    //----------
+    //-----------
     // VARIABLES
-    //----------
-    // Create data storage object
-    var data = NSMutableData()
-    var selectedDog = 0
-    // For passing onto next view controller
-    var animalList = Dog()
+    //-----------
+    var data = NSMutableData()  // Create data storage object
+    var selectedDog = 0 // Initialize selectedDog
+    var animalList = Dog() // To pass data to next controller
     
 
 
-    
-    
-    
+    //-----------------------
+    // PREPARE FOR DOG SEGUE
+    //-----------------------
     override func prepareForSegue(segue: UIStoryboardSegue, sender:
         AnyObject?) {
-
             if segue.identifier == "dogsegue" {
-                let detailVC = segue.destinationViewController as!
-                DogViewController
-                let indexPath = tableView.indexPathForCell(sender as!
-                    UITableViewCell)!
-                
+                let detailVC = segue.destinationViewController as! DogViewController
+                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
                 //sets the data for the destination controller
-                detailVC.title = animalList.names[indexPath.row]
+                detailVC.title = animalList.nameList[indexPath.row]
                 detailVC.dogList = animalList
                 detailVC.selectedDog = indexPath.row
             }
@@ -45,9 +34,9 @@ class FirstViewController: UITableViewController {
     
     
     
-    //--------------------------
-    // Displays table view cells
-    //--------------------------
+    //-------------------------
+    // DISPLAY TABLEVIEW CELLS
+    //-------------------------
     override func tableView(tableView: UITableView, cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             //configure the cell
@@ -62,15 +51,9 @@ class FirstViewController: UITableViewController {
     
     
     
-    
-
-
-    
-    
-    
-    
-    // Required methods for UITableViewDataSource
-    // Customize the number of rows in the section
+    //----------------------
+    // # OF ROWS IN SECTION
+    //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
             return animalList.nameList.count
@@ -78,15 +61,17 @@ class FirstViewController: UITableViewController {
     
     
     
-    //------------------------
-    // Get JSON data from file
-    //------------------------
+    //-------------------------
+    // GET JSON DATA FROM FILE
+    //-------------------------
     func getData(){
         if let path = NSBundle.mainBundle().pathForResource("dogData", ofType: "json") {
             do {
                 let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 do {
                     let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    
+                    // Get JSON data and append to arrays
                     if let animals : [NSDictionary] = jsonResult["animals"] as? [NSDictionary] {
                         for item in animals {
                             if let name = item["name"] as? String {
@@ -96,7 +81,7 @@ class FirstViewController: UITableViewController {
                                 animalList.statusList.append(status)
                             }
                             if let sex = item["sex"] as? String {
-                                animalList.statusList.append(sex)
+                                animalList.sexList.append(sex)
                             }
                             if let pedigree = item["pedigree"] as? String {
                                 animalList.pedigreeList.append(pedigree)
@@ -106,6 +91,9 @@ class FirstViewController: UITableViewController {
                             }
                             if let age = item["age"] as? String {
                                 animalList.ageList.append(age)
+                            }
+                            if let pic = item["image"] as? String {
+                                animalList.picList.append(pic)
                             }
                         }
                     }
@@ -117,13 +105,20 @@ class FirstViewController: UITableViewController {
     
     
     //---------------
-    // View Did Load
+    // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
         getData()
+        // Background image
+        tableView.backgroundView = UIImageView(image: UIImage(named: "pup"))
+        //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         super.viewDidLoad()
     }
     
+    
+    //-------------------------
+    // DIDRECEIVEMEMORYWARNING
+    //-------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

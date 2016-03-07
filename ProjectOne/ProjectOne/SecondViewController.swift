@@ -1,37 +1,32 @@
-//
-//  FirstViewController.swift
-//  ProjectOne
-//
-//  Created by Jessie Albarian on 2/29/16.
-//  Copyright © 2016 babyllama. All rights reserved.
-//
+
+
 
 import UIKit
 
+
 class SecondViewController: UITableViewController {
     
-    //----------
+    
+    
+    //-----------
     // VARIABLES
-    //----------
-    // Create data storage object
-    var data = NSMutableData()
-    var animals = [String]()
-    var selectedAnimal = 0
-    var animalList = Cat()
-    //    let dogItems = ["dog1","dog2","dog3"]
+    //-----------
+    var data = NSMutableData()  // Create data storage object
+    var selectedCat = 0 // Initialize selectedDog
+    var animalList = Cat() // To pass data to next controller
     
     
     
-    
+    //-----------------------
+    // PREPARE FOR DOG SEGUE
+    //-----------------------
     override func prepareForSegue(segue: UIStoryboardSegue, sender:
         AnyObject?) {
             if segue.identifier == "catsegue" {
-                let detailVC = segue.destinationViewController as!
-                CatViewController
-                let indexPath = tableView.indexPathForCell(sender as!
-                    UITableViewCell)!
+                let detailVC = segue.destinationViewController as! CatViewController
+                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
                 //sets the data for the destination controller
-                detailVC.title = animalList.names[indexPath.row]
+                detailVC.title = animalList.nameList[indexPath.row]
                 detailVC.catList = animalList
                 detailVC.selectedCat = indexPath.row
             }
@@ -39,16 +34,16 @@ class SecondViewController: UITableViewController {
     
     
     
-    //--------------------------
-    // Displays table view cells
-    //--------------------------
+    //-------------------------
+    // DISPLAY TABLEVIEW CELLS
+    //-------------------------
     override func tableView(tableView: UITableView, cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
             //configure the cell
             let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
             
             // Format labels
-            cell.textLabel?.text = animalList.names[indexPath.row]
+            cell.textLabel?.text = animalList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
             return cell
@@ -57,74 +52,75 @@ class SecondViewController: UITableViewController {
     
     
     //----------------------
-    // Get JSON data from URL
-    // Code block from http://www.learnswiftonline.com/mini-tutorials/how-to-download-and-read-json/
+    // # OF ROWS IN SECTION
     //----------------------
-    func startConnection() {
-        let requestURL: NSURL = NSURL(string: "https://www.jessiealbarian.com/dogdata.json")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-        let session = NSURLSession.sharedSession()
-        //        var nameSet = [String]()
-        
-        
-        let task = session.dataTaskWithRequest(urlRequest) {
-            (data, response, error) -> Void in
-            
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
-            
-            
-            
-            if (statusCode == 200) {
-                do{
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
-                    let petObject = Cat()
-                    if let items = json["animals"] as? [[String: AnyObject]] {
-                        for item in items {
+    override func tableView(tableView: UITableView, numberOfRowsInSection
+        section: Int) -> Int {
+            return animalList.nameList.count
+    }
+    
+    
+    
+    //-------------------------
+    // GET JSON DATA FROM FILE
+    //-------------------------
+    func getData(){
+        if let path = NSBundle.mainBundle().pathForResource("catData", ofType: "json") {
+            do {
+                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                do {
+                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    
+                    // Get JSON data and append to arrays
+                    if let animals : [NSDictionary] = jsonResult["animals"] as? [NSDictionary] {
+                        for item in animals {
                             if let name = item["name"] as? String {
-                                petObject.name = name
-                                petObject.names.append(name)
-                                //                                print(name)
+                                animalList.nameList.append(name)
+                            }
+                            if let status = item["status"] as? String {
+                                animalList.statusList.append(status)
+                            }
+                            if let sex = item["sex"] as? String {
+                                animalList.sexList.append(sex)
+                            }
+                            if let pedigree = item["pedigree"] as? String {
+                                animalList.pedigreeList.append(pedigree)
+                            }
+                            if let breed = item["breed"] as? String {
+                                animalList.breedList.append(breed)
+                            }
+                            if let age = item["age"] as? String {
+                                animalList.ageList.append(age)
+                            }
+                            if let pic = item["image"] as? String {
+                                animalList.picList.append(pic)
                             }
                         }
                     }
-                }catch {
-                    print("Error with Json: \(error)")
-                }
-            }
+                } catch {}
+            } catch {}
         }
-        task.resume()
-        
     }
     
     
     
-    // Required methods for UITableViewDataSource
-    // Customize the number of rows in the section
-    override func tableView(tableView: UITableView, numberOfRowsInSection
-        section: Int) -> Int {
-            return animalList.catData.count
-    }
-    
+    //---------------
+    // VIEWDIDLOAD
+    //---------------
     override func viewDidLoad() {
+        getData()
+        // Background image
+        tableView.backgroundView = UIImageView(image: UIImage(named: "kitty"))
         super.viewDidLoad()
-        let path = NSBundle.mainBundle().pathForResource("catData", ofType: "plist")
-        //        animalList.animalData = NSArray(contentsOfFile: path!) as! [String]!
-        animalList.catData = NSDictionary(contentsOfFile: path!) as! [String : [String]]
-        animalList.names = Array(animalList.catData.keys)
-        //        print(animalList.animalData)
     }
     
     
-    
-    
+    //-------------------------
+    // DIDRECEIVEMEMORYWARNING
+    //-------------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
 }
 
