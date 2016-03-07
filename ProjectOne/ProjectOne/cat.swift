@@ -11,7 +11,7 @@ class Cat {
     var nameList = [String]()
     var statusList = [String]()
     var sexList = [String]()
-    var pedigreeList = [String]()
+    var personList = [String]()
     var breedList = [String]()
     var ageList = [String]()
     var idList = [String]()

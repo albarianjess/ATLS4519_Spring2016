@@ -20,6 +20,7 @@
 		7DBABE971C8C0024002098A1 /* dogData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBABE961C8C0024002098A1 /* dogData.json */; };
 		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
 		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
+		7DE300481C8D1C4200AA6808 /* catData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DE300471C8D1C4200AA6808 /* catData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		7DBABE961C8C0024002098A1 /* dogData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogData.json; sourceTree = "<group>"; };
 		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
+		7DE300471C8D1C4200AA6808 /* catData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		7D101E621C84D7E700E51F31 /* ProjectOne */ = {
 			isa = PBXGroup;
 			children = (
+				7DE300471C8D1C4200AA6808 /* catData.json */,
 				7DBABE961C8C0024002098A1 /* dogData.json */,
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
@@ -148,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE300481C8D1C4200AA6808 /* catData.json in Resources */,
 				7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */,
 				7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */,
 				7DBABE971C8C0024002098A1 /* dogData.json in Resources */,

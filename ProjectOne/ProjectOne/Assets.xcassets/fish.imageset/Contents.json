@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "dog2.jpg",
+      "filename" : "25x25caticon.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dog2-1.jpg",
+      "filename" : "50x50caticon.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dog2-2.jpg",
+      "filename" : "75x75caticon.png",
       "scale" : "3x"
     }
   ],

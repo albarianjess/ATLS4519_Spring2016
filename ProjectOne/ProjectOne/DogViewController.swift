@@ -11,7 +11,7 @@ import UIKit
 class DogViewController: UIViewController {
 
     
-    var properties = [String]()
+//    var properties = [String]()
     var selectedDog = 0
     var dogList = Dog()
     
@@ -46,7 +46,6 @@ class DogViewController: UIViewController {
         let plainString = dogList.picList[selectedDog]
         let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
         let decodedimage = UIImage(data: decodedData!)
-        print(decodedimage)
         pic.image = decodedimage! as UIImage
     }
 

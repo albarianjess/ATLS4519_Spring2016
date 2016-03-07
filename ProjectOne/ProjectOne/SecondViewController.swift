@@ -46,6 +46,16 @@ class SecondViewController: UITableViewController {
             cell.textLabel?.text = animalList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
+            
+            // Decode base64 to use as image
+            let plainString = animalList.picList[indexPath.row]
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
+            
+            // Formatting table view cells source
+            //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
             return cell
     }
     
@@ -83,8 +93,8 @@ class SecondViewController: UITableViewController {
                             if let sex = item["sex"] as? String {
                                 animalList.sexList.append(sex)
                             }
-                            if let pedigree = item["pedigree"] as? String {
-                                animalList.pedigreeList.append(pedigree)
+                            if let personality = item["personality"] as? String {
+                                animalList.personList.append(personality)
                             }
                             if let breed = item["breed"] as? String {
                                 animalList.breedList.append(breed)

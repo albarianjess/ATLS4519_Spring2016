@@ -1,30 +1,23 @@
-//
-//  DogViewController.swift
-//  ProjectOne
-//
-//  Created by Jessie Albarian on 3/1/16.
-//  Copyright © 2016 babyllama. All rights reserved.
-//
+
+
 
 import UIKit
 
 class CatViewController: UIViewController {
     
     
-    var properties = [String]()
     var selectedCat = 0
     var catList = Cat()
     
-    
-
+    @IBOutlet var pic: UIImageView!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var breedLabel: UILabel!
+    @IBOutlet var personLabel: UILabel!
     @IBOutlet var sexLabel: UILabel!
-    @IBOutlet var pedigreeLabel: UILabel!
-    @IBOutlet var pic: UIImageView!
+    @IBOutlet var ageLabel: UILabel!
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,42 +27,24 @@ class CatViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        catList.names =
-            Array(catList.catData.keys)
-        let chosenCat = catList.names[selectedCat]
-        properties = catList.catData[chosenCat]! as [String]
+        let chosenCat = catList.nameList[selectedCat]
         
-        nameLabel.text = chosenCat
-        statusLabel.text = properties[0]
-        sexLabel.text = properties[2]
-        breedLabel.text = properties[3]
-        pedigreeLabel.text = properties[4]
+        // Set label information
+        nameLabel.text = "Name: " + chosenCat
+        statusLabel.text = "Status: " + catList.statusList[selectedCat]
+        breedLabel.text = "Breed: " + catList.breedList[selectedCat]
+        personLabel.text = "Personality: " + catList.personList[selectedCat]
+        sexLabel.text = "Sex: " + catList.sexList[selectedCat]
+        ageLabel.text = "Age: " + catList.ageList[selectedCat]
         
-        if (chosenCat == "Snuggles"){
-            pic.image = UIImage(named: "cat1")
-        } else if (chosenCat == "Patches"){
-            pic.image = UIImage(named: "cat2")
-        } else {
-            pic.image = UIImage(named: "cat3")
-        }
-        
-        
-        
+        // Decode base64 to use as image
+        let plainString = catList.picList[selectedCat]
+        let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+        let decodedimage = UIImage(data: decodedData!)
+        pic.image = decodedimage! as UIImage
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

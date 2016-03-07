@@ -14,7 +14,7 @@ class FirstViewController: UITableViewController {
     var data = NSMutableData()  // Create data storage object
     var selectedDog = 0 // Initialize selectedDog
     var animalList = Dog() // To pass data to next controller
-    
+
 
 
     //-----------------------
@@ -33,7 +33,6 @@ class FirstViewController: UITableViewController {
     }
     
     
-    
     //-------------------------
     // DISPLAY TABLEVIEW CELLS
     //-------------------------
@@ -46,6 +45,17 @@ class FirstViewController: UITableViewController {
             cell.textLabel?.text = animalList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
+            
+            
+            // Decode base64 to use as image
+            let plainString = animalList.picList[indexPath.row]
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
+            
+            // Formatting table view cells source
+            //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
             return cell
     }
     
