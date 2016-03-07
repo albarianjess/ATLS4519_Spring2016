@@ -355,7 +355,7 @@
         <scene sceneID="CMO-Q6-EGO">
             <objects>
                 <navigationController title="Adoptable Cats" automaticallyAdjustsScrollViewInsets="NO" id="48z-fp-bKy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cats" image="second" selectedImage="fish" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Cats" image="fish" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lsP-0C-kKa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -375,6 +375,5 @@
         <image name="bone" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
         <image name="fish" width="25" height="25"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
