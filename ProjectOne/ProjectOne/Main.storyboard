@@ -185,7 +185,7 @@
         <scene sceneID="KYA-8B-3DT">
             <objects>
                 <navigationController title="Adoptable Dogs" automaticallyAdjustsScrollViewInsets="NO" id="Yo5-EA-1xE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dogs" image="first" selectedImage="bone" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Dogs" image="bone" selectedImage="bone" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvn-1f-FNJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -355,7 +355,7 @@
         <scene sceneID="CMO-Q6-EGO">
             <objects>
                 <navigationController title="Adoptable Cats" automaticallyAdjustsScrollViewInsets="NO" id="48z-fp-bKy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cats" image="fish" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Cats" image="fish" selectedImage="fish" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lsP-0C-kKa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -373,7 +373,6 @@
     </scenes>
     <resources>
         <image name="bone" width="25" height="25"/>
-        <image name="first" width="30" height="30"/>
         <image name="fish" width="25" height="25"/>
     </resources>
 </document>
