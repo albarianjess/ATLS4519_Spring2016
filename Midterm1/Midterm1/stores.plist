@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Target</key>
+	<array>
+		<string>Bath towels</string>
+		<string>Toaster</string>
+		<string>Rug</string>
+	</array>
+	<key>King Soopers</key>
+	<array>
+		<string>Brocolli</string>
+		<string>Chicken</string>
+		<string>Apple juice</string>
+	</array>
+	<key>REI</key>
+	<array>
+		<string>Rock climbing shoes</string>
+		<string>Chalk</string>
+		<string>Climbing rope</string>
+	</array>
+	<key>CU Bookstore</key>
+	<array>
+		<string>App Dev textbook</string>
+		<string>Physics textbook</string>
+	</array>
+	<key>Apple</key>
+	<array>
+		<string>iPhone 6</string>
+		<string>iPhone 6 fancy case</string>
+	</array>
+	<key>Whole Foods</key>
+	<array>
+		<string>Chipotle soup</string>
+		<string>Peppermint tea</string>
+	</array>
+</dict>
+</plist>
