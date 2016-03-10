@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemsViewController: UITableViewController {
+class ItemsViewController: UITableViewController, UIWebViewDelegate {
 
     //-----------
     // VARIABLES
@@ -58,7 +58,7 @@ class ItemsViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+//         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {

@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Target</key>
+	<key>Amazon</key>
 	<array>
 		<string>Bath towels</string>
 		<string>Toaster</string>
@@ -30,7 +30,7 @@
 		<string>iPhone 6</string>
 		<string>iPhone 6 fancy case</string>
 	</array>
-	<key>Whole Foods</key>
+	<key>Sprouts</key>
 	<array>
 		<string>Chipotle soup</string>
 		<string>Peppermint tea</string>

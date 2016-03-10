@@ -3,8 +3,48 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="uDe-mC-g9K">
+            <objects>
+                <viewController id="1RW-Ar-dMJ" customClass="WebViewController" customModule="Midterm1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="skh-9n-F4r"/>
+                        <viewControllerLayoutGuide type="bottom" id="U0C-Bm-v1l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kzz-L6-p2R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7JN-fB-ie0">
+                                <rect key="frame" x="-2" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c4u-km-fUB">
+                                <rect key="frame" x="288" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7JN-fB-ie0" secondAttribute="trailing" constant="-18" id="EC8-J1-xet"/>
+                            <constraint firstItem="c4u-km-fUB" firstAttribute="centerX" secondItem="Kzz-L6-p2R" secondAttribute="centerX" constant="-2" id="V4Q-Li-GHJ"/>
+                            <constraint firstItem="c4u-km-fUB" firstAttribute="centerY" secondItem="Kzz-L6-p2R" secondAttribute="centerY" id="WeK-VQ-YTw"/>
+                            <constraint firstItem="7JN-fB-ie0" firstAttribute="top" secondItem="Kzz-L6-p2R" secondAttribute="top" id="fEM-Mz-AQc"/>
+                            <constraint firstItem="7JN-fB-ie0" firstAttribute="bottom" secondItem="U0C-Bm-v1l" secondAttribute="top" id="gjP-mj-cGu"/>
+                            <constraint firstItem="7JN-fB-ie0" firstAttribute="leading" secondItem="Kzz-L6-p2R" secondAttribute="leadingMargin" constant="-22" id="qMC-Gh-9VF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webSpinner" destination="c4u-km-fUB" id="Hea-pC-JaZ"/>
+                        <outlet property="webView" destination="7JN-fB-ie0" id="NpZ-EC-iJv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QKQ-wF-wls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285" y="-410"/>
+        </scene>
         <!--Shopping List-->
         <scene sceneID="HTj-0s-srn">
             <objects>
@@ -14,16 +54,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" id="1n5-fI-qxq">
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CellIdentifier" id="1n5-fI-qxq">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1n5-fI-qxq" id="bR4-um-W1f">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="8wa-vt-D66" kind="show" identifier="itemsegue" id="nwt-Nm-61a"/>
+                                    <segue destination="1RW-Ar-dMJ" kind="show" identifier="infosegue" trigger="accessoryAction" id="1Bq-hD-5ye"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

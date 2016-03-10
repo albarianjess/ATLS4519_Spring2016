@@ -39,6 +39,9 @@ class ViewController: UITableViewController {
     
     
     
+    
+    
+    
     //-------------------
     // PREPARE FOR SEGUE
     //-------------------
@@ -49,10 +52,18 @@ class ViewController: UITableViewController {
             detail.title = storeList.items[indexPath!.row]
             detail.storeListItem = storeList
             detail.selectedStore = indexPath!.row
-
+            
+        } else if segue.identifier == "infosegue"{
+            let infoVC = segue.destinationViewController as! WebViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            infoVC.title = storeList.items[indexPath!.row]
+            infoVC.storeList2 = storeList
+            infoVC.selectedStore = indexPath!.row
         }
     }
     
+
+
     
     
     //--------------

@@ -12,4 +12,6 @@ import Foundation
 class Stores {
     var storesData = [String : [String]]()
     var items = [String]()
+    
+    
 }
