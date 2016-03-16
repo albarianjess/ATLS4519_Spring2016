@@ -15,7 +15,6 @@ class ViewController: UITableViewController {
     
     
     
-    
     //---------------------------
     // NUMBER OF ROWS IN SECTION
     //---------------------------
@@ -77,6 +76,7 @@ class ViewController: UITableViewController {
         
         // Change background
         tableView.backgroundView = UIImageView(image: UIImage(named: "grocery"))
+        
     }
 
     override func didReceiveMemoryWarning() {
