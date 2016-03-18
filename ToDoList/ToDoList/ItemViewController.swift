@@ -31,8 +31,7 @@ class ItemViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func checkNotify() {
-        let settings =
-        UIApplication.sharedApplication().currentUserNotificationSettings()
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
         if settings?.types.rawValue == 0 {
             let alert = UIAlertController(title: "Can't schedule notifications", message: "Please go to Settings to enable notifications", preferredStyle: .Alert)
             let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
