@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
             if let label = self.detailDescriptionLabel {
+//                label.textColor = UIColor.whiteColor()
                 label.text = detail.description + " patients use medical marijuana for " + title!
             }
         }
