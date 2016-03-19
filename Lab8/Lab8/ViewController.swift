@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    var addedLat = String()
-    var addedLong = String()
+    var addedLat = Double()
+    var addedLong = Double()
+    var addedName = String()
     
     @IBOutlet var buildingText: UITextField!
     @IBOutlet var latText: UITextField!
@@ -23,13 +24,13 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             if segue.identifier == "savesegue"{
-                if latText.text?.isEmpty == false {
-                    addedLat = latText.text!
-                    addedLong = longText.text!
+                if buildingText.text?.isEmpty == false {
+                    addedLat = (latText.text! as NSString).doubleValue
+                    addedLong = (longText.text! as NSString).doubleValue
+                    addedName = buildingText.text!
                 }
             }
     }
-    
     
     
     override func viewDidLoad() {

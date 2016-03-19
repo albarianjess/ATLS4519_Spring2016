@@ -3,10 +3,12 @@ import Foundation
 
 
 class Places {
-    var latitude: String
-    var longitude: String
+    var name: String
+    var latitude: Double
+    var longitude: Double
     
-    init(newlat: String, newlong: String){
+    init(newlat: Double, newlong: Double, newname: String){
+        name = newname
         latitude = newlat
         longitude = newlong
     }

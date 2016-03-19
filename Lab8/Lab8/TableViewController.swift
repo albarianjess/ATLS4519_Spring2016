@@ -20,17 +20,32 @@ class TableViewController: UITableViewController {
     @IBAction func unwindSegue(segue:UIStoryboardSegue){
         if segue.identifier == "savesegue" {
             let source = segue.sourceViewController as! ViewController
-            if source.addedLat.isEmpty == false {
-                let newPlace = Places(newlat: source.addedLat, newlong: source.addedLong)
+            if source.addedLat.isZero == false {
+            
+                let newPlace = Places(newlat: source.addedLat, newlong: source.addedLong, newname: source.addedName)
                 places.append(newPlace)
-                //create Dictionary
-                let newPlaceDict = ["latitude": source.addedLat, "longitude": source.addedLong]
-                let placeref = ref.childByAppendingPath(source.addedLat)
-                //write data to Firebase
+                //create dictionary
+                let newPlaceDict = ["latitude": source.addedLat, "longitude": source.addedLong, "name": source.addedName]
+                let placeref = ref.childByAppendingPath(source.addedName)
                 placeref.setValue(newPlaceDict)
+                
             }
         }
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "mapsegue" {
+            let source = segue.destinationViewController as! MapViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            source.name = places[indexPath.row].name
+            source.lat = places[indexPath.row].latitude
+            source.long = places[indexPath.row].longitude
+        }
+    }
+    
+    
     
     
     override func viewDidAppear(animated: Bool) {
@@ -41,14 +56,15 @@ class TableViewController: UITableViewController {
             if let snapshots = snapshot.children.allObjects as?
                 [FDataSnapshot]{
                     for item in snapshots {
-                        guard let latitude = item.value["latitude"] as? String,
-                            let longitude = item.value["longitude"] as? String
+                        guard let name = item.key as String!,
+                            let latitude = item.value["latitude"] as? Double,
+                            let longitude = item.value["longitude"] as? Double
                             else {
                                 continue
                         }
                         print(latitude)
                         //create new recipe object
-                        let newPlace = Places(newlat: latitude, newlong: longitude)
+                        let newPlace = Places(newlat: latitude, newlong: longitude, newname: name)
                         self.places.append(newPlace)
                     }
             }
@@ -92,8 +108,15 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let place = places[indexPath.row]
         
-        cell.textLabel!.text = place.latitude
-//        cell.textLabel!.text = "hi"
+//        let s = NSString(format: "%.2f", place.latitude)
+//        let nf = NSNumberFormatter()
+//        nf.numberStyle = .DecimalStyle
+        // Configure the number formatter to your liking
+//        let s2 = nf.stringFromNumber(place.latitude)
+        
+        
+        
+        cell.textLabel!.text = place.name
         return cell
     }
 

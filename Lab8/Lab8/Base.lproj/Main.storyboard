@@ -14,13 +14,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="RHG-po-Jow">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="RHG-po-Jow">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RHG-po-Jow" id="N7C-JA-Fv2">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Chn-gh-oBa" kind="show" identifier="mapsegue" id="p4I-ta-y0b"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,6 +149,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WD8-6P-quL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1039" y="317"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="wfT-ka-Iw4">
+            <objects>
+                <viewController id="Chn-gh-oBa" customClass="MapViewController" customModule="Lab8" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ul3-dy-DgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="wNC-Xg-p1L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2E8-Vp-uhe" customClass="Map">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="myz-fM-9Gd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="myz-fM-9Gd" firstAttribute="bottom" secondItem="wNC-Xg-p1L" secondAttribute="top" id="QHt-Oz-ySz"/>
+                            <constraint firstAttribute="trailing" secondItem="myz-fM-9Gd" secondAttribute="trailing" id="ea3-j5-AkF"/>
+                            <constraint firstItem="myz-fM-9Gd" firstAttribute="leading" secondItem="2E8-Vp-uhe" secondAttribute="leading" id="mQ2-6f-ZNs"/>
+                            <constraint firstItem="myz-fM-9Gd" firstAttribute="top" secondItem="ul3-dy-DgS" secondAttribute="bottom" id="w65-k7-9kU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="myz-fM-9Gd" id="Q8g-de-jDX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eol-ue-hlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672" y="1019"/>
         </scene>
     </scenes>
 </document>

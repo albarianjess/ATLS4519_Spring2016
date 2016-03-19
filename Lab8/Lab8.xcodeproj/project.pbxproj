@@ -14,6 +14,9 @@
 		7D2F2E001C9B0C8E007E84F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F2DFE1C9B0C8E007E84F6 /* LaunchScreen.storyboard */; };
 		7D2F2E081C9B0E0D007E84F6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F2E071C9B0E0D007E84F6 /* TableViewController.swift */; };
 		7D2F2E0A1C9B1024007E84F6 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F2E091C9B1024007E84F6 /* Places.swift */; };
+		7DF9576C1C9CECEE005FDAA4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF9576B1C9CECEE005FDAA4 /* MapKit.framework */; };
+		7DF9576E1C9CECF3005FDAA4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF9576D1C9CECF3005FDAA4 /* CoreLocation.framework */; };
+		7DF957701C9CEF1C005FDAA4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF9576F1C9CEF1C005FDAA4 /* MapViewController.swift */; };
 		FC441D76EED859297BCF6020 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51DB785A688BA2F0D93A7EA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		7D2F2E011C9B0C8E007E84F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D2F2E071C9B0E0D007E84F6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7D2F2E091C9B1024007E84F6 /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		7DF9576B1C9CECEE005FDAA4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7DF9576D1C9CECF3005FDAA4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7DF9576F1C9CEF1C005FDAA4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C51DB785A688BA2F0D93A7EA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01F5A0FC7B01F0A5A770D70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF9576E1C9CECF3005FDAA4 /* CoreLocation.framework in Frameworks */,
+				7DF9576C1C9CECEE005FDAA4 /* MapKit.framework in Frameworks */,
 				FC441D76EED859297BCF6020 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +64,8 @@
 		4E457B4DDD52FB5E33F59FDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DF9576D1C9CECF3005FDAA4 /* CoreLocation.framework */,
+				7DF9576B1C9CECEE005FDAA4 /* MapKit.framework */,
 				C51DB785A688BA2F0D93A7EA /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -85,6 +95,7 @@
 				7D2F2DF51C9B0C8E007E84F6 /* AppDelegate.swift */,
 				7D2F2DF71C9B0C8E007E84F6 /* ViewController.swift */,
 				7D2F2E071C9B0E0D007E84F6 /* TableViewController.swift */,
+				7DF9576F1C9CEF1C005FDAA4 /* MapViewController.swift */,
 				7D2F2E091C9B1024007E84F6 /* Places.swift */,
 				7D2F2DF91C9B0C8E007E84F6 /* Main.storyboard */,
 				7D2F2DFC1C9B0C8E007E84F6 /* Assets.xcassets */,
@@ -219,6 +230,7 @@
 				7D2F2DF81C9B0C8E007E84F6 /* ViewController.swift in Sources */,
 				7D2F2E081C9B0E0D007E84F6 /* TableViewController.swift in Sources */,
 				7D2F2DF61C9B0C8E007E84F6 /* AppDelegate.swift in Sources */,
+				7DF957701C9CEF1C005FDAA4 /* MapViewController.swift in Sources */,
 				7D2F2E0A1C9B1024007E84F6 /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
