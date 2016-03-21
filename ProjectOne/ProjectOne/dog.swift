@@ -16,4 +16,5 @@ class Dog {
     var ageList = [String]()
     var idList = [String]()
     var picList = [String]()
+    
 }

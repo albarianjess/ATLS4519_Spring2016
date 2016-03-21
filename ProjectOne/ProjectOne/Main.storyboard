@@ -22,17 +22,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-Xo-ffC">
-                                            <rect key="frame" x="8" y="5" width="141" height="88"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSP-YW-nFk">
+                                            <rect key="frame" x="8" y="13" width="110" height="75"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="141" id="7u0-Vc-2GN"/>
-                                                <constraint firstAttribute="height" constant="88" id="dYW-tu-Gdh"/>
+                                                <constraint firstAttribute="width" constant="141" id="8o6-u1-CCP"/>
+                                                <constraint firstAttribute="height" constant="88" id="bDk-Zt-gMr"/>
+                                                <constraint firstAttribute="width" constant="110" id="rHe-Da-cr7"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8o6-u1-CCP"/>
+                                                    <exclude reference="bDk-Zt-gMr"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Qbp-Xo-ffC" firstAttribute="leading" secondItem="3ws-Ue-HC4" secondAttribute="leadingMargin" id="7X7-TW-ebw"/>
-                                        <constraint firstItem="Qbp-Xo-ffC" firstAttribute="top" secondItem="3ws-Ue-HC4" secondAttribute="topMargin" constant="-3" id="klP-Qt-T6j"/>
+                                        <constraint firstItem="fSP-YW-nFk" firstAttribute="centerY" secondItem="3ws-Ue-HC4" secondAttribute="centerY" id="AA1-Ll-WfJ"/>
+                                        <constraint firstItem="fSP-YW-nFk" firstAttribute="top" secondItem="3ws-Ue-HC4" secondAttribute="topMargin" constant="5" id="VDv-qZ-fks"/>
+                                        <constraint firstItem="fSP-YW-nFk" firstAttribute="leading" secondItem="3ws-Ue-HC4" secondAttribute="leadingMargin" id="hdw-et-EhT"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -251,17 +259,32 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c9T-2B-Kby">
-                                            <rect key="frame" x="8" y="5" width="141" height="88"/>
+                                            <rect key="frame" x="8" y="13" width="110" height="75"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="40Z-VK-9IL"/>
                                                 <constraint firstAttribute="width" constant="141" id="55w-ir-p9J"/>
                                                 <constraint firstAttribute="height" constant="88" id="TyN-CF-8cq"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="55w-ir-p9J"/>
+                                                    <exclude reference="TyN-CF-8cq"/>
+                                                </mask>
+                                            </variation>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="c9T-2B-Kby" firstAttribute="top" secondItem="Ff7-yg-4QP" secondAttribute="topMargin" constant="-3" id="ZID-dn-x3h"/>
+                                        <constraint firstItem="c9T-2B-Kby" firstAttribute="top" secondItem="Ff7-yg-4QP" secondAttribute="top" constant="13" id="AD2-vf-pni"/>
+                                        <constraint firstItem="c9T-2B-Kby" firstAttribute="leading" secondItem="Ff7-yg-4QP" secondAttribute="leading" constant="8" id="LRe-b3-59a"/>
+                                        <constraint firstItem="c9T-2B-Kby" firstAttribute="top" secondItem="Ff7-yg-4QP" secondAttribute="topMargin" constant="5" id="ZID-dn-x3h"/>
+                                        <constraint firstAttribute="bottom" secondItem="c9T-2B-Kby" secondAttribute="bottom" constant="14" id="dXt-C5-Yob"/>
                                         <constraint firstItem="c9T-2B-Kby" firstAttribute="leading" secondItem="Ff7-yg-4QP" secondAttribute="leadingMargin" id="fob-0T-FOp"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="LRe-b3-59a"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <edgeInsets key="layoutMargins" top="15" left="15" bottom="15" right="15"/>

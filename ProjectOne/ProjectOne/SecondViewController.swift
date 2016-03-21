@@ -4,6 +4,8 @@
 import UIKit
 
 
+var myCatList = Cat() // To pass data to next controller
+
 class SecondViewController: UITableViewController {
     
     
@@ -13,7 +15,7 @@ class SecondViewController: UITableViewController {
     //-----------
     var data = NSMutableData()  // Create data storage object
     var selectedCat = 0 // Initialize selectedDog
-    var animalList = Cat() // To pass data to next controller
+    var objects = [[String:String]]()
     
     
     
@@ -26,8 +28,8 @@ class SecondViewController: UITableViewController {
                 let detailVC = segue.destinationViewController as! CatViewController
                 let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
                 //sets the data for the destination controller
-                detailVC.title = animalList.nameList[indexPath.row]
-                detailVC.catList = animalList
+                detailVC.title = myCatList.nameList[indexPath.row]
+                detailVC.catList = myCatList
                 detailVC.selectedCat = indexPath.row
             }
     }
@@ -43,12 +45,13 @@ class SecondViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
             
             // Format labels
-            cell.textLabel?.text = animalList.nameList[indexPath.row]
+            cell.textLabel?.text = myCatList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
             
+            
             // Decode base64 to use as image
-            let plainString = animalList.picList[indexPath.row]
+            let plainString = myCatList.picList[indexPath.row]
             let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
@@ -66,51 +69,75 @@ class SecondViewController: UITableViewController {
     //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-            return animalList.nameList.count
+            return myCatList.nameList.count
     }
     
     
     
-    //-------------------------
-    // GET JSON DATA FROM FILE
-    //-------------------------
-    func getData(){
-        if let path = NSBundle.mainBundle().pathForResource("catData", ofType: "json") {
-            do {
-                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                do {
-                    let jsonResult: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    
-                    // Get JSON data and append to arrays
-                    if let animals : [NSDictionary] = jsonResult["animals"] as? [NSDictionary] {
-                        for item in animals {
-                            if let name = item["name"] as? String {
-                                animalList.nameList.append(name)
-                            }
-                            if let status = item["status"] as? String {
-                                animalList.statusList.append(status)
-                            }
-                            if let sex = item["sex"] as? String {
-                                animalList.sexList.append(sex)
-                            }
-                            if let personality = item["personality"] as? String {
-                                animalList.personList.append(personality)
-                            }
-                            if let breed = item["breed"] as? String {
-                                animalList.breedList.append(breed)
-                            }
-                            if let age = item["age"] as? String {
-                                animalList.ageList.append(age)
-                            }
-                            if let pic = item["image"] as? String {
-                                animalList.picList.append(pic)
-                            }
-                        }
-                    }
-                } catch {}
-            } catch {}
+    //--------------------
+    // Load JSON from URL
+    //--------------------
+    func loadJSON(){
+        let urlPath = "https://www.jessiealbarian.com/catdata.json"
+        guard let url = NSURL(string: urlPath)
+            else {
+                print("url error")
+                return
         }
+        let session = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: {(data, response, error) in
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            guard statusCode == 200
+                else {
+                    print("file download error")
+                    return
+            }
+            print("download successful")
+            dispatch_async(dispatch_get_main_queue()) { self.parsejson(data!) }
+        })
+        session.resume()
     }
+    
+    
+    
+    //------------
+    // Parse JSON
+    //------------
+    func parsejson(data: NSData){
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+            for item in json {
+                let name = item["name"] as! String
+                myCatList.nameList.append(name)
+                
+                print(name)
+                let status = item["status"]! as! String
+                if status == "Adopt Me"{
+                    myCatList.statusList.append("Adoptable")
+                } else if status == "On Hold" {
+                    myCatList.statusList.append(status)
+                }
+                let sex = item["sex"]! as! String
+                myCatList.sexList.append(sex)
+                
+                let pedigree = item["personality"]! as! String
+                myCatList.personList.append(pedigree)
+                
+                let breed = item["breed"]! as! String
+                myCatList.breedList.append(breed)
+                
+                let age = item["age"]! as! String
+                myCatList.ageList.append(age)
+                
+                let pic = item["image"]! as! String
+                myCatList.picList.append(pic)
+            }
+        } catch {
+            print("Error with JSON: \(error)")
+        }
+        tableView.reloadData()
+    }
+    
     
     
     
@@ -118,11 +145,11 @@ class SecondViewController: UITableViewController {
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
-        getData()
-        // Background image
-        tableView.backgroundView = UIImageView(image: UIImage(named: "kitty"))
+        loadJSON()
         super.viewDidLoad()
+        
     }
+   
     
     
     //-------------------------

@@ -34,7 +34,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             latitude: lat,
             longitude: long
         )
-        let span = MKCoordinateSpanMake(0.03, 0.03)
+        let span = MKCoordinateSpanMake(0.01, 0.01)
         
 //        let region = MKCoordinateRegionMake(locationManager.location!.coordinate,span)
         let region = MKCoordinateRegionMake(location, span)

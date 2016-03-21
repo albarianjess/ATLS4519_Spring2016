@@ -17,7 +17,6 @@
 		7D504D841C855DB200452FAC /* dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D504D831C855DB200452FAC /* dog.swift */; };
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
-		7DBABE971C8C0024002098A1 /* dogData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBABE961C8C0024002098A1 /* dogData.json */; };
 		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
 		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
 		7DE300481C8D1C4200AA6808 /* catData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DE300471C8D1C4200AA6808 /* catData.json */; };
@@ -36,7 +35,6 @@
 		7D504D831C855DB200452FAC /* dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dog.swift; sourceTree = "<group>"; };
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		7DBABE961C8C0024002098A1 /* dogData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dogData.json; sourceTree = "<group>"; };
 		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
 		7DE300471C8D1C4200AA6808 /* catData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catData.json; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				7DE300471C8D1C4200AA6808 /* catData.json */,
-				7DBABE961C8C0024002098A1 /* dogData.json */,
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
 				7D101E651C84D7E700E51F31 /* FirstViewController.swift */,
@@ -154,7 +151,6 @@
 				7DE300481C8D1C4200AA6808 /* catData.json in Resources */,
 				7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */,
 				7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */,
-				7DBABE971C8C0024002098A1 /* dogData.json in Resources */,
 				7D101E6D1C84D7E700E51F31 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
