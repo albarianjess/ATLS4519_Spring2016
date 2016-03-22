@@ -4,9 +4,9 @@
 import UIKit
 
 
-var myCatList = Cat() // To pass data to next controller
+var smallList = Small() // To pass data to next controller
 
-class SecondViewController: UITableViewController {
+class ThirdViewController: UITableViewController {
     
     
     
@@ -14,23 +14,23 @@ class SecondViewController: UITableViewController {
     // VARIABLES
     //-----------
     var data = NSMutableData()  // Create data storage object
-    var selectedCat = 0 // Initialize selectedDog
+    var selectedSmall = 0 // Initialize selectedDog
     var objects = [[String:String]]()
     
     
     
     //-----------------------
-    // PREPARE FOR DOG SEGUE
+    // PREPARE FOR SMALL SEGUE
     //-----------------------
     override func prepareForSegue(segue: UIStoryboardSegue, sender:
         AnyObject?) {
-            if segue.identifier == "catsegue" {
-                let detailVC = segue.destinationViewController as! CatViewController
+            if segue.identifier == "smallsegue" {
+                let detailVC = segue.destinationViewController as! SmallViewController
                 let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
                 //sets the data for the destination controller
-                detailVC.title = myCatList.nameList[indexPath.row]
-                detailVC.catList = myCatList
-                detailVC.selectedCat = indexPath.row
+                detailVC.title = animalList.nameList[indexPath.row]
+                detailVC.smallList = smallList
+                detailVC.selectedSmall = indexPath.row
             }
     }
     
@@ -45,13 +45,13 @@ class SecondViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
             
             // Format labels
-            cell.textLabel?.text = myCatList.nameList[indexPath.row]
+            cell.textLabel?.text = smallList.nameList[indexPath.row]
             cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
             cell.textLabel?.textAlignment = .Center
             
             
             // Decode base64 to use as image
-            let plainString = myCatList.picList[indexPath.row]
+            let plainString = smallList.picList[indexPath.row]
             let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
@@ -69,7 +69,7 @@ class SecondViewController: UITableViewController {
     //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-            return myCatList.nameList.count
+            return smallList.nameList.count
     }
     
     
@@ -78,7 +78,7 @@ class SecondViewController: UITableViewController {
     // Load JSON from URL
     //--------------------
     func loadJSON(){
-        let urlPath = "https://www.jessiealbarian.com/catdata.json"
+        let urlPath = "https://www.jessiealbarian.com/smalldata.json"
         guard let url = NSURL(string: urlPath)
             else {
                 print("url error")
@@ -108,27 +108,30 @@ class SecondViewController: UITableViewController {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
             for item in json {
                 let name = item["name"] as! String
-                myCatList.nameList.append(name)
+                smallList.nameList.append(name)
+                
+                print(name)
                 let status = item["status"]! as! String
                 if status == "Adopt Me"{
-                    myCatList.statusList.append("Adoptable")
+                    smallList.statusList.append("Adoptable")
                 } else if status == "On Hold" {
-                    myCatList.statusList.append(status)
+                    smallList.statusList.append(status)
                 }
-                let sex = item["sex"]! as! String
-                myCatList.sexList.append(sex)
                 
-                let pedigree = item["personality"]! as! String
-                myCatList.personList.append(pedigree)
+                let sex = item["sex"]! as! String
+                smallList.sexList.append(sex)
+                
+                let pedigree = item["pedigree"]! as! String
+                smallList.pedigreeList.append(pedigree)
                 
                 let breed = item["breed"]! as! String
-                myCatList.breedList.append(breed)
+                smallList.breedList.append(breed)
                 
                 let age = item["age"]! as! String
-                myCatList.ageList.append(age)
+                smallList.ageList.append(age)
                 
                 let pic = item["image"]! as! String
-                myCatList.picList.append(pic)
+                smallList.picList.append(pic)
             }
         } catch {
             print("Error with JSON: \(error)")
@@ -143,16 +146,21 @@ class SecondViewController: UITableViewController {
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
+        //        animalList.getData()
         loadJSON()
+        // Background image
+        //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         super.viewDidLoad()
+        //        animalList.getData()
+        //print(animalList.nameList)
+        //        animalList.getNames()
         
     }
-   
+    
     
     override func viewDidAppear(animated: Bool) {
         loadJSON()
     }
-    
     
     //-------------------------
     // DIDRECEIVEMEMORYWARNING

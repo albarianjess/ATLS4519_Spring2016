@@ -14,12 +14,14 @@
 		7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D101E6E1C84D7E700E51F31 /* LaunchScreen.storyboard */; };
 		7D101E781C84E07F00E51F31 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D101E771C84E07F00E51F31 /* MapKit.framework */; };
 		7D101E7A1C84E08500E51F31 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D101E791C84E08500E51F31 /* CoreLocation.framework */; };
+		7D2998321C9FB84A009E8862 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2998311C9FB84A009E8862 /* ThirdViewController.swift */; };
+		7D2998341C9FB85E009E8862 /* SmallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2998331C9FB85E009E8862 /* SmallViewController.swift */; };
+		7D2998361C9FB8CD009E8862 /* small.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2998351C9FB8CD009E8862 /* small.swift */; };
 		7D504D841C855DB200452FAC /* dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D504D831C855DB200452FAC /* dog.swift */; };
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
 		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
 		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
-		7DE300481C8D1C4200AA6808 /* catData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DE300471C8D1C4200AA6808 /* catData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +34,14 @@
 		7D101E711C84D7E700E51F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D101E771C84E07F00E51F31 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D101E791C84E08500E51F31 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7D2998311C9FB84A009E8862 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		7D2998331C9FB85E009E8862 /* SmallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallViewController.swift; sourceTree = "<group>"; };
+		7D2998351C9FB8CD009E8862 /* small.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = small.swift; sourceTree = "<group>"; };
 		7D504D831C855DB200452FAC /* dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dog.swift; sourceTree = "<group>"; };
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
-		7DE300471C8D1C4200AA6808 /* catData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = catData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,14 +78,16 @@
 		7D101E621C84D7E700E51F31 /* ProjectOne */ = {
 			isa = PBXGroup;
 			children = (
-				7DE300471C8D1C4200AA6808 /* catData.json */,
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
+				7D2998311C9FB84A009E8862 /* ThirdViewController.swift */,
+				7D2998331C9FB85E009E8862 /* SmallViewController.swift */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
 				7D101E651C84D7E700E51F31 /* FirstViewController.swift */,
 				7D101E671C84D7E700E51F31 /* SecondViewController.swift */,
 				7D8302AA1C860341007CBACB /* DogViewController.swift */,
 				7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */,
 				7D504D831C855DB200452FAC /* dog.swift */,
+				7D2998351C9FB8CD009E8862 /* small.swift */,
 				7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */,
 				7D101E6C1C84D7E700E51F31 /* Assets.xcassets */,
 				7D101E6E1C84D7E700E51F31 /* LaunchScreen.storyboard */,
@@ -148,7 +154,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DE300481C8D1C4200AA6808 /* catData.json in Resources */,
 				7D101E701C84D7E700E51F31 /* LaunchScreen.storyboard in Resources */,
 				7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */,
 				7D101E6D1C84D7E700E51F31 /* Assets.xcassets in Resources */,
@@ -165,9 +170,12 @@
 				7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */,
 				7D101E681C84D7E700E51F31 /* SecondViewController.swift in Sources */,
 				7D504D841C855DB200452FAC /* dog.swift in Sources */,
+				7D2998341C9FB85E009E8862 /* SmallViewController.swift in Sources */,
 				7D101E641C84D7E700E51F31 /* AppDelegate.swift in Sources */,
+				7D2998361C9FB8CD009E8862 /* small.swift in Sources */,
 				7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */,
 				7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */,
+				7D2998321C9FB84A009E8862 /* ThirdViewController.swift in Sources */,
 				7D101E661C84D7E700E51F31 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

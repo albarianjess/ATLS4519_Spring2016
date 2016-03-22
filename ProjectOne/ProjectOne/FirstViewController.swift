@@ -188,15 +188,19 @@ class FirstViewController: UITableViewController {
     //---------------
     override func viewDidLoad() {
 //        animalList.getData()
+        
         loadJSON()
         // Background image
-//        tableView.backgroundView = UIImageView(image: UIImage(named: "pup"))
         //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         super.viewDidLoad()
 //        animalList.getData()
         //print(animalList.nameList)
 //        animalList.getNames()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadJSON()
     }
     
     
