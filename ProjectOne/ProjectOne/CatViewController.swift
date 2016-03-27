@@ -10,10 +10,8 @@ class CatViewController: UIViewController {
     var catList = Cat()
     
     @IBOutlet var pic: UIImageView!
-    @IBOutlet var statusLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var breedLabel: UILabel!
-    @IBOutlet var personLabel: UILabel!
     @IBOutlet var sexLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     
@@ -31,9 +29,7 @@ class CatViewController: UIViewController {
         
         // Set label information
         nameLabel.text = "Name: " + chosenCat
-        statusLabel.text = "Status: " + catList.statusList[selectedCat]
         breedLabel.text = "Breed: " + catList.breedList[selectedCat]
-        personLabel.text = "Personality: " + catList.personList[selectedCat]
         sexLabel.text = "Sex: " + catList.sexList[selectedCat]
         ageLabel.text = "Age: " + catList.ageList[selectedCat]
         

@@ -23,7 +23,9 @@ class FirstViewController: UITableViewController {
     var place = CLLocation()
 
     @IBOutlet var searching: UISearchBar!
-
+    
+    var searchController : UISearchController!
+    
     //-----------------------
     // PREPARE FOR DOG SEGUE
     //-----------------------
@@ -234,6 +236,19 @@ class FirstViewController: UITableViewController {
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         print("latitude \(latitude) and longitude \(longitude)")
         super.viewDidLoad()
+        
+        
+        //search results
+//        let resultsController = SearchResultsController()
+////        resultsController.allwords = 
+//        resultsController.words = animalList.names
+//        searchController = UISearchController(searchResultsController: resultsController)
+//        //search bar configuration
+//        searchController.searchBar.placeholder = "Search"
+//        //place holder text
+//        searchController.searchBar.sizeToFit()
+//        tableView.tableHeaderView=searchController.searchBar
+//        searchController.searchResultsUpdater = resultsController
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -25,14 +25,9 @@ class SmallViewController: UIViewController {
 //    @IBOutlet var ageLabel: UILabel!
     
     @IBOutlet var pic: UIImageView!
-    
-    @IBOutlet var statusLabel: UILabel!
-    
     @IBOutlet var nameLabel: UILabel!
-    
     @IBOutlet var ageLabe: UILabel!
     @IBOutlet var sexLabel: UILabel!
-    @IBOutlet var pedigreeLabel: UILabel!
     @IBOutlet var breedLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +41,7 @@ class SmallViewController: UIViewController {
         
         // Set label information
         nameLabel.text = "Name: " + chosenDog
-        statusLabel.text = "Status: " + smallList.statusList[selectedSmall]
         breedLabel.text = "Breed: " + smallList.breedList[selectedSmall]
-        pedigreeLabel.text = "Pedigree: " + smallList.pedigreeList[selectedSmall]
         sexLabel.text = "Sex: " + smallList.sexList[selectedSmall]
         ageLabe.text = "Age: " + smallList.ageList[selectedSmall]
         

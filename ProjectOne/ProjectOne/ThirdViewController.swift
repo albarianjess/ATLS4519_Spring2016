@@ -16,7 +16,7 @@ class ThirdViewController: UITableViewController {
     var data = NSMutableData()  // Create data storage object
     var selectedSmall = 0 // Initialize selectedDog
     var objects = [[String:String]]()
-    
+    var searchController : UISearchController!
     
     @IBOutlet var searching: UISearchBar!
     
@@ -106,24 +106,26 @@ class ThirdViewController: UITableViewController {
     //------------
     func parsejson(data: NSData){
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
-            for item in json {
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+            let allresults = json["boulder, CO"] as! NSArray
+            let results = Array(allresults)
+            for item in results {
                 let name = item["name"] as! String
                 smallList.nameList.append(name)
-                
-                print(name)
-                let status = item["status"]! as! String
-                if status == "Adopt Me"{
-                    smallList.statusList.append("Adoptable")
-                } else if status == "On Hold" {
-                    smallList.statusList.append(status)
-                }
+//                
+//                print(name)
+//                let status = item["status"]! as! String
+//                if status == "Adopt Me"{
+//                    smallList.statusList.append("Adoptable")
+//                } else if status == "On Hold" {
+//                    smallList.statusList.append(status)
+//                }
                 
                 let sex = item["sex"]! as! String
                 smallList.sexList.append(sex)
                 
-                let pedigree = item["pedigree"]! as! String
-                smallList.pedigreeList.append(pedigree)
+//                let pedigree = item["pedigree"]! as! String
+//                smallList.pedigreeList.append(pedigree)
                 
                 let breed = item["breed"]! as! String
                 smallList.breedList.append(breed)

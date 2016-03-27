@@ -17,10 +17,8 @@ class DogViewController: UIViewController {
     
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var sexLabel: UILabel!
-    @IBOutlet weak var pedigreeLabel: UILabel!
     @IBOutlet weak var pic: UIImageView!
     @IBOutlet var ageLabel: UILabel!
     
@@ -36,9 +34,7 @@ class DogViewController: UIViewController {
         
         // Set label information
         nameLabel.text = "Name: " + chosenDog
-        statusLabel.text = "Status: " + dogList.statusList[selectedDog]
         breedLabel.text = "Breed: " + dogList.breedList[selectedDog]
-        pedigreeLabel.text = "Pedigree: " + dogList.pedigreeList[selectedDog]
         sexLabel.text = "Sex: " + dogList.sexList[selectedDog]
         ageLabel.text = "Age: " + dogList.ageList[selectedDog]
         

@@ -16,7 +16,7 @@ class SecondViewController: UITableViewController {
     var data = NSMutableData()  // Create data storage object
     var selectedCat = 0 // Initialize selectedDog
     var objects = [[String:String]]()
-    
+    var searchController : UISearchController!
     
     @IBOutlet var searching: UISearchBar!
     
@@ -106,21 +106,24 @@ class SecondViewController: UITableViewController {
     //------------
     func parsejson(data: NSData){
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
-            for item in json {
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+            //            let city = json.objectForKey("boulder, CO") as! NSArray
+            let allresults = json["boulder, CO"] as! NSArray
+            let results = Array(allresults)
+            for item in results {
                 let name = item["name"] as! String
                 myCatList.nameList.append(name)
-                let status = item["status"]! as! String
-                if status == "Adopt Me"{
-                    myCatList.statusList.append("Adoptable")
-                } else if status == "On Hold" {
-                    myCatList.statusList.append(status)
-                }
+//                let status = item["status"]! as! String
+//                if status == "Adopt Me"{
+//                    myCatList.statusList.append("Adoptable")
+//                } else if status == "On Hold" {
+//                    myCatList.statusList.append(status)
+//                }
                 let sex = item["sex"]! as! String
                 myCatList.sexList.append(sex)
                 
-                let pedigree = item["personality"]! as! String
-                myCatList.personList.append(pedigree)
+//                let pedigree = item["personality"]! as! String
+//                myCatList.personList.append(pedigree)
                 
                 let breed = item["breed"]! as! String
                 myCatList.breedList.append(breed)
