@@ -18,6 +18,7 @@ class SecondViewController: UITableViewController {
     var objects = [[String:String]]()
     
     
+    @IBOutlet var searching: UISearchBar!
     
     //-----------------------
     // PREPARE FOR DOG SEGUE

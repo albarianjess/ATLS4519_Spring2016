@@ -18,6 +18,7 @@ class ThirdViewController: UITableViewController {
     var objects = [[String:String]]()
     
     
+    @IBOutlet var searching: UISearchBar!
     
     //-----------------------
     // PREPARE FOR SMALL SEGUE

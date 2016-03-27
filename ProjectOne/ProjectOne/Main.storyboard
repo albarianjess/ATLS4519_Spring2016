@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Yyf-Ro-wnU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,9 +14,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="SpF-sd-HmT">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="xij-QQ-3su">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xij-QQ-3su" id="3ws-Ue-HC4">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -55,6 +60,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Cats" id="I6T-ei-laF"/>
+                    <connections>
+                        <outlet property="searching" destination="SpF-sd-HmT" id="xds-m5-Dnf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN3-Qp-W3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,9 +76,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ft5-Ib-j0E">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="I43-3q-Gge">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I43-3q-Gge" id="1Ka-Ze-bg5">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="101"/>
@@ -109,6 +122,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Small Animals" id="588-1m-tLD"/>
+                    <connections>
+                        <outlet property="searching" destination="ft5-Ib-j0E" id="n4u-gB-g4r"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeY-9I-lEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,40 +352,6 @@
             </objects>
             <point key="canvasLocation" x="2240" y="359"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="3TK-eS-oTz">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbT-nQ-LgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Yyf-Ro-wnU" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YMd-h3-Axe"/>
-                        <viewControllerLayoutGuide type="bottom" id="jQu-wJ-Jcg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZjX-pV-VnD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-zK-mTu">
-                                <rect key="frame" x="173" y="295" width="258" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="258" id="qLM-dZ-wAI"/>
-                                </constraints>
-                                <state key="normal" title="Find Adoptable Pets"/>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="m7H-mS-RHM"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5Xs-zK-mTu" firstAttribute="centerX" secondItem="ZjX-pV-VnD" secondAttribute="centerX" constant="2" id="8Qk-Pm-nAV"/>
-                            <constraint firstItem="5Xs-zK-mTu" firstAttribute="top" secondItem="YMd-h3-Axe" secondAttribute="bottom" constant="275" id="uBc-ld-9EM"/>
-                        </constraints>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-710" y="96"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -417,9 +399,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="rwq-pf-Qwy">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="yqQ-bR-Q5b">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" tableViewCell="yqQ-bR-Q5b" id="Ff7-yg-4QP">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -466,6 +453,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Dogs" id="jlL-Y5-eZD"/>
+                    <connections>
+                        <outlet property="searching" destination="rwq-pf-Qwy" id="BFk-CB-MlU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y6-jH-UHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -2,6 +2,9 @@
 
 
 import UIKit
+import MapKit
+import CoreLocation
+
 
 
 var animalList = Dog() // To pass data to next controller
@@ -16,8 +19,10 @@ class FirstViewController: UITableViewController {
     var data = NSMutableData()  // Create data storage object
     var selectedDog = 0 // Initialize selectedDog
     var objects = [[String:String]]()
-    
+    var locationManager = CLLocationManager()
+    var place = CLLocation()
 
+    @IBOutlet var searching: UISearchBar!
 
     //-----------------------
     // PREPARE FOR DOG SEGUE
@@ -146,7 +151,7 @@ class FirstViewController: UITableViewController {
     //------------
     func parsejson(data: NSData){
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
             for item in json {
                 let name = item["name"] as! String
                 animalList.nameList.append(name)
@@ -182,6 +187,34 @@ class FirstViewController: UITableViewController {
     
     
     
+    //called when the authorization status for the application changed.
+    func locationManager(manager: CLLocationManager,
+                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("didchangeauth")
+        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation() //starts the location
+            manager
+        }
+    }
+    
+    
+    //called when a location cannot be determined
+    func locationManager(manager: CLLocationManager, didFailWithError
+        error: NSError) {
+        var errorType=String()
+        if let clError=CLError(rawValue: error.code) {
+            if clError == .Denied {
+                errorType="access denied"
+                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion:
+                    nil)
+            }
+        }
+    }
+    
+    
     
     //---------------
     // VIEWDIDLOAD
@@ -192,17 +225,23 @@ class FirstViewController: UITableViewController {
         loadJSON()
         // Background image
         //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+        if status==CLAuthorizationStatus.NotDetermined{
+            locationManager.requestWhenInUseAuthorization()
+            
+        }
+        let latitude = locationManager.location?.coordinate.latitude
+        let longitude = locationManager.location?.coordinate.longitude
+//        locationManager.delegate = self
+        locationManager.desiredAccuracy=kCLLocationAccuracyBest
+        print("latitude \(latitude) and longitude \(longitude)")
         super.viewDidLoad()
-//        animalList.getData()
-        //print(animalList.nameList)
-//        animalList.getNames()
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         loadJSON()
     }
-    
+
     
     //-------------------------
     // DIDRECEIVEMEMORYWARNING
