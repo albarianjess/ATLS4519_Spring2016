@@ -152,17 +152,15 @@ class FirstViewController: UITableViewController {
     func parsejson(data: NSData){
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
-            for item in json {
-                let name = item["name"] as! String
+//            let city = json.objectForKey("boulder, CO") as! NSArray
+            let allresults = json["boulder, CO"] as! NSArray
+            let results = Array(allresults)
+            for item in results {
+                let name = item["name"]! as! String
                 animalList.nameList.append(name)
-                
-                print(name)
-                let status = item["status"]! as! String
-                if status == "Adopt Me"{
-                    animalList.statusList.append("Adoptable")
-                } else if status == "On Hold" {
-                    animalList.statusList.append(status)
-                }
+            
+//                let status = item["status"]! as! String
+//                animalList.statusList.append(status)
                 
                 let sex = item["sex"]! as! String
                 animalList.sexList.append(sex)
@@ -188,31 +186,31 @@ class FirstViewController: UITableViewController {
     
     
     //called when the authorization status for the application changed.
-    func locationManager(manager: CLLocationManager,
-                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("didchangeauth")
-        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
-            locationManager.startUpdatingLocation() //starts the location
-            manager
-        }
-    }
-    
-    
-    //called when a location cannot be determined
-    func locationManager(manager: CLLocationManager, didFailWithError
-        error: NSError) {
-        var errorType=String()
-        if let clError=CLError(rawValue: error.code) {
-            if clError == .Denied {
-                errorType="access denied"
-                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
-                alert.addAction(okAction)
-                presentViewController(alert, animated: true, completion:
-                    nil)
-            }
-        }
-    }
+//    func locationManager(manager: CLLocationManager,
+//                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+//        print("didchangeauth")
+//        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
+//            locationManager.startUpdatingLocation() //starts the location
+//            manager
+//        }
+//    }
+//    
+//    
+//    //called when a location cannot be determined
+//    func locationManager(manager: CLLocationManager, didFailWithError
+//        error: NSError) {
+//        var errorType=String()
+//        if let clError=CLError(rawValue: error.code) {
+//            if clError == .Denied {
+//                errorType="access denied"
+//                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
+//                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
+//                alert.addAction(okAction)
+//                presentViewController(alert, animated: true, completion:
+//                    nil)
+//            }
+//        }
+//    }
     
     
     
@@ -239,7 +237,7 @@ class FirstViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        loadJSON()
+//        loadJSON()
     }
 
     
