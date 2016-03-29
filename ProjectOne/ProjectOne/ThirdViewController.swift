@@ -112,20 +112,9 @@ class ThirdViewController: UITableViewController {
             for item in results {
                 let name = item["name"] as! String
                 smallList.nameList.append(name)
-//                
-//                print(name)
-//                let status = item["status"]! as! String
-//                if status == "Adopt Me"{
-//                    smallList.statusList.append("Adoptable")
-//                } else if status == "On Hold" {
-//                    smallList.statusList.append(status)
-//                }
-                
+
                 let sex = item["sex"]! as! String
                 smallList.sexList.append(sex)
-                
-//                let pedigree = item["pedigree"]! as! String
-//                smallList.pedigreeList.append(pedigree)
                 
                 let breed = item["breed"]! as! String
                 smallList.breedList.append(breed)
@@ -150,7 +139,9 @@ class ThirdViewController: UITableViewController {
     //---------------
     override func viewDidLoad() {
         //        animalList.getData()
-        loadJSON()
+        if (smallList.nameList.isEmpty == true){
+            loadJSON()
+        }
         // Background image
         //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         super.viewDidLoad()
@@ -162,7 +153,6 @@ class ThirdViewController: UITableViewController {
     
     
     override func viewDidAppear(animated: Bool) {
-        loadJSON()
     }
     
     //-------------------------

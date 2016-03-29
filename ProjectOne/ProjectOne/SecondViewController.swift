@@ -147,14 +147,15 @@ class SecondViewController: UITableViewController {
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
-        loadJSON()
+        if (myCatList.nameList.isEmpty == true){
+            loadJSON()
+        }
         super.viewDidLoad()
         
     }
    
     
     override func viewDidAppear(animated: Bool) {
-        loadJSON()
     }
     
     

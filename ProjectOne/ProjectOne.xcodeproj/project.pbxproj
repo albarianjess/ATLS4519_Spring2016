@@ -22,6 +22,7 @@
 		7D6C793E1CA1143F0049F532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C793D1CA1143F0049F532 /* ViewController.swift */; };
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
+		7D9C85CB1CA85CB1002E72BA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C85CA1CA85CB1002E72BA /* Location.swift */; };
 		7DB7ED011CA7AEC000C968AF /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB7ED001CA7AEC000C968AF /* SearchResultsController.swift */; };
 		7DC3C0F61C8B9AA7008D1FA7 /* CatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */; };
 		7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */; };
@@ -45,6 +46,7 @@
 		7D6C793D1CA1143F0049F532 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7D9C85CA1CA85CB1002E72BA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7DB7ED001CA7AEC000C968AF /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		7DC3C0F51C8B9AA7008D1FA7 /* CatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatViewController.swift; sourceTree = "<group>"; };
 		7DC3C0F71C8B9BA5008D1FA7 /* cat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cat.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
+				7D9C85CA1CA85CB1002E72BA /* Location.swift */,
 				7D4BCDCD1CA6267C0030EDEB /* NoConnection.xib */,
 				7D2998311C9FB84A009E8862 /* ThirdViewController.swift */,
 				7D2998331C9FB85E009E8862 /* SmallViewController.swift */,
@@ -183,6 +186,7 @@
 				7D2998341C9FB85E009E8862 /* SmallViewController.swift in Sources */,
 				7DB7ED011CA7AEC000C968AF /* SearchResultsController.swift in Sources */,
 				7D6C793E1CA1143F0049F532 /* ViewController.swift in Sources */,
+				7D9C85CB1CA85CB1002E72BA /* Location.swift in Sources */,
 				7D101E641C84D7E700E51F31 /* AppDelegate.swift in Sources */,
 				7D2998361C9FB8CD009E8862 /* small.swift in Sources */,
 				7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */,

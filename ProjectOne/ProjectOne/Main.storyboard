@@ -366,10 +366,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="rwq-pf-Qwy">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="UYm-Tm-F8y">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Ppj-HX-NIi" id="twq-UH-vhE"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="yqQ-bR-Q5b">
@@ -413,10 +416,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Dogs" id="jlL-Y5-eZD"/>
                     <connections>
-                        <outlet property="searching" destination="rwq-pf-Qwy" id="BFk-CB-MlU"/>
+                        <outlet property="searchDisplayController" destination="1Df-3N-l04" id="0SS-I7-LJH"/>
+                        <outlet property="searching" destination="UYm-Tm-F8y" id="X7I-Dd-49j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y6-jH-UHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="1Df-3N-l04">
+                    <connections>
+                        <outlet property="delegate" destination="Ppj-HX-NIi" id="qNp-0a-L1q"/>
+                        <outlet property="searchBar" destination="UYm-Tm-F8y" id="Fl8-RZ-XuY"/>
+                        <outlet property="searchContentsController" destination="Ppj-HX-NIi" id="VFb-wQ-uTE"/>
+                        <outlet property="searchResultsDataSource" destination="Ppj-HX-NIi" id="R6B-3v-7Kh"/>
+                        <outlet property="searchResultsDelegate" destination="Ppj-HX-NIi" id="Tcg-9l-5YV"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
         </scene>

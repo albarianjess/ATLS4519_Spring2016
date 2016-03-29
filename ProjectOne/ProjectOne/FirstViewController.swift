@@ -16,15 +16,17 @@ class FirstViewController: UITableViewController {
     //-----------
     // VARIABLES
     //-----------
-    var data = NSMutableData()  // Create data storage object
-    var selectedDog = 0 // Initialize selectedDog
-    var objects = [[String:String]]()
+    var data = NSMutableData()
+    var selectedDog = 0
+    
     var locationManager = CLLocationManager()
     var place = CLLocation()
-
-    @IBOutlet var searching: UISearchBar!
+    let location = Location()
     
+    @IBOutlet var searching: UISearchBar!
     var searchController : UISearchController!
+    
+    
     
     //-----------------------
     // PREPARE FOR DOG SEGUE
@@ -40,6 +42,7 @@ class FirstViewController: UITableViewController {
                 detailVC.selectedDog = indexPath.row
             }
     }
+    
     
     
     //-------------------------
@@ -122,6 +125,7 @@ class FirstViewController: UITableViewController {
 //    }
 
     
+    
     //--------------------
     // Load JSON from URL
     //--------------------
@@ -154,15 +158,40 @@ class FirstViewController: UITableViewController {
     func parsejson(data: NSData){
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
-//            let city = json.objectForKey("boulder, CO") as! NSArray
-            let allresults = json["boulder, CO"] as! NSArray
-            let results = Array(allresults)
+            let long = location.latandlong.values
+            
+            
+            if (lo
+            //BOULDER
+            let boulderResults = json["boulder, CO"] as! NSArray
+            let results = Array(boulderResults)
             for item in results {
                 let name = item["name"]! as! String
                 animalList.nameList.append(name)
+                
+                let sex = item["sex"]! as! String
+                animalList.sexList.append(sex)
+                
+                let pedigree = item["pedigree"]! as! String
+                animalList.pedigreeList.append(pedigree)
+                
+                let breed = item["breed"]! as! String
+                animalList.breedList.append(breed)
+                
+                let age = item["age"]! as! String
+                animalList.ageList.append(age)
+                
+                let pic = item["image"]! as! String
+                animalList.picList.append(pic)
+            }
             
-//                let status = item["status"]! as! String
-//                animalList.statusList.append(status)
+            
+            //LONGMONT
+            let boulderResults = json["boulder, CO"] as! NSArray
+            let results = Array(boulderResults)
+            for item in results {
+                let name = item["name"]! as! String
+                animalList.nameList.append(name)
                 
                 let sex = item["sex"]! as! String
                 animalList.sexList.append(sex)
@@ -188,31 +217,31 @@ class FirstViewController: UITableViewController {
     
     
     //called when the authorization status for the application changed.
-//    func locationManager(manager: CLLocationManager,
-//                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-//        print("didchangeauth")
-//        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
-//            locationManager.startUpdatingLocation() //starts the location
-//            manager
-//        }
-//    }
-//    
-//    
+    func locationManager(manager: CLLocationManager,
+                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("didchangeauth")
+        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation() //starts the location
+            manager
+        }
+    }
+    
+    
 //    //called when a location cannot be determined
-//    func locationManager(manager: CLLocationManager, didFailWithError
-//        error: NSError) {
-//        var errorType=String()
-//        if let clError=CLError(rawValue: error.code) {
-//            if clError == .Denied {
-//                errorType="access denied"
-//                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
-//                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
-//                alert.addAction(okAction)
-//                presentViewController(alert, animated: true, completion:
-//                    nil)
-//            }
-//        }
-//    }
+    func locationManager(manager: CLLocationManager, didFailWithError
+        error: NSError) {
+        var errorType=String()
+        if let clError=CLError(rawValue: error.code) {
+            if clError == .Denied {
+                errorType="access denied"
+                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
+                alert.addAction(okAction)
+                presentViewController(alert, animated: true, completion:
+                    nil)
+            }
+        }
+    }
     
     
     
@@ -220,18 +249,26 @@ class FirstViewController: UITableViewController {
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
-//        animalList.getData()
+        if (animalList.nameList.isEmpty == true){
+            loadJSON()
+        }
         
-        loadJSON()
         // Background image
         //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
+        
         let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
         if status==CLAuthorizationStatus.NotDetermined{
             locationManager.requestWhenInUseAuthorization()
             
         }
         let latitude = locationManager.location?.coordinate.latitude
+        let lat = String(latitude)
+        location.latandlong.updateValue(lat, forKey: "latitude")
+        
         let longitude = locationManager.location?.coordinate.longitude
+        let long = String(longitude)
+        location.latandlong.updateValue(long, forKey: "longitude")
+        
 //        locationManager.delegate = self
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         print("latitude \(latitude) and longitude \(longitude)")
@@ -251,10 +288,7 @@ class FirstViewController: UITableViewController {
 //        searchController.searchResultsUpdater = resultsController
     }
     
-    override func viewDidAppear(animated: Bool) {
-//        loadJSON()
-    }
-
+    
     
     //-------------------------
     // DIDRECEIVEMEMORYWARNING
