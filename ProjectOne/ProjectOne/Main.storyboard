@@ -14,7 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="SpF-sd-HmT">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="erI-UF-bHQ">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -56,7 +56,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Cats" id="I6T-ei-laF"/>
                     <connections>
-                        <outlet property="searching" destination="SpF-sd-HmT" id="xds-m5-Dnf"/>
+                        <outlet property="searchBar" destination="erI-UF-bHQ" id="Uuy-2F-IWb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN3-Qp-W3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,14 +71,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="ft5-Ib-j0E">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="I43-3q-Gge">
-                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I43-3q-Gge" id="1Ka-Ze-bg5">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -141,9 +136,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Small Animals" id="588-1m-tLD"/>
-                    <connections>
-                        <outlet property="searching" destination="ft5-Ib-j0E" id="n4u-gB-g4r"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeY-9I-lEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,17 +358,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="UYm-Tm-F8y">
-                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="Ppj-HX-NIi" id="twq-UH-vhE"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="yqQ-bR-Q5b">
-                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" tableViewCell="yqQ-bR-Q5b" id="Ff7-yg-4QP">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -417,14 +401,12 @@
                     <navigationItem key="navigationItem" title="Adoptable Dogs" id="jlL-Y5-eZD"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="1Df-3N-l04" id="0SS-I7-LJH"/>
-                        <outlet property="searching" destination="UYm-Tm-F8y" id="X7I-Dd-49j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y6-jH-UHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="1Df-3N-l04">
                     <connections>
                         <outlet property="delegate" destination="Ppj-HX-NIi" id="qNp-0a-L1q"/>
-                        <outlet property="searchBar" destination="UYm-Tm-F8y" id="Fl8-RZ-XuY"/>
                         <outlet property="searchContentsController" destination="Ppj-HX-NIi" id="VFb-wQ-uTE"/>
                         <outlet property="searchResultsDataSource" destination="Ppj-HX-NIi" id="R6B-3v-7Kh"/>
                         <outlet property="searchResultsDelegate" destination="Ppj-HX-NIi" id="Tcg-9l-5YV"/>

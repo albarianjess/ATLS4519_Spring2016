@@ -23,8 +23,7 @@ class FirstViewController: UITableViewController {
     var place = CLLocation()
     let location = Location()
     
-    @IBOutlet var searching: UISearchBar!
-    var searchController : UISearchController!
+
     
     
     
@@ -158,10 +157,10 @@ class FirstViewController: UITableViewController {
     func parsejson(data: NSData){
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
-            let long = location.latandlong.values
+//            let long = location.latandlong.values
             
             
-            if (lo
+//            if (lo
             //BOULDER
             let boulderResults = json["boulder, CO"] as! NSArray
             let results = Array(boulderResults)
@@ -187,27 +186,27 @@ class FirstViewController: UITableViewController {
             
             
             //LONGMONT
-            let boulderResults = json["boulder, CO"] as! NSArray
-            let results = Array(boulderResults)
-            for item in results {
-                let name = item["name"]! as! String
-                animalList.nameList.append(name)
-                
-                let sex = item["sex"]! as! String
-                animalList.sexList.append(sex)
-                
-                let pedigree = item["pedigree"]! as! String
-                animalList.pedigreeList.append(pedigree)
-                
-                let breed = item["breed"]! as! String
-                animalList.breedList.append(breed)
-                
-                let age = item["age"]! as! String
-                animalList.ageList.append(age)
-                
-                let pic = item["image"]! as! String
-                animalList.picList.append(pic)
-            }
+////            let boulderResults = json["boulder, CO"] as! NSArray
+//            let results = Array(boulderResults)
+//            for item in results {
+//                let name = item["name"]! as! String
+//                animalList.nameList.append(name)
+//                
+//                let sex = item["sex"]! as! String
+//                animalList.sexList.append(sex)
+//                
+//                let pedigree = item["pedigree"]! as! String
+//                animalList.pedigreeList.append(pedigree)
+//                
+//                let breed = item["breed"]! as! String
+//                animalList.breedList.append(breed)
+//                
+//                let age = item["age"]! as! String
+//                animalList.ageList.append(age)
+//                
+//                let pic = item["image"]! as! String
+//                animalList.picList.append(pic)
+//            }
         } catch {
             print("Error with JSON: \(error)")
         }
@@ -217,31 +216,30 @@ class FirstViewController: UITableViewController {
     
     
     //called when the authorization status for the application changed.
-    func locationManager(manager: CLLocationManager,
-                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("didchangeauth")
-        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
-            locationManager.startUpdatingLocation() //starts the location
-            manager
-        }
-    }
+//    func locationManager(manager: CLLocationManager,
+//                         didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+//        print("didchangeauth")
+//        if status==CLAuthorizationStatus.AuthorizedWhenInUse {
+//            locationManager.startUpdatingLocation() //starts the location
+//        }
+//    }
     
     
 //    //called when a location cannot be determined
-    func locationManager(manager: CLLocationManager, didFailWithError
-        error: NSError) {
-        var errorType=String()
-        if let clError=CLError(rawValue: error.code) {
-            if clError == .Denied {
-                errorType="access denied"
-                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
-                alert.addAction(okAction)
-                presentViewController(alert, animated: true, completion:
-                    nil)
-            }
-        }
-    }
+//    func locationManager(manager: CLLocationManager, didFailWithError
+//        error: NSError) {
+//        var errorType=String()
+//        if let clError=CLError(rawValue: error.code) {
+//            if clError == .Denied {
+//                errorType="access denied"
+//                let alert=UIAlertController(title: "Error", message: errorType, preferredStyle: UIAlertControllerStyle.Alert)
+//                let okAction:UIAlertAction=UIAlertAction(title: "OK", style:UIAlertActionStyle.Default, handler: nil)
+//                alert.addAction(okAction)
+//                presentViewController(alert, animated: true, completion:
+//                    nil)
+//            }
+//        }
+//    }
     
     
     
@@ -256,22 +254,22 @@ class FirstViewController: UITableViewController {
         // Background image
         //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
         
-        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
-        if status==CLAuthorizationStatus.NotDetermined{
-            locationManager.requestWhenInUseAuthorization()
-            
-        }
-        let latitude = locationManager.location?.coordinate.latitude
-        let lat = String(latitude)
-        location.latandlong.updateValue(lat, forKey: "latitude")
-        
-        let longitude = locationManager.location?.coordinate.longitude
-        let long = String(longitude)
-        location.latandlong.updateValue(long, forKey: "longitude")
-        
-//        locationManager.delegate = self
-        locationManager.desiredAccuracy=kCLLocationAccuracyBest
-        print("latitude \(latitude) and longitude \(longitude)")
+//        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
+//        if status==CLAuthorizationStatus.NotDetermined{
+//            locationManager.requestWhenInUseAuthorization()
+//            
+//        }
+//        let latitude = locationManager.location?.coordinate.latitude
+//        let lat = String(latitude)
+//        location.latandlong.updateValue(lat, forKey: "latitude")
+//        
+//        let longitude = locationManager.location?.coordinate.longitude
+//        let long = String(longitude)
+//        location.latandlong.updateValue(long, forKey: "longitude")
+//        
+////        locationManager.delegate = self
+//        locationManager.desiredAccuracy=kCLLocationAccuracyBest
+//        print("latitude \(latitude) and longitude \(longitude)")
         super.viewDidLoad()
         
         

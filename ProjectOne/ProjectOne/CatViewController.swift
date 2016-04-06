@@ -25,14 +25,21 @@ class CatViewController: UIViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        let chosenCat = catList.nameList[selectedCat]
-        
-        // Set label information
-        nameLabel.text = "Name: " + chosenCat
-        breedLabel.text = "Breed: " + catList.breedList[selectedCat]
-        sexLabel.text = "Sex: " + catList.sexList[selectedCat]
-        ageLabel.text = "Age: " + catList.ageList[selectedCat]
-        
+        if (catList.filteredName.isEmpty != true){
+            let chosenCat = catList.filteredName[selectedCat]
+            // Set label information
+            nameLabel.text = "Name: " + chosenCat
+            breedLabel.text = "Breed: " + catList.filteredBreed[selectedCat]
+            sexLabel.text = "Sex: " + catList.filteredSex[selectedCat]
+            ageLabel.text = "Age: " + catList.filteredAge[selectedCat]
+        } else {
+            let chosenCat = catList.nameList[selectedCat]
+            // Set label information
+            nameLabel.text = "Name: " + chosenCat
+            breedLabel.text = "Breed: " + catList.breedList[selectedCat]
+            sexLabel.text = "Sex: " + catList.sexList[selectedCat]
+            ageLabel.text = "Age: " + catList.ageList[selectedCat]
+        }
         // Decode base64 to use as image
         let plainString = catList.picList[selectedCat]
         let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))

@@ -9,11 +9,14 @@ class Cat {
     var names : [String]!
     
     var nameList = [String]()
-    var statusList = [String]()
     var sexList = [String]()
-    var personList = [String]()
     var breedList = [String]()
     var ageList = [String]()
-    var idList = [String]()
     var picList = [String]()
+    
+    var filteredName = [String]()
+    var filteredSex = [String]()
+    var filteredBreed = [String]()
+    var filteredAge = [String]()
+    var filteredPic = [String]()
 }

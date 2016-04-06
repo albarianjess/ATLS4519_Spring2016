@@ -6,7 +6,7 @@ import UIKit
 
 var myCatList = Cat() // To pass data to next controller
 
-class SecondViewController: UITableViewController {
+class SecondViewController: UITableViewController, UISearchBarDelegate {
     
     
     
@@ -16,9 +16,10 @@ class SecondViewController: UITableViewController {
     var data = NSMutableData()  // Create data storage object
     var selectedCat = 0 // Initialize selectedDog
     var objects = [[String:String]]()
-    var searchController : UISearchController!
     
-    @IBOutlet var searching: UISearchBar!
+    
+    @IBOutlet var searchBar: UISearchBar!
+    var searchActive : Bool = false
     
     //-----------------------
     // PREPARE FOR DOG SEGUE
@@ -28,10 +29,22 @@ class SecondViewController: UITableViewController {
             if segue.identifier == "catsegue" {
                 let detailVC = segue.destinationViewController as! CatViewController
                 let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+                
                 //sets the data for the destination controller
-                detailVC.title = myCatList.nameList[indexPath.row]
-                detailVC.catList = myCatList
-                detailVC.selectedCat = indexPath.row
+                if(searchActive){
+                    detailVC.title = myCatList.filteredName[indexPath.row]
+                    detailVC.catList = myCatList
+                    detailVC.selectedCat = indexPath.row
+//                    detailVC.catList.ageList = myCatList.filteredAge
+//                    detailVC.catList.sexList = myCatList.filteredSex
+//                    detailVC.catList.breedList = myCatList.filteredBreed
+//                    detailVC.catList.picList = myCatList.filteredPic
+                } else {
+                    detailVC.title = myCatList.nameList[indexPath.row]
+                    detailVC.catList = myCatList
+                    detailVC.selectedCat = indexPath.row
+                }
+                
             }
     }
     
@@ -40,24 +53,31 @@ class SecondViewController: UITableViewController {
     //-------------------------
     // DISPLAY TABLEVIEW CELLS
     //-------------------------
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             //configure the cell
-            let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
-            
-            // Format labels
-            cell.textLabel?.text = myCatList.nameList[indexPath.row]
-            cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
-            cell.textLabel?.textAlignment = .Center
-            
-            
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+        if(searchActive){
+            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
             // Decode base64 to use as image
-            let plainString = myCatList.picList[indexPath.row]
-            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
-            let decodedimage = UIImage(data: decodedData!)
-            let image : UIImage = decodedimage! as UIImage
-            cell.imageView!.image = image
+//            let plainString = myCatList.filteredPic[indexPath.row]
+//            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+//            let decodedimage = UIImage(data: decodedData!)
+//            let image : UIImage = decodedimage! as UIImage
+//            cell.imageView!.image = image
             
+        } else {
+            cell.textLabel?.text = myCatList.nameList[indexPath.row]
+
+        }
+        let plainString = myCatList.picList[indexPath.row]
+        let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+        let decodedimage = UIImage(data: decodedData!)
+        let image : UIImage = decodedimage! as UIImage
+        cell.imageView!.image = image
+        
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
+        cell.textLabel?.textAlignment = .Center
+        
             // Formatting table view cells source
             //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
             return cell
@@ -65,12 +85,33 @@ class SecondViewController: UITableViewController {
     
     
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    
     //----------------------
     // # OF ROWS IN SECTION
     //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
+        if(searchActive) {
+            return myCatList.filteredName.count
+        } else {
             return myCatList.nameList.count
+        }
     }
     
     
@@ -100,6 +141,26 @@ class SecondViewController: UITableViewController {
     }
     
     
+    //--------------------
+    // Search bar function
+    //--------------------
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        myCatList.filteredName = myCatList.nameList.filter({ (text) -> Bool in
+            let tmp: NSString = text
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        
+        if(myCatList.filteredName.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.tableView.reloadData()
+    }
+    
+    
     
     //------------
     // Parse JSON
@@ -107,24 +168,13 @@ class SecondViewController: UITableViewController {
     func parsejson(data: NSData){
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
-            //            let city = json.objectForKey("boulder, CO") as! NSArray
             let allresults = json["boulder, CO"] as! NSArray
             let results = Array(allresults)
             for item in results {
                 let name = item["name"] as! String
                 myCatList.nameList.append(name)
-//                let status = item["status"]! as! String
-//                if status == "Adopt Me"{
-//                    myCatList.statusList.append("Adoptable")
-//                } else if status == "On Hold" {
-//                    myCatList.statusList.append(status)
-//                }
                 let sex = item["sex"]! as! String
                 myCatList.sexList.append(sex)
-                
-//                let pedigree = item["personality"]! as! String
-//                myCatList.personList.append(pedigree)
-                
                 let breed = item["breed"]! as! String
                 myCatList.breedList.append(breed)
                 
@@ -142,7 +192,6 @@ class SecondViewController: UITableViewController {
     
     
     
-    
     //---------------
     // VIEWDIDLOAD
     //---------------
@@ -151,12 +200,15 @@ class SecondViewController: UITableViewController {
             loadJSON()
         }
         super.viewDidLoad()
+        searchBar.delegate = self
         
+        myCatList.filteredName = myCatList.nameList
+        myCatList.filteredPic = myCatList.picList
+        myCatList.filteredBreed = myCatList.breedList
+        myCatList.filteredAge = myCatList.ageList
+        myCatList.filteredSex = myCatList.sexList
     }
    
-    
-    override func viewDidAppear(animated: Bool) {
-    }
     
     
     //-------------------------
