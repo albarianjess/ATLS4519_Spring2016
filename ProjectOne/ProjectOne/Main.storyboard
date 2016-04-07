@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tvl-fD-HVe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -311,10 +311,68 @@
             </objects>
             <point key="canvasLocation" x="2240" y="359"/>
         </scene>
+        <!--Main View Controller-->
+        <scene sceneID="57N-fI-4u2">
+            <objects>
+                <viewController id="tvl-fD-HVe" customClass="MainViewController" customModule="ProjectOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DdI-sC-vWL"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIz-2f-y7m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ub7-CL-VYi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pup" translatesAutoresizingMaskIntoConstraints="NO" id="Xpv-Vq-yo4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-7b-HwM">
+                                <rect key="frame" x="185" y="248" width="231" height="123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="3ZQ-Wq-UGt"/>
+                                    <constraint firstAttribute="width" constant="231" id="687-yo-ha7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oDG-gg-BlX">
+                                <rect key="frame" x="290" y="220" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="IwH-6X-6Ue"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="YWD-4J-dYY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="ZHW-QQ-v6y"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="45" id="e01-jG-pzL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="edc-Ed-Yyu"/>
+                                    <constraint firstAttribute="height" constant="20" id="nTP-iM-MWr"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xpv-Vq-yo4" secondAttribute="trailing" id="8hb-DY-qiM"/>
+                            <constraint firstItem="Xpv-Vq-yo4" firstAttribute="leading" secondItem="Ub7-CL-VYi" secondAttribute="leading" id="CFU-eG-gC8"/>
+                            <constraint firstItem="oDG-gg-BlX" firstAttribute="centerX" secondItem="DKp-7b-HwM" secondAttribute="centerX" id="GcC-Hq-f9L"/>
+                            <constraint firstItem="Xpv-Vq-yo4" firstAttribute="bottom" secondItem="rIz-2f-y7m" secondAttribute="top" id="Kfs-aB-KXP"/>
+                            <constraint firstItem="DKp-7b-HwM" firstAttribute="centerX" secondItem="Xpv-Vq-yo4" secondAttribute="centerX" id="QAS-n6-hie"/>
+                            <constraint firstItem="DKp-7b-HwM" firstAttribute="top" secondItem="DdI-sC-vWL" secondAttribute="bottom" constant="228" id="V2G-YU-hKg"/>
+                            <constraint firstItem="DKp-7b-HwM" firstAttribute="top" secondItem="oDG-gg-BlX" secondAttribute="bottom" constant="8" id="kGX-wA-et5"/>
+                            <constraint firstItem="Xpv-Vq-yo4" firstAttribute="top" secondItem="DdI-sC-vWL" secondAttribute="bottom" id="nKB-LG-Z64"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingText" destination="DKp-7b-HwM" id="f1b-sR-Gnw"/>
+                        <outlet property="spin" destination="oDG-gg-BlX" id="NS1-wC-Ygy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXq-3o-Jen" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-646" y="26"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="nextView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -329,7 +387,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-11" y="26"/>
         </scene>
         <!--Adoptable Dogs-->
         <scene sceneID="KYA-8B-3DT">
@@ -353,7 +411,7 @@
         <!--Adoptable Dogs-->
         <scene sceneID="yTk-5O-I91">
             <objects>
-                <tableViewController id="Ppj-HX-NIi" customClass="FirstViewController" customModule="ProjectOne" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ppj-HX-NIi" customClass="FirstViewController" customModule="ProjectOne" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="iAx-XI-Eqj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,5 +598,6 @@
         <image name="bone" width="25" height="25"/>
         <image name="bunny" width="16" height="16"/>
         <image name="fish" width="25" height="25"/>
+        <image name="pup" width="425" height="650"/>
     </resources>
 </document>

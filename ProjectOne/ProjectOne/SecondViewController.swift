@@ -21,6 +21,10 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet var searchBar: UISearchBar!
     var searchActive : Bool = false
     
+    
+    
+    
+    
     //-----------------------
     // PREPARE FOR DOG SEGUE
     //-----------------------
@@ -35,10 +39,10 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
                     detailVC.title = myCatList.filteredName[indexPath.row]
                     detailVC.catList = myCatList
                     detailVC.selectedCat = indexPath.row
-//                    detailVC.catList.ageList = myCatList.filteredAge
-//                    detailVC.catList.sexList = myCatList.filteredSex
-//                    detailVC.catList.breedList = myCatList.filteredBreed
-//                    detailVC.catList.picList = myCatList.filteredPic
+                    detailVC.catList.ageList = myCatList.filteredAge
+                    detailVC.catList.sexList = myCatList.filteredSex
+                    detailVC.catList.breedList = myCatList.filteredBreed
+                    detailVC.catList.picList = myCatList.filteredPic
                 } else {
                     detailVC.title = myCatList.nameList[indexPath.row]
                     detailVC.catList = myCatList
@@ -58,12 +62,14 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
         if(searchActive){
             cell.textLabel?.text = myCatList.filteredName[indexPath.row]
+            
             // Decode base64 to use as image
-//            let plainString = myCatList.filteredPic[indexPath.row]
-//            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
-//            let decodedimage = UIImage(data: decodedData!)
-//            let image : UIImage = decodedimage! as UIImage
-//            cell.imageView!.image = image
+            let plainString = myCatList.filteredPic[indexPath.row]
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
+            tableView.reloadData()
             
         } else {
             cell.textLabel?.text = myCatList.nameList[indexPath.row]

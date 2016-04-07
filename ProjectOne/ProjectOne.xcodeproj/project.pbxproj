@@ -18,8 +18,9 @@
 		7D2998341C9FB85E009E8862 /* SmallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2998331C9FB85E009E8862 /* SmallViewController.swift */; };
 		7D2998361C9FB8CD009E8862 /* small.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2998351C9FB8CD009E8862 /* small.swift */; };
 		7D4BCDCE1CA6267C0030EDEB /* NoConnection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D4BCDCD1CA6267C0030EDEB /* NoConnection.xib */; };
+		7D4EE2341CB6AF6D007F97FF /* CheckConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EE2331CB6AF6D007F97FF /* CheckConnection.swift */; };
+		7D4EE2361CB6B263007F97FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4EE2351CB6B263007F97FF /* MainViewController.swift */; };
 		7D504D841C855DB200452FAC /* dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D504D831C855DB200452FAC /* dog.swift */; };
-		7D6C793E1CA1143F0049F532 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C793D1CA1143F0049F532 /* ViewController.swift */; };
 		7D8302AB1C860341007CBACB /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8302AA1C860341007CBACB /* DogViewController.swift */; };
 		7D8302AD1C8607FC007CBACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8302AC1C8607FC007CBACB /* Main.storyboard */; };
 		7D9C85CB1CA85CB1002E72BA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C85CA1CA85CB1002E72BA /* Location.swift */; };
@@ -42,8 +43,9 @@
 		7D2998331C9FB85E009E8862 /* SmallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallViewController.swift; sourceTree = "<group>"; };
 		7D2998351C9FB8CD009E8862 /* small.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = small.swift; sourceTree = "<group>"; };
 		7D4BCDCD1CA6267C0030EDEB /* NoConnection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoConnection.xib; sourceTree = "<group>"; };
+		7D4EE2331CB6AF6D007F97FF /* CheckConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckConnection.swift; sourceTree = "<group>"; };
+		7D4EE2351CB6B263007F97FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7D504D831C855DB200452FAC /* dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dog.swift; sourceTree = "<group>"; };
-		7D6C793D1CA1143F0049F532 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7D8302AA1C860341007CBACB /* DogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		7D8302AC1C8607FC007CBACB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7D9C85CA1CA85CB1002E72BA /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -87,13 +89,14 @@
 			isa = PBXGroup;
 			children = (
 				7D8302AC1C8607FC007CBACB /* Main.storyboard */,
+				7D4EE2351CB6B263007F97FF /* MainViewController.swift */,
+				7D4EE2331CB6AF6D007F97FF /* CheckConnection.swift */,
 				7D9C85CA1CA85CB1002E72BA /* Location.swift */,
 				7D4BCDCD1CA6267C0030EDEB /* NoConnection.xib */,
 				7D2998311C9FB84A009E8862 /* ThirdViewController.swift */,
 				7D2998331C9FB85E009E8862 /* SmallViewController.swift */,
 				7D101E631C84D7E700E51F31 /* AppDelegate.swift */,
 				7D101E651C84D7E700E51F31 /* FirstViewController.swift */,
-				7D6C793D1CA1143F0049F532 /* ViewController.swift */,
 				7D101E671C84D7E700E51F31 /* SecondViewController.swift */,
 				7D8302AA1C860341007CBACB /* DogViewController.swift */,
 				7DB7ED001CA7AEC000C968AF /* SearchResultsController.swift */,
@@ -185,8 +188,9 @@
 				7D504D841C855DB200452FAC /* dog.swift in Sources */,
 				7D2998341C9FB85E009E8862 /* SmallViewController.swift in Sources */,
 				7DB7ED011CA7AEC000C968AF /* SearchResultsController.swift in Sources */,
-				7D6C793E1CA1143F0049F532 /* ViewController.swift in Sources */,
+				7D4EE2341CB6AF6D007F97FF /* CheckConnection.swift in Sources */,
 				7D9C85CB1CA85CB1002E72BA /* Location.swift in Sources */,
+				7D4EE2361CB6B263007F97FF /* MainViewController.swift in Sources */,
 				7D101E641C84D7E700E51F31 /* AppDelegate.swift in Sources */,
 				7D2998361C9FB8CD009E8862 /* small.swift in Sources */,
 				7DC3C0F81C8B9BA5008D1FA7 /* cat.swift in Sources */,

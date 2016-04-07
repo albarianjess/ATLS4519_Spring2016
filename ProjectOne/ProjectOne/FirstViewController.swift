@@ -23,8 +23,8 @@ class FirstViewController: UITableViewController {
     var place = CLLocation()
     let location = Location()
     
+//    let checkConnection = CheckConnection()
 
-    
     
     
     //-----------------------
@@ -251,39 +251,8 @@ class FirstViewController: UITableViewController {
             loadJSON()
         }
         
-        // Background image
-        //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
-        
-//        let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
-//        if status==CLAuthorizationStatus.NotDetermined{
-//            locationManager.requestWhenInUseAuthorization()
-//            
-//        }
-//        let latitude = locationManager.location?.coordinate.latitude
-//        let lat = String(latitude)
-//        location.latandlong.updateValue(lat, forKey: "latitude")
-//        
-//        let longitude = locationManager.location?.coordinate.longitude
-//        let long = String(longitude)
-//        location.latandlong.updateValue(long, forKey: "longitude")
-//        
-////        locationManager.delegate = self
-//        locationManager.desiredAccuracy=kCLLocationAccuracyBest
-//        print("latitude \(latitude) and longitude \(longitude)")
         super.viewDidLoad()
-        
-        
-        //search results
-//        let resultsController = SearchResultsController()
-////        resultsController.allwords = 
-//        resultsController.words = animalList.names
-//        searchController = UISearchController(searchResultsController: resultsController)
-//        //search bar configuration
-//        searchController.searchBar.placeholder = "Search"
-//        //place holder text
-//        searchController.searchBar.sizeToFit()
-//        tableView.tableHeaderView=searchController.searchBar
-//        searchController.searchResultsUpdater = resultsController
+    
     }
     
     
