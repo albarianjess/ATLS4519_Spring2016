@@ -17,16 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flatiron" translatesAutoresizingMaskIntoConstraints="NO" id="RC6-T8-5T7">
-                                <rect key="frame" x="0.0" y="275" width="600" height="325"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="AwG-Rn-vK6">
+                                <rect key="frame" x="156" y="155" width="289" height="289"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="Rwh-Fa-6IV"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WWDC 2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80x-eX-TI4">
+                                <rect key="frame" x="254" y="289" width="92" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.015686274509803921" green="0.019607843137254902" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="RC6-T8-5T7" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="TZJ-ET-vc7"/>
-                            <constraint firstAttribute="trailing" secondItem="RC6-T8-5T7" secondAttribute="trailing" id="VuY-md-H1r"/>
-                            <constraint firstItem="RC6-T8-5T7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="255" id="bej-P9-0u2"/>
-                            <constraint firstItem="RC6-T8-5T7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jMZ-RO-mDs"/>
+                            <constraint firstItem="AwG-Rn-vK6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1GH-eN-fDv"/>
+                            <constraint firstItem="AwG-Rn-vK6" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="135" id="UDX-P0-1Tl"/>
+                            <constraint firstItem="80x-eX-TI4" firstAttribute="centerY" secondItem="AwG-Rn-vK6" secondAttribute="centerY" id="obW-RC-NJg"/>
+                            <constraint firstItem="80x-eX-TI4" firstAttribute="centerX" secondItem="AwG-Rn-vK6" secondAttribute="centerX" id="sFk-jg-o7R"/>
+                            <constraint firstItem="80x-eX-TI4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="269" id="sLI-ZC-kvl"/>
+                            <constraint firstItem="AwG-Rn-vK6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="x8e-tv-JBD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flatiron" width="800" height="400"/>
+        <image name="main" width="800" height="800"/>
     </resources>
 </document>

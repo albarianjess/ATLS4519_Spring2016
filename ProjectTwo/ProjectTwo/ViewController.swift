@@ -13,12 +13,24 @@ import Firebase
 class ViewController: UIViewController {
 
     
-    // SOURCE: http://mathewsanders.com/animations-in-swift-part-two
+    // SOURCES: http://mathewsanders.com/animations-in-swift-part-two
     
     
     func stars(){
-        
         var count = 0
+        
+        repeat {
+            let staysquares = UIView()
+            let x = Int(arc4random_uniform(700))
+            let y = Int(arc4random_uniform(700))
+            staysquares.frame = CGRect(x: x, y: y, width: 6, height: 6)
+            staysquares.backgroundColor = UIColor.whiteColor()
+            self.view.layer.zPosition = 100
+//            self.view.bringSubviewToFront(staysquares)
+            self.view.addSubview(staysquares)
+            count += 1
+        } while count < 30
+        
         repeat {
             let square = UIView()
             let num1 = Int(arc4random_uniform(700))

@@ -32,6 +32,9 @@
                                 <state key="normal" title="Places I've Been">
                                     <color key="titleColor" red="0.23137254901960785" green="0.6588235294117647" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="tfO-70-BXF" kind="show" id="dfA-1v-me5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tj3-RE-iLo">
                                 <rect key="frame" x="179" y="409" width="245" height="36"/>
@@ -82,6 +85,9 @@
                                 <state key="normal" title="About Me">
                                     <color key="titleColor" red="0.23137254901960785" green="0.6588235294117647" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Yju-fe-Or8" kind="show" id="d5N-x5-0Id"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.019607843137254902" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,12 +126,12 @@
                     <view key="view" contentMode="scaleToFill" id="Z1R-ff-B5X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.019607843137254902" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZ8-9a-LXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="-53"/>
+            <point key="canvasLocation" x="1078" y="257"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="afJ-1L-Z5T">

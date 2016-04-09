@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "colors.png",
+      "filename" : "wwdc.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "colors-1.png",
+      "filename" : "wwdc-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "colors-2.png",
+      "filename" : "wwdc-2.png",
       "scale" : "3x"
     }
   ],
