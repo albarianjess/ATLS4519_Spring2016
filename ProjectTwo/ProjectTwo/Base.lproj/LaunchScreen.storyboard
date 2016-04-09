@@ -17,28 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flatiron" translatesAutoresizingMaskIntoConstraints="NO" id="C3v-zO-OpY">
-                                <rect key="frame" x="0.0" y="306" width="600" height="294"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flatiron" translatesAutoresizingMaskIntoConstraints="NO" id="RC6-T8-5T7">
+                                <rect key="frame" x="0.0" y="275" width="600" height="325"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jessie Albarian" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-Sh-4VT">
-                                <rect key="frame" x="193" y="198" width="214" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="hLl-3I-QJ0"/>
-                                    <constraint firstAttribute="height" constant="23" id="taN-J4-C3t"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.019607843137254902" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="C3v-zO-OpY" secondAttribute="trailing" id="4jR-GW-xaA"/>
-                            <constraint firstItem="C3v-zO-OpY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WbK-id-nw4"/>
-                            <constraint firstItem="C3v-zO-OpY" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="dkO-aI-j0a"/>
-                            <constraint firstItem="C3v-zO-OpY" firstAttribute="top" secondItem="jDv-Sh-4VT" secondAttribute="bottom" constant="85" id="hqE-hh-3aE"/>
-                            <constraint firstItem="jDv-Sh-4VT" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="178" id="hv0-xN-Fzk"/>
-                            <constraint firstItem="jDv-Sh-4VT" firstAttribute="centerX" secondItem="C3v-zO-OpY" secondAttribute="centerX" id="mwh-vY-lSk"/>
+                            <constraint firstItem="RC6-T8-5T7" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="TZJ-ET-vc7"/>
+                            <constraint firstAttribute="trailing" secondItem="RC6-T8-5T7" secondAttribute="trailing" id="VuY-md-H1r"/>
+                            <constraint firstItem="RC6-T8-5T7" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="255" id="bej-P9-0u2"/>
+                            <constraint firstItem="RC6-T8-5T7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jMZ-RO-mDs"/>
                         </constraints>
                     </view>
                 </viewController>

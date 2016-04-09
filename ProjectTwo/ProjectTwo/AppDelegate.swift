@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
+    override init() {
+        super.init()
+        Firebase.defaultConfig().persistenceEnabled = true
+    }
+    
     var window: UIWindow?
 
 

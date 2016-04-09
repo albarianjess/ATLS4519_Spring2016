@@ -15,9 +15,13 @@
 		7D04BCD81CB8E199009EAFE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D04BCD71CB8E199009EAFE8 /* CoreLocation.framework */; };
 		7D04BCDA1CB8E19E009EAFE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D04BCD91CB8E19E009EAFE8 /* MapKit.framework */; };
 		7D04BCDC1CB8E1B3009EAFE8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D04BCDB1CB8E1B3009EAFE8 /* MapViewController.swift */; };
+		7DA275C31CB8ECAA001B0315 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA275C21CB8ECAA001B0315 /* Location.swift */; };
+		ED47BBBB313805DFC246A103 /* Pods_ProjectTwo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903AAB860499AF4DF5BFD7E6 /* Pods_ProjectTwo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DD57EBF8442867FBA2C6112 /* Pods-ProjectTwo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTwo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTwo/Pods-ProjectTwo.debug.xcconfig"; sourceTree = "<group>"; };
+		31F6AA52D6EB72911026B626 /* Pods-ProjectTwo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTwo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTwo/Pods-ProjectTwo.release.xcconfig"; sourceTree = "<group>"; };
 		7D04BCC21CB8DBF3009EAFE8 /* ProjectTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D04BCC51CB8DBF3009EAFE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D04BCC71CB8DBF3009EAFE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		7D04BCD71CB8E199009EAFE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7D04BCD91CB8E19E009EAFE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D04BCDB1CB8E1B3009EAFE8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7DA275C21CB8ECAA001B0315 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		903AAB860499AF4DF5BFD7E6 /* Pods_ProjectTwo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTwo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +43,21 @@
 			files = (
 				7D04BCDA1CB8E19E009EAFE8 /* MapKit.framework in Frameworks */,
 				7D04BCD81CB8E199009EAFE8 /* CoreLocation.framework in Frameworks */,
+				ED47BBBB313805DFC246A103 /* Pods_ProjectTwo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		677BCB608D5057CF91F8B8B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				903AAB860499AF4DF5BFD7E6 /* Pods_ProjectTwo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D04BCB91CB8DBF3009EAFE8 = {
 			isa = PBXGroup;
 			children = (
@@ -50,6 +65,8 @@
 				7D04BCD71CB8E199009EAFE8 /* CoreLocation.framework */,
 				7D04BCC41CB8DBF3009EAFE8 /* ProjectTwo */,
 				7D04BCC31CB8DBF3009EAFE8 /* Products */,
+				EF2FABB9BD720D22382658F8 /* Pods */,
+				677BCB608D5057CF91F8B8B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +88,18 @@
 				7D04BCCC1CB8DBF3009EAFE8 /* Assets.xcassets */,
 				7D04BCCE1CB8DBF3009EAFE8 /* LaunchScreen.storyboard */,
 				7D04BCD11CB8DBF3009EAFE8 /* Info.plist */,
+				7DA275C21CB8ECAA001B0315 /* Location.swift */,
 			);
 			path = ProjectTwo;
+			sourceTree = "<group>";
+		};
+		EF2FABB9BD720D22382658F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DD57EBF8442867FBA2C6112 /* Pods-ProjectTwo.debug.xcconfig */,
+				31F6AA52D6EB72911026B626 /* Pods-ProjectTwo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D04BCD41CB8DBF3009EAFE8 /* Build configuration list for PBXNativeTarget "ProjectTwo" */;
 			buildPhases = (
+				07B7EB2FDBEFDE37DA7A3927 /* Check Pods Manifest.lock */,
 				7D04BCBE1CB8DBF3009EAFE8 /* Sources */,
 				7D04BCBF1CB8DBF3009EAFE8 /* Frameworks */,
 				7D04BCC01CB8DBF3009EAFE8 /* Resources */,
+				E34FDC28DEBB38DF4CB5E53A /* Embed Pods Frameworks */,
+				BA5D8D67C44A63B9C6A1C2AB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +171,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07B7EB2FDBEFDE37DA7A3927 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA5D8D67C44A63B9C6A1C2AB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectTwo/Pods-ProjectTwo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34FDC28DEBB38DF4CB5E53A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectTwo/Pods-ProjectTwo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D04BCBE1CB8DBF3009EAFE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -148,6 +226,7 @@
 			files = (
 				7D04BCC81CB8DBF3009EAFE8 /* ViewController.swift in Sources */,
 				7D04BCDC1CB8E1B3009EAFE8 /* MapViewController.swift in Sources */,
+				7DA275C31CB8ECAA001B0315 /* Location.swift in Sources */,
 				7D04BCC61CB8DBF3009EAFE8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +338,7 @@
 		};
 		7D04BCD51CB8DBF3009EAFE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DD57EBF8442867FBA2C6112 /* Pods-ProjectTwo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProjectTwo/Info.plist;
@@ -270,6 +350,7 @@
 		};
 		7D04BCD61CB8DBF3009EAFE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31F6AA52D6EB72911026B626 /* Pods-ProjectTwo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProjectTwo/Info.plist;
@@ -298,6 +379,7 @@
 				7D04BCD61CB8DBF3009EAFE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
