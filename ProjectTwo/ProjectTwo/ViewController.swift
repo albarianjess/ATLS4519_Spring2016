@@ -30,15 +30,13 @@ class ViewController: UIViewController {
             self.view.addSubview(square)
             let viewsToAnimate = [square]
             count += 1
-//            UIView.animateWithDuration(2, delay: 6, options: .CurveEaseIn, animations: {
-//                UIView.performSystemAnimation(UISystemAnimation.Delete, onViews: viewsToAnimate, options: .Repeat, animations: {
-//                            }, completion: { finished in })
-//                }, completion: { finished in })
             
-                UIView.performSystemAnimation(UISystemAnimation.Delete, onViews: viewsToAnimate, options: .CurveEaseInOut, animations: {
-                    UIView.animateWithDuration(2, delay: 6, options: .CurveEaseIn, animations: {
-                    }, completion: { finished in })
+            UIView.animateWithDuration(20, delay: 6, options: .Repeat, animations: {
+                UIView.performSystemAnimation(UISystemAnimation.Delete, onViews: viewsToAnimate, options: .Repeat, animations: {
+                            }, completion: { finished in })
                 }, completion: { finished in })
+            
+
         
             
             } while count < 20
