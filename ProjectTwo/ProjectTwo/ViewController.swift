@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         var count = 0
         repeat {
             let square = UIView()
-            let num1 = Int(arc4random_uniform(300))
-            let num2 = Int(arc4random_uniform(300))
+            let num1 = Int(arc4random_uniform(700))
+            let num2 = Int(arc4random_uniform(700))
         
             square.frame = CGRect(x: num1, y: num2, width: 6, height: 6)
             square.backgroundColor = UIColor.whiteColor()
@@ -31,14 +31,10 @@ class ViewController: UIViewController {
             let viewsToAnimate = [square]
             count += 1
             
-            UIView.animateWithDuration(20, delay: 6, options: .Repeat, animations: {
+            UIView.animateWithDuration(2, delay: 2, options: .Repeat, animations: {
                 UIView.performSystemAnimation(UISystemAnimation.Delete, onViews: viewsToAnimate, options: .Repeat, animations: {
                             }, completion: { finished in })
                 }, completion: { finished in })
-            
-
-        
-            
             } while count < 20
 
     }
