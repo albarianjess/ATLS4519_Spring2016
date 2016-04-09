@@ -14,10 +14,14 @@ class Cat {
     var breedList = [String]()
     var ageList = [String]()
     var picList = [String]()
+    var id : Int = 0
     
     var filteredName = [String]()
     var filteredSex = [String]()
     var filteredBreed = [String]()
     var filteredAge = [String]()
     var filteredPic = [String]()
+    
+    
+    var namePic = [String : String]()
 }

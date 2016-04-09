@@ -60,26 +60,33 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             //configure the cell
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+    
+        
+        
         if(searchActive){
             cell.textLabel?.text = myCatList.filteredName[indexPath.row]
-            
             // Decode base64 to use as image
-            let plainString = myCatList.filteredPic[indexPath.row]
-            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let plainString = myCatList.namePic[myCatList.nameList[indexPath.row]]
+            
+            
+            
+            let decodedData = NSData(base64EncodedString: plainString!, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
             cell.imageView!.image = image
+            
+            
             tableView.reloadData()
             
         } else {
             cell.textLabel?.text = myCatList.nameList[indexPath.row]
-
+            let plainString = myCatList.picList[indexPath.row]
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
         }
-        let plainString = myCatList.picList[indexPath.row]
-        let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
-        let decodedimage = UIImage(data: decodedData!)
-        let image : UIImage = decodedimage! as UIImage
-        cell.imageView!.image = image
+        
         
         cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
         cell.textLabel?.textAlignment = .Center
@@ -147,6 +154,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     }
     
     
+    
     //--------------------
     // Search bar function
     //--------------------
@@ -189,6 +197,9 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
                 
                 let pic = item["image"]! as! String
                 myCatList.picList.append(pic)
+                myCatList.namePic[name] = pic
+                
+                myCatList.id = myCatList.id + 1
             }
         } catch {
             print("Error with JSON: \(error)")
