@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "animalbtn.png",
+      "filename" : "ministar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "animalbtn-1.png",
+      "filename" : "ministar-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "animalbtn-2.png",
+      "filename" : "ministar-2.png",
       "scale" : "3x"
     }
   ],

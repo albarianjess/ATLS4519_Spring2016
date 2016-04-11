@@ -15,6 +15,8 @@
 		7D04BCD81CB8E199009EAFE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D04BCD71CB8E199009EAFE8 /* CoreLocation.framework */; };
 		7D04BCDA1CB8E19E009EAFE8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D04BCD91CB8E19E009EAFE8 /* MapKit.framework */; };
 		7D04BCDC1CB8E1B3009EAFE8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D04BCDB1CB8E1B3009EAFE8 /* MapViewController.swift */; };
+		7D29BACC1CB9F9DB007CBBE7 /* EducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D29BACB1CB9F9DB007CBBE7 /* EducationViewController.swift */; };
+		7D8F42541CB97056000DE978 /* LetsMakeStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8F42531CB97056000DE978 /* LetsMakeStars.swift */; };
 		7DA275C31CB8ECAA001B0315 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA275C21CB8ECAA001B0315 /* Location.swift */; };
 		7DFCEAC41CB91275005157B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFCEAC31CB91275005157B0 /* AboutViewController.swift */; };
 		ED47BBBB313805DFC246A103 /* Pods_ProjectTwo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903AAB860499AF4DF5BFD7E6 /* Pods_ProjectTwo.framework */; };
@@ -33,6 +35,8 @@
 		7D04BCD71CB8E199009EAFE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7D04BCD91CB8E19E009EAFE8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D04BCDB1CB8E1B3009EAFE8 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7D29BACB1CB9F9DB007CBBE7 /* EducationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationViewController.swift; sourceTree = "<group>"; };
+		7D8F42531CB97056000DE978 /* LetsMakeStars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsMakeStars.swift; sourceTree = "<group>"; };
 		7DA275C21CB8ECAA001B0315 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		7DFCEAC31CB91275005157B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		903AAB860499AF4DF5BFD7E6 /* Pods_ProjectTwo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectTwo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +89,9 @@
 			children = (
 				7D04BCC51CB8DBF3009EAFE8 /* AppDelegate.swift */,
 				7D04BCC71CB8DBF3009EAFE8 /* ViewController.swift */,
+				7D8F42531CB97056000DE978 /* LetsMakeStars.swift */,
 				7D04BCC91CB8DBF3009EAFE8 /* Main.storyboard */,
+				7D29BACB1CB9F9DB007CBBE7 /* EducationViewController.swift */,
 				7DFCEAC31CB91275005157B0 /* AboutViewController.swift */,
 				7D04BCDB1CB8E1B3009EAFE8 /* MapViewController.swift */,
 				7D04BCCC1CB8DBF3009EAFE8 /* Assets.xcassets */,
@@ -229,9 +235,11 @@
 			files = (
 				7D04BCC81CB8DBF3009EAFE8 /* ViewController.swift in Sources */,
 				7D04BCDC1CB8E1B3009EAFE8 /* MapViewController.swift in Sources */,
+				7D29BACC1CB9F9DB007CBBE7 /* EducationViewController.swift in Sources */,
 				7DA275C31CB8ECAA001B0315 /* Location.swift in Sources */,
 				7DFCEAC41CB91275005157B0 /* AboutViewController.swift in Sources */,
 				7D04BCC61CB8DBF3009EAFE8 /* AppDelegate.swift in Sources */,
+				7D8F42541CB97056000DE978 /* LetsMakeStars.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

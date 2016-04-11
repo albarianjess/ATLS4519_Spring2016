@@ -39,10 +39,11 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
                     detailVC.title = myCatList.filteredName[indexPath.row]
                     detailVC.catList = myCatList
                     detailVC.selectedCat = indexPath.row
-                    detailVC.catList.ageList = myCatList.filteredAge
-                    detailVC.catList.sexList = myCatList.filteredSex
-                    detailVC.catList.breedList = myCatList.filteredBreed
-                    detailVC.catList.picList = myCatList.filteredPic
+                    detailVC.catList.catObject = myCatList.searchCatObjects
+//                    detailVC.catList.ageList = myCatList.filteredAge
+//                    detailVC.catList.sexList = myCatList.filteredSex
+//                    detailVC.catList.breedList = myCatList.filteredBreed
+//                    detailVC.catList.picList = myCatList.filteredPic
                 } else {
                     detailVC.title = myCatList.nameList[indexPath.row]
                     detailVC.catList = myCatList
@@ -63,21 +64,17 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     
         
         
-        if(searchActive){
-            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
-            // Decode base64 to use as image
-            let plainString = myCatList.namePic[myCatList.nameList[indexPath.row]]
+        if(searchActive == true){
+//            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
+            for item in myCatList.searchCatObjects {
+                cell.textLabel?.text = item["name"]
+            }
             
-            
-            
-            let decodedData = NSData(base64EncodedString: plainString!, options: NSDataBase64DecodingOptions(rawValue: 0))
-            let decodedimage = UIImage(data: decodedData!)
-            let image : UIImage = decodedimage! as UIImage
-            cell.imageView!.image = image
-            
-            
-            tableView.reloadData()
-            
+//            let plainString = myCatList.searchCatObjects[4]
+//            let decodedData = NSData(base64EncodedString: plainString!, options: NSDataBase64DecodingOptions(rawValue: 0))
+//            let decodedimage = UIImage(data: decodedData!)
+//            let image : UIImage = decodedimage! as UIImage
+//            cell.imageView!.image = image
         } else {
             cell.textLabel?.text = myCatList.nameList[indexPath.row]
             let plainString = myCatList.picList[indexPath.row]
@@ -164,7 +161,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             let tmp: NSString = text
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
-        })
+            })
         
         if(myCatList.filteredName.count == 0){
             searchActive = false;
@@ -187,19 +184,24 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             for item in results {
                 let name = item["name"] as! String
                 myCatList.nameList.append(name)
+                for type in myCatList.catObject {
+                    type["name"] = name
+                }
                 let sex = item["sex"]! as! String
                 myCatList.sexList.append(sex)
+                myCatList.catObject[1]["sex"] = sex
+                
                 let breed = item["breed"]! as! String
                 myCatList.breedList.append(breed)
+                myCatList.catObject[2]["breed"] = breed
                 
                 let age = item["age"]! as! String
                 myCatList.ageList.append(age)
+                myCatList.catObject[3]["age"] = age
                 
                 let pic = item["image"]! as! String
                 myCatList.picList.append(pic)
-                myCatList.namePic[name] = pic
-                
-                myCatList.id = myCatList.id + 1
+                myCatList.catObject[4]["pic"] = pic
             }
         } catch {
             print("Error with JSON: \(error)")
@@ -216,6 +218,8 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         if (myCatList.nameList.isEmpty == true){
             loadJSON()
         }
+        
+        
         super.viewDidLoad()
         searchBar.delegate = self
         
@@ -224,6 +228,8 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         myCatList.filteredBreed = myCatList.breedList
         myCatList.filteredAge = myCatList.ageList
         myCatList.filteredSex = myCatList.sexList
+        
+        myCatList.searchCatObjects = myCatList.catObject
     }
    
     
