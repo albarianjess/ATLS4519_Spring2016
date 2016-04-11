@@ -39,7 +39,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
                     detailVC.title = myCatList.filteredName[indexPath.row]
                     detailVC.catList = myCatList
                     detailVC.selectedCat = indexPath.row
-                    detailVC.catList.catObject = myCatList.searchCatObjects
+                    detailVC.catList.catObject = myCatList.searchObjects
 //                    detailVC.catList.ageList = myCatList.filteredAge
 //                    detailVC.catList.sexList = myCatList.filteredSex
 //                    detailVC.catList.breedList = myCatList.filteredBreed
@@ -65,16 +65,14 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         
         
         if(searchActive == true){
-//            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
-            for item in myCatList.searchCatObjects {
-                cell.textLabel?.text = item["name"]
-            }
+            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
+    
             
-//            let plainString = myCatList.searchCatObjects[4]
-//            let decodedData = NSData(base64EncodedString: plainString!, options: NSDataBase64DecodingOptions(rawValue: 0))
-//            let decodedimage = UIImage(data: decodedData!)
-//            let image : UIImage = decodedimage! as UIImage
-//            cell.imageView!.image = image
+            let plainString = myCatList.searchObjects["pic"]
+            let decodedData = NSData(base64EncodedString: plainString!, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
         } else {
             cell.textLabel?.text = myCatList.nameList[indexPath.row]
             let plainString = myCatList.picList[indexPath.row]
@@ -184,24 +182,24 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             for item in results {
                 let name = item["name"] as! String
                 myCatList.nameList.append(name)
-                for type in myCatList.catObject {
-                    type["name"] = name
-                }
+                myCatList.searchObjects["name"] = name
+                
+                
                 let sex = item["sex"]! as! String
                 myCatList.sexList.append(sex)
-                myCatList.catObject[1]["sex"] = sex
+                myCatList.searchObjects["sex"] = sex
                 
                 let breed = item["breed"]! as! String
                 myCatList.breedList.append(breed)
-                myCatList.catObject[2]["breed"] = breed
+                myCatList.searchObjects["breed"] = breed
                 
                 let age = item["age"]! as! String
                 myCatList.ageList.append(age)
-                myCatList.catObject[3]["age"] = age
+                myCatList.searchObjects["age"] = age
                 
                 let pic = item["image"]! as! String
                 myCatList.picList.append(pic)
-                myCatList.catObject[4]["pic"] = pic
+                myCatList.searchObjects["pic"] = pic
             }
         } catch {
             print("Error with JSON: \(error)")
@@ -229,7 +227,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         myCatList.filteredAge = myCatList.ageList
         myCatList.filteredSex = myCatList.sexList
         
-        myCatList.searchCatObjects = myCatList.catObject
+        myCatList.searchObjects = myCatList.catObject
     }
    
     

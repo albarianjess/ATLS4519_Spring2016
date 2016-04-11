@@ -21,12 +21,7 @@ class Cat {
     var filteredAge = [String]()
     var filteredPic = [String]()
     
-    var catObject = [
-        ["name" : ""],
-        ["sex" : ""],
-        ["breed" : ""],
-        ["age" : ""],
-        ["pic" : ""]]
+    var catObject = [String : String]()
     
     var searchCatObjects = [
         ["name" : ""],
@@ -34,4 +29,6 @@ class Cat {
         ["breed" : ""],
         ["age" : ""],
         ["pic" : ""]]
+    
+    var searchObjects = [String : String]()
 }
