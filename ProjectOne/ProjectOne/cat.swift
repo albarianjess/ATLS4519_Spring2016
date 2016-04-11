@@ -22,13 +22,7 @@ class Cat {
     var filteredPic = [String]()
     
     var catObject = [String : String]()
-    
-    var searchCatObjects = [
-        ["name" : ""],
-        ["sex" : ""],
-        ["breed" : ""],
-        ["age" : ""],
-        ["pic" : ""]]
-    
+
     var searchObjects = [String : String]()
+    var users = [(image:String,name:String)]()
 }

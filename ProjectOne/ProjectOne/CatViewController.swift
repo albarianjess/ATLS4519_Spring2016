@@ -29,9 +29,9 @@ class CatViewController: UIViewController {
             let chosenCat = catList.filteredName[selectedCat]
             // Set label information
             nameLabel.text = "Name: " + chosenCat
-            breedLabel.text = "Breed: " + catList.filteredBreed[selectedCat]
-            sexLabel.text = "Sex: " + catList.filteredSex[selectedCat]
-            ageLabel.text = "Age: " + catList.filteredAge[selectedCat]
+            breedLabel.text = "Breed: " + catList.breedList[selectedCat]
+            sexLabel.text = "Sex: " + catList.sexList[selectedCat]
+            ageLabel.text = "Age: " + catList.ageList[selectedCat]
         } else {
             let chosenCat = catList.nameList[selectedCat]
             // Set label information

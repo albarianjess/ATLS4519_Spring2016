@@ -246,6 +246,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzg-6D-TuV">
+                                <rect key="frame" x="260" y="483" width="81" height="30"/>
+                                <state key="normal" title="Put on Hold"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -256,6 +260,8 @@
                             <constraint firstItem="Bqi-ZM-M51" firstAttribute="top" secondItem="zM2-92-q30" secondAttribute="bottom" constant="8" symbolic="YES" id="905-e9-4Ti"/>
                             <constraint firstItem="Lbp-Mj-JXA" firstAttribute="leading" secondItem="fuO-WK-P24" secondAttribute="leading" id="9qR-zH-pvV"/>
                             <constraint firstItem="dmq-tG-uYR" firstAttribute="top" secondItem="fuO-WK-P24" secondAttribute="bottom" constant="8" symbolic="YES" id="BZZ-kY-57C"/>
+                            <constraint firstItem="Hzg-6D-TuV" firstAttribute="centerX" secondItem="Bqi-ZM-M51" secondAttribute="centerX" id="MWH-oO-odz"/>
+                            <constraint firstItem="XCV-Pi-QgZ" firstAttribute="top" secondItem="Hzg-6D-TuV" secondAttribute="bottom" constant="38" id="Q9I-AD-gI0"/>
                             <constraint firstItem="Lbp-Mj-JXA" firstAttribute="trailing" secondItem="fuO-WK-P24" secondAttribute="trailing" id="aPk-xj-BjH"/>
                             <constraint firstItem="Lbp-Mj-JXA" firstAttribute="centerX" secondItem="tQd-k3-XBr" secondAttribute="centerX" id="f0q-kB-b5m"/>
                             <constraint firstItem="zM2-92-q30" firstAttribute="top" secondItem="dmq-tG-uYR" secondAttribute="bottom" constant="8" symbolic="YES" id="fZK-Ki-8QP"/>
