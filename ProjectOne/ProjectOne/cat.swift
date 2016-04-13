@@ -5,24 +5,18 @@ import Foundation
 import UIKit
 
 class Cat {
-    
-    var catData = [String : [String]]()
-    var names : [String]!
-    
-    var nameList = [String]()
-    var sexList = [String]()
-    var breedList = [String]()
-    var ageList = [String]()
-    var picList = [String]()
-    
-    var filteredName = [String]()
-    var filteredSex = [String]()
-    var filteredBreed = [String]()
-    var filteredAge = [String]()
-    var filteredPic = [String]()
-    
-    var catObject = [String : String]()
 
-    var searchObjects = [String : String]()
-    var users = [(image:String,name:String)]()
+    var name = String()
+    var sex = String()
+    var breed = String()
+    var age = String()
+    var pic = String()
+    
+    init(newName: String, newSex: String, newBreed: String, newAge: String, newPic: String){
+        self.name = newName
+        self.sex = newSex
+        self.breed = newBreed
+        self.age = newAge
+        self.pic = newPic
+    }
 }

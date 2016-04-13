@@ -4,7 +4,8 @@
 import UIKit
 
 
-var myCatList = Cat() // To pass data to next controller
+
+var myCatList = [String: Cat]()
 
 class SecondViewController: UITableViewController, UISearchBarDelegate {
     
@@ -13,16 +14,30 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     //-----------
     // VARIABLES
     //-----------
+    var catNamelist = [String]()
+    var filteredNames = [String]()
+    
+    
     var data = NSMutableData()  // Create data storage object
     var selectedCat = 0 // Initialize selectedDog
     var objects = [[String:String]]()
     
-    var names = Array(myCatList.searchObjects.values)
     
     @IBOutlet var searchBar: UISearchBar!
     var searchActive : Bool = false
     
     
+    //---------------
+    // HIDE KEYBOARD
+    //---------------
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     
     
@@ -37,16 +52,13 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
                 
                 //sets the data for the destination controller
                 if(searchActive){
-                    detailVC.title = myCatList.filteredName[indexPath.row]
+                    detailVC.title = filteredNames[indexPath.row]
+                    detailVC.filteredNames = filteredNames
                     detailVC.catList = myCatList
                     detailVC.selectedCat = indexPath.row
-                    detailVC.catList.catObject = myCatList.searchObjects
-                    detailVC.catList.ageList = myCatList.filteredAge
-                    detailVC.catList.sexList = myCatList.filteredSex
-                    detailVC.catList.breedList = myCatList.filteredBreed
-                    detailVC.catList.picList = myCatList.filteredPic
                 } else {
-                    detailVC.title = myCatList.nameList[indexPath.row]
+                    detailVC.title = catNamelist[indexPath.row]
+                    detailVC.catNamelist = catNamelist
                     detailVC.catList = myCatList
                     detailVC.selectedCat = indexPath.row
                 }
@@ -63,36 +75,32 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             //configure the cell
         let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
     
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
+        cell.textLabel?.textAlignment = .Center
         
-        
-        if(searchActive == true){
-            cell.textLabel?.text = myCatList.filteredName[indexPath.row]
+        if(searchActive){
+            cell.textLabel?.text = filteredNames[indexPath.row]
     
-            
-//            let plainString = myCatList.picList[indexPath.row]
-//            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
-//            let decodedimage = UIImage(data: decodedData!)
-//            let image : UIImage = decodedimage! as UIImage
-//            cell.imageView!.image = image
-//            
-//            tableView.reloadData()
-        } else {
-            cell.textLabel?.text = myCatList.nameList[indexPath.row]
-            
-            let plainString = myCatList.picList[indexPath.row]
+            let plainString = myCatList[filteredNames[indexPath.row]]!.pic
             let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
             cell.imageView!.image = image
+            return cell
+            
+            
+            
+        } else {
+            cell.textLabel?.text = catNamelist[indexPath.row]
+            let plainString = myCatList[catNamelist[indexPath.row]]!.pic
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
+            return cell
         }
-        
-        
-        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
-        cell.textLabel?.textAlignment = .Center
-        
             // Formatting table view cells source
             //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
-            return cell
     }
     
     
@@ -120,9 +128,9 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
         if(searchActive) {
-            return myCatList.filteredName.count
+            return filteredNames.count
         } else {
-            return myCatList.nameList.count
+            return catNamelist.count
         }
     }
     
@@ -158,21 +166,35 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     // Search bar function
     //--------------------
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.isEmpty == true){
+            filteredNames = catNamelist
+        } else {
         
         
-        names = myCatList.nameList.filter({ (text) -> Bool in
-            let tmp: NSString = text
+        var i : Int = 0
+        while(i < catNamelist.count){
+            for item in catNamelist{
+                filteredNames.append(item)
+                i += 1
+            }
+        }
+        
+
+        filteredNames = catNamelist.filter({ (text) -> Bool in
+            let tmp: NSString = text // the name from the variable decleration
             let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
             return range.location != NSNotFound
-            })
+        })
         
         
-        if(myCatList.filteredName.count == 0){
+        if(filteredNames.count == 0){
             searchActive = false;
         } else {
             searchActive = true;
         }
         self.tableView.reloadData()
+        }
+       
     }
     
  
@@ -188,24 +210,17 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             let results = Array(allresults)
             for item in results {
                 let name = item["name"] as! String
-                myCatList.nameList.append(name)
-                myCatList.catObject["name"] = name
                 
                 let sex = item["sex"]! as! String
-                myCatList.sexList.append(sex)
-                myCatList.catObject["sex"] = sex
                 
                 let breed = item["breed"]! as! String
-                myCatList.breedList.append(breed)
-                myCatList.catObject["breed"] = breed
                 
                 let age = item["age"]! as! String
-                myCatList.ageList.append(age)
-                myCatList.catObject["age"] = age
                 
                 let pic = item["image"]! as! String
-                myCatList.picList.append(pic)
-                myCatList.catObject["pic"] = pic
+                
+                myCatList[name] = Cat(newName: name, newSex: sex, newBreed: breed, newAge: age, newPic: pic)
+                catNamelist.append(name)
             }
         } catch {
             print("Error with JSON: \(error)")
@@ -219,17 +234,13 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
-        if (myCatList.nameList.isEmpty == true){
+        if (myCatList.isEmpty == true){
             loadJSON()
         }
         
-        
         super.viewDidLoad()
         searchBar.delegate = self
-        
-//        myCatList.filteredName = myCatList.nameList
-        myCatList.filteredName = names
-        myCatList.searchObjects = myCatList.catObject
+        self.hideKeyboardWhenTappedAround()
     }
    
     

@@ -5,16 +5,17 @@ import Foundation
 
 class Small {
     
-    var smallData = [String : [String]]()
-    var names : [String]!
+    var name = String()
+    var sex = String()
+    var breed = String()
+    var age = String()
+    var pic = String()
     
-    var nameList = [String]()
-    var statusList = [String]()
-    var sexList = [String]()
-    var pedigreeList = [String]()
-    var breedList = [String]()
-    var ageList = [String]()
-    var idList = [String]()
-    var picList = [String]()
-    
+    init(newName: String, newSex: String, newBreed: String, newAge: String, newPic: String){
+        self.name = newName
+        self.sex = newSex
+        self.breed = newBreed
+        self.age = newAge
+        self.pic = newPic
+    }
 }

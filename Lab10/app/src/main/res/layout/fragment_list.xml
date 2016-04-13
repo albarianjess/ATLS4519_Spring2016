@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jessie.lab10.ListFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <fragment
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:id="@+id/universe_frag"
+        class="jessie.lab10.ListFragment" />
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="76dp"
+        android:layout_gravity="center"
+        android:id="@+id/imageView"
+        android:src="@drawable/curious"
+        android:contentDescription="@string/app_name" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:id="@+id/listView" />
+</FrameLayout>

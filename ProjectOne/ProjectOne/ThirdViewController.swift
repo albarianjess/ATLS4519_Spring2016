@@ -4,35 +4,67 @@
 import UIKit
 
 
-var smallList = Small() // To pass data to next controller
 
-class ThirdViewController: UITableViewController {
+var mySmallList = [String: Small]()
+
+class ThirdViewController: UITableViewController, UISearchBarDelegate {
     
     
     
     //-----------
     // VARIABLES
     //-----------
+    var smallNamelist = [String]()
+    var filteredNames = [String]()
+    
+    
     var data = NSMutableData()  // Create data storage object
     var selectedSmall = 0 // Initialize selectedDog
     var objects = [[String:String]]()
-    var searchController : UISearchController!
     
-    @IBOutlet var searching: UISearchBar!
+    
+    @IBOutlet var searchBar: UISearchBar!
+    var searchActive : Bool = false
+    
+    
+    
+    //---------------
+    // HIDE KEYBOARD
+    //---------------
+//    func hideKeyboardWhenTappedAround() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ThirdViewController.dismissKeyboard))
+//            view.addGestureRecognizer(tap)
+//        }
+//        
+//        func dismissKeyboard() {
+//            view.endEditing(true)
+//        }
+    
+    
     
     //-----------------------
-    // PREPARE FOR SMALL SEGUE
+    // PREPARE FOR DOG SEGUE
     //-----------------------
     override func prepareForSegue(segue: UIStoryboardSegue, sender:
         AnyObject?) {
-            if segue.identifier == "smallsegue" {
-                let detailVC = segue.destinationViewController as! SmallViewController
-                let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-                //sets the data for the destination controller
-                detailVC.title = animalList.nameList[indexPath.row]
-                detailVC.smallList = smallList
+        if segue.identifier == "smallsegue" {
+            let detailVC = segue.destinationViewController as! SmallViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            
+            //sets the data for the destination controller
+            if(searchActive){
+                detailVC.title = filteredNames[indexPath.row]
+                detailVC.filteredNames = filteredNames
+                detailVC.smallList = mySmallList
+                detailVC.selectedSmall = indexPath.row
+            } else {
+                detailVC.title = smallNamelist[indexPath.row]
+                detailVC.smallNamelist = smallNamelist
+                detailVC.smallList = mySmallList
                 detailVC.selectedSmall = indexPath.row
             }
+            
+        }
     }
     
     
@@ -40,29 +72,55 @@ class ThirdViewController: UITableViewController {
     //-------------------------
     // DISPLAY TABLEVIEW CELLS
     //-------------------------
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
-            //configure the cell
-            let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //configure the cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
+        
+        cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
+        cell.textLabel?.textAlignment = .Center
+        
+        if(searchActive){
+            cell.textLabel?.text = filteredNames[indexPath.row]
             
-            // Format labels
-            cell.textLabel?.text = smallList.nameList[indexPath.row]
-            cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
-            cell.textLabel?.textAlignment = .Center
-            
-            
-            // Decode base64 to use as image
-            let plainString = smallList.picList[indexPath.row]
+            let plainString = mySmallList[filteredNames[indexPath.row]]!.pic
             let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
             cell.imageView!.image = image
-            
-            // Formatting table view cells source
-            //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
             return cell
+            
+            
+            
+        } else {
+            cell.textLabel?.text = smallNamelist[indexPath.row]
+            let plainString = mySmallList[smallNamelist[indexPath.row]]!.pic
+            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+            let decodedimage = UIImage(data: decodedData!)
+            let image : UIImage = decodedimage! as UIImage
+            cell.imageView!.image = image
+            return cell
+        }
+        // Formatting table view cells source
+        //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
     }
     
+    
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
     
     
     //----------------------
@@ -70,7 +128,11 @@ class ThirdViewController: UITableViewController {
     //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-            return smallList.nameList.count
+        if(searchActive) {
+            return filteredNames.count
+        } else {
+            return smallNamelist.count
+        }
     }
     
     
@@ -101,6 +163,42 @@ class ThirdViewController: UITableViewController {
     
     
     
+    //--------------------
+    // Search bar function
+    //--------------------
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+//        if (searchText.isEmpty == true){
+//            filteredNames = smallNamelist
+//        } else {
+//        
+        var i : Int = 0
+        while(i < smallNamelist.count){
+            for item in smallNamelist{
+                filteredNames.append(item)
+                i += 1
+            }
+        }
+        
+        
+        filteredNames = smallNamelist.filter({ (text) -> Bool in
+            let tmp: NSString = text // the name from the variable decleration
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        
+        
+        if(filteredNames.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        self.tableView.reloadData()
+//        }
+    }
+    
+    
+    
+    
     //------------
     // Parse JSON
     //------------
@@ -111,19 +209,17 @@ class ThirdViewController: UITableViewController {
             let results = Array(allresults)
             for item in results {
                 let name = item["name"] as! String
-                smallList.nameList.append(name)
-
+                
                 let sex = item["sex"]! as! String
-                smallList.sexList.append(sex)
                 
                 let breed = item["breed"]! as! String
-                smallList.breedList.append(breed)
                 
                 let age = item["age"]! as! String
-                smallList.ageList.append(age)
                 
                 let pic = item["image"]! as! String
-                smallList.picList.append(pic)
+                
+                mySmallList[name] = Small(newName: name, newSex: sex, newBreed: breed, newAge: age, newPic: pic)
+                smallNamelist.append(name)
             }
         } catch {
             print("Error with JSON: \(error)")
@@ -133,27 +229,20 @@ class ThirdViewController: UITableViewController {
     
     
     
-    
     //---------------
     // VIEWDIDLOAD
     //---------------
     override func viewDidLoad() {
-        //        animalList.getData()
-        if (smallList.nameList.isEmpty == true){
+        if (mySmallList.isEmpty == true){
             loadJSON()
         }
-        // Background image
-        //navigationController!.navigationBar.barTintColor = UIColor.orangeColor()
-        super.viewDidLoad()
-        //        animalList.getData()
-        //print(animalList.nameList)
-        //        animalList.getNames()
         
+        super.viewDidLoad()
+        searchBar.delegate = self
+//        self.hideKeyboardWhenTappedAround()
     }
     
     
-    override func viewDidAppear(animated: Bool) {
-    }
     
     //-------------------------
     // DIDRECEIVEMEMORYWARNING

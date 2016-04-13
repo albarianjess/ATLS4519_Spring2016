@@ -14,7 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="erI-UF-bHQ">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Yuz-1g-jVT">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -56,7 +56,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Cats" id="I6T-ei-laF"/>
                     <connections>
-                        <outlet property="searchBar" destination="erI-UF-bHQ" id="Uuy-2F-IWb"/>
+                        <outlet property="searchBar" destination="Yuz-1g-jVT" id="FhZ-ef-Us5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN3-Qp-W3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,9 +71,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="EZU-ue-Udk">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="I43-3q-Gge">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I43-3q-Gge" id="1Ka-Ze-bg5">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -104,6 +109,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Small Animals" id="588-1m-tLD"/>
+                    <connections>
+                        <outlet property="searchBar" destination="EZU-ue-Udk" id="DCk-Tl-jq4"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeY-9I-lEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -163,10 +171,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMX-CH-UE9">
+                                <rect key="frame" x="260" y="480" width="81" height="30"/>
+                                <state key="normal" title="Put on Hold"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HjE-hs-zrA" firstAttribute="leading" secondItem="ohm-YM-lzs" secondAttribute="leading" id="55a-0z-AX6"/>
+                            <constraint firstItem="oTO-46-aDb" firstAttribute="top" secondItem="FMX-CH-UE9" secondAttribute="bottom" constant="41" id="6kB-FU-psb"/>
+                            <constraint firstItem="FMX-CH-UE9" firstAttribute="centerX" secondItem="Gmd-M8-ZX5" secondAttribute="centerX" id="Ezy-IL-Kgc"/>
                             <constraint firstItem="Gmd-M8-ZX5" firstAttribute="top" secondItem="VLO-E9-3bh" secondAttribute="bottom" constant="8" symbolic="YES" id="HXQ-Xo-Z5U"/>
                             <constraint firstItem="ohm-YM-lzs" firstAttribute="top" secondItem="HjE-hs-zrA" secondAttribute="bottom" constant="8" symbolic="YES" id="Ig2-76-K6w"/>
                             <constraint firstItem="VLO-E9-3bh" firstAttribute="top" secondItem="ohm-YM-lzs" secondAttribute="bottom" constant="8" symbolic="YES" id="Lms-Eh-uo1"/>
@@ -184,7 +198,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ageLabe" destination="Gmd-M8-ZX5" id="Wur-eM-YCL"/>
+                        <outlet property="ageLabel" destination="Gmd-M8-ZX5" id="ksu-au-1hQ"/>
                         <outlet property="breedLabel" destination="ohm-YM-lzs" id="INO-xa-OFq"/>
                         <outlet property="nameLabel" destination="HjE-hs-zrA" id="iJs-47-OSk"/>
                         <outlet property="pic" destination="4bI-hz-U7S" id="d8m-Fa-EtC"/>
@@ -332,9 +346,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="bkk-QO-Mih">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" rowHeight="102" id="yqQ-bR-Q5b">
-                                <rect key="frame" x="0.0" y="92" width="600" height="102"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" semanticContentAttribute="spatial" tableViewCell="yqQ-bR-Q5b" id="Ff7-yg-4QP">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="102"/>
@@ -374,7 +393,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Adoptable Dogs" id="jlL-Y5-eZD"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="1Df-3N-l04" id="0SS-I7-LJH"/>
+                        <outlet property="searchBar" destination="bkk-QO-Mih" id="kqu-Sn-8GP"/>
+                        <outlet property="searchDisplayController" destination="knv-T4-cAa" id="hGQ-mS-sdY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y6-jH-UHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -384,6 +404,14 @@
                         <outlet property="searchContentsController" destination="Ppj-HX-NIi" id="VFb-wQ-uTE"/>
                         <outlet property="searchResultsDataSource" destination="Ppj-HX-NIi" id="R6B-3v-7Kh"/>
                         <outlet property="searchResultsDelegate" destination="Ppj-HX-NIi" id="Tcg-9l-5YV"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="knv-T4-cAa">
+                    <connections>
+                        <outlet property="delegate" destination="Ppj-HX-NIi" id="XJY-E6-kiT"/>
+                        <outlet property="searchContentsController" destination="Ppj-HX-NIi" id="oyC-bd-RTG"/>
+                        <outlet property="searchResultsDataSource" destination="Ppj-HX-NIi" id="7EZ-MP-Tjw"/>
+                        <outlet property="searchResultsDelegate" destination="Ppj-HX-NIi" id="H5u-Lw-bq7"/>
                     </connections>
                 </searchDisplayController>
             </objects>
@@ -437,6 +465,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXS-cc-oEt">
+                                <rect key="frame" x="260" y="475" width="81" height="30"/>
+                                <state key="normal" title="Put on Hold"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -444,6 +476,7 @@
                             <constraint firstItem="Roa-Nh-3OM" firstAttribute="trailing" secondItem="oOi-9R-yX6" secondAttribute="trailing" id="7yS-Io-w3H"/>
                             <constraint firstItem="n6d-TE-GSr" firstAttribute="leading" secondItem="q9i-yE-9e5" secondAttribute="leading" id="92g-Hf-gfj"/>
                             <constraint firstItem="q9i-yE-9e5" firstAttribute="top" secondItem="Roa-Nh-3OM" secondAttribute="bottom" constant="8" id="AM4-Gd-8hU"/>
+                            <constraint firstItem="PXS-cc-oEt" firstAttribute="centerX" secondItem="n6d-TE-GSr" secondAttribute="centerX" id="Ad3-sT-sqJ"/>
                             <constraint firstItem="q9i-yE-9e5" firstAttribute="leading" secondItem="Roa-Nh-3OM" secondAttribute="leading" id="DRa-am-tiY"/>
                             <constraint firstItem="Uwa-AP-Dcd" firstAttribute="top" secondItem="EsN-Ij-C7E" secondAttribute="bottom" constant="30" id="JFD-ei-DZe"/>
                             <constraint firstItem="6HE-TM-CXS" firstAttribute="top" secondItem="n6d-TE-GSr" secondAttribute="bottom" constant="120" id="KZC-bt-5u3"/>
@@ -457,6 +490,7 @@
                             <constraint firstItem="Uwa-AP-Dcd" firstAttribute="leading" secondItem="oOi-9R-yX6" secondAttribute="leading" id="tQ5-nt-KbG"/>
                             <constraint firstItem="6HE-TM-CXS" firstAttribute="top" secondItem="oOi-9R-yX6" secondAttribute="bottom" constant="207" id="taI-2D-nDL"/>
                             <constraint firstItem="Uwa-AP-Dcd" firstAttribute="centerX" secondItem="oOi-9R-yX6" secondAttribute="centerX" id="wdS-qe-liI"/>
+                            <constraint firstItem="PXS-cc-oEt" firstAttribute="top" secondItem="n6d-TE-GSr" secondAttribute="bottom" constant="44" id="zbX-pG-wB0"/>
                         </constraints>
                     </view>
                     <connections>
