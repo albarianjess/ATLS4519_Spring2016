@@ -30,14 +30,14 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     //---------------
     // HIDE KEYBOARD
     //---------------
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
+//    func hideKeyboardWhenTappedAround() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+//    }
+//    
+//    func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
     
     
     
@@ -166,9 +166,9 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
     // Search bar function
     //--------------------
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if (searchText.isEmpty == true){
-            filteredNames = catNamelist
-        } else {
+//        if (searchText.isEmpty == true){
+//            filteredNames = catNamelist
+//        } else {
         
         
         var i : Int = 0
@@ -193,7 +193,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
             searchActive = true;
         }
         self.tableView.reloadData()
-        }
+//        }
        
     }
     
@@ -240,7 +240,7 @@ class SecondViewController: UITableViewController, UISearchBarDelegate {
         
         super.viewDidLoad()
         searchBar.delegate = self
-        self.hideKeyboardWhenTappedAround()
+//        self.hideKeyboardWhenTappedAround()
     }
    
     
