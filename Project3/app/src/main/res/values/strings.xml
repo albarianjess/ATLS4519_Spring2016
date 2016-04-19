@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Project3</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="calling">Who Are You Calling</string>
+    <string name="safety">Feeling unsafe</string>
+    <string name="suspicious">Suspicious Activity</string>
+    <string name="crime">Crimes</string>
+    <string name="accidents">Accidents</string>
+    <string name="emergencies">Emergencies</string>
+    <string name="reasons">Reasons to Call</string>
 </resources>
