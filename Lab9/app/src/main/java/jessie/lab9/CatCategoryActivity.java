@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class PupCategoryActivity extends ListActivity {
+public class CatCategoryActivity extends ListActivity {
 
     private String animaltype;
 
@@ -17,26 +17,26 @@ public class PupCategoryActivity extends ListActivity {
         Intent i = getIntent();
         String animaltype = i.getStringExtra("animaltype");
         //get the list view
-        ListView listdogs = getListView();
+        ListView listCats = getListView();
         //define an array adapter
-        ArrayAdapter<Dog> listAdapter;
+        ArrayAdapter<Cat> listAdapter;
 
         //initialize the array adapter with the right list of bulbs
         switch (animaltype){
-            case "Dogs":
-                listAdapter = new ArrayAdapter<Dog>(this, android.R.layout.simple_list_item_1, Dog.pups);
+            case "Cats":
+                listAdapter = new ArrayAdapter<Cat>(this, android.R.layout.simple_list_item_1, Cat.kitties);
                 break;
-            default: listAdapter = new ArrayAdapter<Dog>(this, android.R.layout.simple_list_item_1,
-                    Dog.pups);
+            default: listAdapter = new ArrayAdapter<Cat>(this, android.R.layout.simple_list_item_1,
+                    Cat.kitties);
         }
         //set the array adapter on the list view
-        listdogs.setAdapter(listAdapter);
+        listCats.setAdapter(listAdapter);
     }
 
 
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id){
-        Intent intent = new Intent(PupCategoryActivity.this, PupActivity.class);
+        Intent intent = new Intent(CatCategoryActivity.this, CatActivity.class);
         intent.putExtra("animalid", (int) id);
         intent.putExtra("animaltype", animaltype);
         startActivity(intent);

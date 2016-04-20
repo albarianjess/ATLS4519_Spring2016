@@ -3,17 +3,17 @@ package jessie.lab9;
 /**
  * Created by ashes on 4/20/16.
  */
-public class Dog {
+public class Cat {
     private String name;
     private int imageResourceID;
-//constructor
-private Dog(String newname, int newID){
-    this.name = newname;
-    this.imageResourceID = newID;
-}
-    public static final Dog[] pups = {
-            new Dog("Lab Puppy", R.drawable.lab),
-            new Dog("Husky Puppy", R.drawable.husky)
+    //constructor
+    private Cat(String newname, int newID){
+        this.name = newname;
+        this.imageResourceID = newID;
+    }
+    public static final Cat[] kitties = {
+            new Cat("Siamese", R.drawable.siamese),
+            new Cat("Tabby", R.drawable.tabby)
 
     };
     public String getName(){

@@ -19,13 +19,22 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> listView, View view, int position, long id){
                 String animaltype = (String) listView.getItemAtPosition(position);
 
-                //create new intent
-                Intent intent = new Intent(MainActivity.this, PupCategoryActivity.class);
 
-                //add animaltype to intent
-                intent.putExtra("animaltype", animaltype);
-                //start intent
-                startActivity(intent);
+                if(animaltype.equals("Dogs")) {
+                    //create new intent
+                    Intent intent = new Intent(MainActivity.this, PupCategoryActivity.class);
+                    //add animaltype to intent
+                    intent.putExtra("animaltype", animaltype);
+                    //start intent
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, CatCategoryActivity.class);
+                    //add animaltype to intent
+                    intent.putExtra("animaltype", animaltype);
+                    //start intent
+                    startActivity(intent);
+                }
+
             }
         };
         //get the list view

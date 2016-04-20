@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".PupCategoryActivity" />
-        <activity android:name=".PupActivity"></activity>
+        <activity android:name=".PupActivity" />
+        <activity android:name=".CatActivity" />
+        <activity android:name=".CatCategoryActivity"></activity>
     </application>
 
 </manifest>
