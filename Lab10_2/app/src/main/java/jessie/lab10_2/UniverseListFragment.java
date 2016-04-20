@@ -1,4 +1,4 @@
-package jessie.lab10;
+package jessie.lab10_2;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,21 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DetailFragment.OnFragmentInteractionListener} interface
+ * {@link UniverseListFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link DetailFragment#newInstance} factory method to
+ * Use the {@link UniverseListFragment#newInstance} factory method to
  * create an instance of this fragment.
- */
-public class DetailFragment extends ListFragment {
+ **/
+public class UniverseListFragment extends Fragment implements AdapterView.OnItemClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,17 +29,32 @@ public class DetailFragment extends ListFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private long universeId;
-
-    //set the universe id
-    public void setUniverse(long id){
-        this.universeId = id;
-    }
 
     private OnFragmentInteractionListener mListener;
 
-    public DetailFragment() {
+    public UniverseListFragment() {
         // Required empty public constructor
+    }
+
+
+    @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (listener != null) {
+            //tells the listener an item was clicked
+            listener.itemClicked(id);
+        }
+    }
+
+
+    //create interface
+    interface UniverseListListener{
+        void itemClicked(long id);
+    }
+    //create listener
+    private UniverseListListener listener;
+    @Override public void onAttach(Context context){
+        super.onAttach(context);
+        //attaches the context to the listener
+        listener = (UniverseListListener) context;
     }
 
     /**
@@ -49,36 +63,17 @@ public class DetailFragment extends ListFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DetailFragment.
+     * @return A new instance of fragment UniverseListFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ListFragment newInstance(String param1, String param2) {
-        DetailFragment fragment = new DetailFragment();
+    public static UniverseListFragment newInstance(String param1, String param2) {
+        UniverseListFragment fragment = new UniverseListFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
-
-    //create array adapter
-    private ArrayAdapter<String> adapter;
-    @Override public void onStart(){
-        super.onStart();
-        View view = getView();
-        ListView listHeroes = (ListView) view.findViewById(R.id.herolistView);
-
-        // get hero data
-        ArrayList<String> herolist = new ArrayList<String>();
-        herolist = Hero.heroes[0].getSuperheroes();
-        //set array adapter
-        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, herolist);
-        //bind array adapter to the list view
-        listHeroes.setAdapter(adapter);
-    }
-
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,14 +84,38 @@ public class DetailFragment extends ListFragment {
         }
     }
 
+
+
+    //---------------
+    // ON START METHOD
+    //---------------
+    @Override
+    public void onStart() {
+        super.onStart();
+        View view = getView();
+        if (view != null) {
+            //load data into fragment
+            //get the list view
+            ListView listUniverse = (ListView) view.findViewById(R.id.listView);
+            //define an array adapter
+            ArrayAdapter<Hero> listAdapter = new ArrayAdapter<Hero>(getContext(),
+                    android.R.layout.simple_list_item_1, Hero.heroes);
+            //set the array adapter on the list view
+            listUniverse.setAdapter(listAdapter);
+            //attach the listener to the listview
+            listUniverse.setOnItemClickListener(this);
+        }
+    }
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false);
+        return inflater.inflate(R.layout.fragment_universe_list, container, false);
     }
-
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -105,28 +124,22 @@ public class DetailFragment extends ListFragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
+//    }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
-
-    public void setListAdapter(ArrayAdapter<String> listAdapter) {
-//        this.listAdapter = listAdapter;
-        listAdapter = listAdapter;
-    }
-
 
     /**
      * This interface must be implemented by activities that contain this

@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jessie.lab10.DetailFragment">
+    tools:context="jessie.lab10_2.HeroDetailFragment">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:id="@+id/herolistView" />
+
 </FrameLayout>

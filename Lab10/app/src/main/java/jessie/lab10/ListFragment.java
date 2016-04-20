@@ -76,30 +76,28 @@ public class ListFragment extends Fragment {
         }
     }
 
+
+
+
     @Override
     public void onStart(){
         super.onStart();
-
-
         View view = getView();
         if (view != null){
             //load data into fragment
             //get the list view
             ListView listUniverse = (ListView) view.findViewById(R.id.listView);
-
             //define an array adapter
             ArrayAdapter<Hero> listAdapter = new ArrayAdapter<Hero>(getContext(),
                     android.R.layout.simple_list_item_1, Hero.heroes);
-
             //set the array adapter on the list view
             listUniverse.setAdapter(listAdapter);
-
-            //attach the listener to the listview
-            listUniverse.setOnItemClickListener((AdapterView.OnItemClickListener) this);
         }
-
-
     }
+
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
