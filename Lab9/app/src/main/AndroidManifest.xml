@@ -15,8 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".RecipeActivity"></activity>
+        <activity android:name=".PupCategoryActivity" />
+        <activity android:name=".PupActivity"></activity>
     </application>
 
 </manifest>

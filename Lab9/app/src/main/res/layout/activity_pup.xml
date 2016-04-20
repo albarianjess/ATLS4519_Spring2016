@@ -7,20 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="jessie.lab9.FitnessActivity"
+    tools:context="jessie.lab9.PupActivity"
     android:orientation="vertical">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/fitness_name"
+        android:id="@+id/pup_name"
         android:layout_gravity="center_horizontal" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fitnessImageView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/pupView"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

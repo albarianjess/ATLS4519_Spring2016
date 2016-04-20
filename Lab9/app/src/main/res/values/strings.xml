@@ -1,42 +1,9 @@
 <resources>
     <string name="app_name">Lab9</string>
-    <string name="run">Running girl</string>
 
-    <!--Main Meals-->
-    <string-array name="meals">
-        <item>Breakfast</item>
-        <item>Lunch</item>
-        <item>Dinner</item>
-        <item>Snack</item>
-    </string-array>
 
-    <!--Breakfast Meals-->
-    <string-array name="breakfast">
-        <item>Rice and Avocado</item>
-        <item>Fruit Smoothie</item>
-        <item>Rice and Chicken</item>
-        <item>PB&amp;J</item>
-    </string-array>
-
-    <!--Lunch Meals-->
-    <string-array name="lunch">
-        <item>Chipotle Salad</item>
-        <item>Fruit Smoothie</item>
-        <item>Rice and Chicken</item>
-    </string-array>
-
-    <!--Dinner Meals-->
-    <string-array name="dinner">
-        <item>Salmon and Green Beans</item>
-        <item>Rice, Chicken, and Broccoli</item>
-        <item>Chipotle Salad</item>
-    </string-array>
-
-    <!--Snacks-->
-    <string-array name="snacks">
-        <item>PB&amp;J</item>
-        <item>Hummus and Carrots/Cucumbers</item>
-        <item>Whole Fruit</item>
-        <item>Smoothie</item>
+    <string-array name="animal_types">
+        <item>Dogs</item>
+        <item>Cats</item>
     </string-array>
 </resources>
