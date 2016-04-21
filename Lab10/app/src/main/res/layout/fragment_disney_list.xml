@@ -9,8 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
     <ImageView
-        android:layout_width="175dp"
-        android:layout_height="76dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_gravity="center"
         android:id="@+id/imageView"
         android:src="@drawable/disney"

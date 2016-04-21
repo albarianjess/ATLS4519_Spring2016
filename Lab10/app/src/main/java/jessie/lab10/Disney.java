@@ -64,13 +64,14 @@ public class Disney {
 
         //create an editor to read from the shared preferences file
         SharedPreferences.Editor editor = sharedPrefs.edit();
-        //create a set with the hero list
+
+        //create a set with the char list
         Set<String> set = sharedPrefs.getStringSet(chars[disneyID].getDisney(), null);
-        //if there was a saved list add it to the heroes array
+        //if there was a saved list add it to the character array
         if (set != null) {
             Disney.chars[disneyID].characters.addAll(set);
         }
-        //if no hero list was saved, use the defaults
+        //if no character list was saved, use the defaults
         else {
             switch (disneyID) {
                 case 0:
