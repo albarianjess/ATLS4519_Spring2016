@@ -21,7 +21,7 @@ public class CatCategoryActivity extends ListActivity {
         //define an array adapter
         ArrayAdapter<Cat> listAdapter;
 
-        //initialize the array adapter with the right list of bulbs
+        //initialize the array adapter with the right list of animals
         switch (animaltype){
             case "Cats":
                 listAdapter = new ArrayAdapter<Cat>(this, android.R.layout.simple_list_item_1, Cat.kitties);
