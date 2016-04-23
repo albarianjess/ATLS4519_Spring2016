@@ -48,14 +48,14 @@
 
     <!--TODO: CHANGE SECTION TO ADD 2 SENTENCES-->
     <item android:title="@string/calling">
-        <menu>
-            <item
-                android:id="@+id/nav_call"
-                android:title="If it is a non-emergency situation, a call will be made to your local campus police." />
-            <item
-                android:id="@+id/nav_call2"
-                android:title="If it is an emergency situation, a 911 call will be made to your local police." />
-        </menu>
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_call"-->
+                <!--android:title="If it is a non-emergency situation, a call will be made to your local campus police." />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_call2"-->
+                <!--android:title="If it is an emergency situation, a 911 call will be made to your local police." />-->
+        <!--</menu>-->
     </item>
 
 </menu>

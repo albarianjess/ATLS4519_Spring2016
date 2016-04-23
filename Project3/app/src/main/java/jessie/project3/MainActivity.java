@@ -1,6 +1,10 @@
 package jessie.project3;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,14 +19,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    public void call() {
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:7206207466"));
+
+
+
+
+    public void makeCall(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -31,21 +40,15 @@ public class MainActivity extends AppCompatActivity
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
-        startActivity(callIntent);
+        String phoneNum = "7206207466";
+
+
+        intent.setData(Uri.parse("tel:" + phoneNum));
+        startActivity(intent);
     }
-
-
-//    public void call(View view) {
-//        ImageButton btn = (ImageButton) findViewById(R.id.imageButton);
-//        String number = "tel: 7206207466";
-//        Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse(number));
-//        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-//            return;
-//        }
-//        startActivity(callIntent);
-//    }
 
 
 
@@ -58,19 +61,75 @@ public class MainActivity extends AppCompatActivity
 
 
 
+        ImageButton login = (ImageButton) findViewById(R.id.callBtn);
+        login.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                //TODO: your code here
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    String phoneNum = "7206207466";
+
+
+                    intent.setData(Uri.parse("tel:" + phoneNum));
+                    return;
+                }
+
+                startActivity(intent);
+            }
+        });
+
+        //----------
+        // ANIMATION
+        //----------
+        // Custom repeat animation on button image
+        ImageView myView = (ImageView) findViewById(R.id.fadeButton);
+
+        // Fade out
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha",  0f, 0.3f);
+        fadeOut.setDuration(2000);
+        // Fade in
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.3f, 0f);
+        fadeIn.setDuration(2000);
+
+        final AnimatorSet mAnimationSet = new AnimatorSet();
+
+        mAnimationSet.play(fadeIn).after(fadeOut);
+
+        mAnimationSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mAnimationSet.start();
+            }
+        });
+        mAnimationSet.start();
 
 
 
         //------------------------------------------
-        // MAIN TEXTVIEW FOR WHAT SCHOOL USER IS AT
+        // MAIN TEXT VIEW FOR WHAT SCHOOL USER IS AT
         //------------------------------------------
         String schoolNameData = "University of Colorado Boulder"; // hardcoded for testing
 
         TextView schoolTxt = (TextView) findViewById(R.id.schoolText);
         assert schoolTxt != null;
-        schoolTxt.setTextSize(25);
+        schoolTxt.setTextSize(20);
         schoolTxt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         schoolTxt.setPadding(10, 0, 10, 10);
+//        schoolTxt.setTextColor(Color.parseColor("#2d88ba"));
+
+        // Change font: Work Sans
+//        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/WorkSans-Light.ttf");
+//        schoolTxt.setTypeface(typeFace);
+
         schoolTxt.setText("You are at the \n" + schoolNameData);
 
 
@@ -81,16 +140,19 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        assert drawer != null;
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        assert drawer != null;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -102,6 +164,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -138,7 +201,9 @@ public class MainActivity extends AppCompatActivity
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }
