@@ -1,16 +1,13 @@
 package jessie.project3;
 
-import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,28 +17,24 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+//    public void callMe(View view) {
+//        String phoneNum = "7206207466";
+//        try {
+//            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
+//            startActivity(intent);
+//        } catch (Exception e) {
+//
+//        }
+//    }
 
-    public void callMe(View v) {
-        Intent intent = new Intent(Intent.ACTION_CALL);
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            intent.setData(Uri.parse("tel:7206207466"));
-            return;
-        }
-        startActivity(intent);
-    }
+
 
 
 
@@ -52,7 +45,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        ImageButton button = (ImageButton) findViewById(R.id.callBtn);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Do something in response to button click
+                String phoneNum = "7206207466";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
+                startActivity(intent);
+            }
+        });
 
         //----------
         // ANIMATION

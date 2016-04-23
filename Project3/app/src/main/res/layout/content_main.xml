@@ -35,7 +35,6 @@
         android:id="@+id/fadeButton"
         android:scaleType="fitXY"
         android:src="@drawable/fade"
-        android:onClick="callMe"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="fade" />
