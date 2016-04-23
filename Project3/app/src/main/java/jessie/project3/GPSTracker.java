@@ -18,6 +18,7 @@ import android.util.Log;
 
 /**
  * Created by ashes on 4/23/16.
+ * Source: http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
  */
 public class GPSTracker extends Service implements LocationListener {
     private final Context mContext;

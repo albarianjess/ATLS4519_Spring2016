@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(tracker.canGetLocation()) {
             double latitude = tracker.getLatitude();
             double longitude = tracker.getLongitude();
-            System.out.print("Lat:" + latitude + " Long: "+ longitude);
         }else {
             tracker.showSettingsAlert();
         }
