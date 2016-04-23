@@ -20,18 +20,15 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
-
-
-
-    public void makeCall(View view) {
+    public void callMe(View v) {
         Intent intent = new Intent(Intent.ACTION_CALL);
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -40,13 +37,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
-
+            intent.setData(Uri.parse("tel:7206207466"));
             return;
         }
-        String phoneNum = "7206207466";
-
-
-        intent.setData(Uri.parse("tel:" + phoneNum));
         startActivity(intent);
     }
 
@@ -61,31 +54,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
 
-        ImageButton login = (ImageButton) findViewById(R.id.callBtn);
-        login.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                //TODO: your code here
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
-                    String phoneNum = "7206207466";
-
-
-                    intent.setData(Uri.parse("tel:" + phoneNum));
-                    return;
-                }
-
-                startActivity(intent);
-            }
-        });
-
         //----------
         // ANIMATION
         //----------
@@ -93,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView myView = (ImageView) findViewById(R.id.fadeButton);
 
         // Fade out
-        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha",  0f, 0.3f);
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha",  0f, 0.2f);
         fadeOut.setDuration(2000);
         // Fade in
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.3f, 0f);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.2f, 0f);
         fadeIn.setDuration(2000);
 
         final AnimatorSet mAnimationSet = new AnimatorSet();
@@ -124,7 +92,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         schoolTxt.setTextSize(20);
         schoolTxt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         schoolTxt.setPadding(10, 0, 10, 10);
-//        schoolTxt.setTextColor(Color.parseColor("#2d88ba"));
 
         // Change font: Work Sans
 //        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/WorkSans-Light.ttf");

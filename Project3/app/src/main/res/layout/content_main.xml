@@ -33,8 +33,9 @@
         android:layout_height="300dp"
         android:background="@android:color/transparent"
         android:id="@+id/fadeButton"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:src="@drawable/fade"
+        android:onClick="callMe"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:contentDescription="fade" />
@@ -50,7 +51,14 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="callbtn" />
 
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:id="@+id/imageView2"
+        android:scaleType="fitCenter"
+        android:src="@drawable/plaintitle"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/fadeButton" />
 
 
 </RelativeLayout>
