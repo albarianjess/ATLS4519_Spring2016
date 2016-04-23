@@ -24,23 +24,18 @@
         <menu>
             <item
                 android:id="@+id/nav_emergencies"
-                android:icon="@drawable/ic_menu_share"
                 android:title="@string/emergencies" />
             <item
                 android:id="@+id/nav_accidents"
-                android:icon="@drawable/ic_menu_send"
                 android:title="@string/accidents" />
             <item
                 android:id="@+id/nav_crimes"
-                android:icon="@drawable/ic_menu_send"
                 android:title="@string/crime" />
             <item
                 android:id="@+id/nav_suspicious"
-                android:icon="@drawable/ic_menu_send"
                 android:title="@string/suspicious" />
             <item
                 android:id="@+id/nav_safety"
-                android:icon="@drawable/ic_menu_send"
                 android:title="@string/safety" />
         </menu>
     </item>
@@ -48,14 +43,11 @@
 
     <!--TODO: CHANGE SECTION TO ADD 2 SENTENCES-->
     <item android:title="@string/calling">
-        <!--<menu>-->
-            <!--<item-->
-                <!--android:id="@+id/nav_call"-->
-                <!--android:title="If it is a non-emergency situation, a call will be made to your local campus police." />-->
-            <!--<item-->
-                <!--android:id="@+id/nav_call2"-->
-                <!--android:title="If it is an emergency situation, a 911 call will be made to your local police." />-->
-        <!--</menu>-->
+        <menu>
+            <item
+                android:id="@+id/nav_call"
+                android:title="@string/campus_police" />
+        </menu>
     </item>
 
 </menu>

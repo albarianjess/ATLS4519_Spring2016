@@ -13,4 +13,5 @@
     <string name="accidents">Accidents</string>
     <string name="emergencies">Emergencies</string>
     <string name="reasons">Reasons to Call</string>
+    <string name="campus_police">Campus Police</string>
 </resources>

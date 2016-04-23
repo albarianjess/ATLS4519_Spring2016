@@ -23,16 +23,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-//    public void callMe(View view) {
-//        String phoneNum = "7206207466";
-//        try {
-//            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
-//            startActivity(intent);
-//        } catch (Exception e) {
-//
-//        }
-//    }
-
 
 
 
@@ -45,6 +35,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
+        //-------------------
+        // LOCATION FUNCTIONS
+        //-------------------
+        GPSTracker tracker = new GPSTracker(this);
+        if(tracker.canGetLocation()) {
+            double latitude = tracker.getLatitude();
+            double longitude = tracker.getLongitude();
+            System.out.print("Lat:" + latitude + " Long: "+ longitude);
+        }else {
+            tracker.showSettingsAlert();
+        }
+        //-----------------------
+        // MAIN CALL BTN FUNCTION
+        //-----------------------
         ImageButton button = (ImageButton) findViewById(R.id.callBtn);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
