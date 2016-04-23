@@ -21,6 +21,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.firebase.client.Firebase;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -36,17 +38,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
 
-
         //-------------------
         // LOCATION FUNCTIONS
         //-------------------
         GPSTracker tracker = new GPSTracker(this);
-        if(tracker.canGetLocation()) {
-            double latitude = tracker.getLatitude();
-            double longitude = tracker.getLongitude();
-        }else {
+        double latitude = 0;
+        double longitude = 0;
+        if (tracker.canGetLocation()) {
+            latitude = tracker.getLatitude();
+            longitude = tracker.getLongitude();
+        } else {
             tracker.showSettingsAlert();
         }
+
+
+        //---------
+        // FIREBASE
+        //---------
+        Firebase.setAndroidContext(this);
+        Firebase ref = new Firebase("https://bluelightapp.firebaseio.com/");
+
+        Firebase lat = ref.child("location");
+        lat.child("latitude").setValue(latitude);
+        lat.child("longitude").setValue(longitude);
+
+
         //-----------------------
         // MAIN CALL BTN FUNCTION
         //-----------------------
@@ -67,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView myView = (ImageView) findViewById(R.id.fadeButton);
 
         // Fade out
-        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha",  0f, 0.2f);
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha", 0f, 0.2f);
         fadeOut.setDuration(2000);
         // Fade in
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.2f, 0f);
@@ -87,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAnimationSet.start();
 
 
-
         //------------------------------------------
         // MAIN TEXT VIEW FOR WHAT SCHOOL USER IS AT
         //------------------------------------------
@@ -104,10 +119,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        schoolTxt.setTypeface(typeFace);
 
         schoolTxt.setText("You are at the \n" + schoolNameData);
-
-
-
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
