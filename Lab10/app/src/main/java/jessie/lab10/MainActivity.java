@@ -13,9 +13,13 @@ public class MainActivity extends AppCompatActivity implements DisneyListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    @Override public void itemClicked(long id){
+
+
+
+    @Override public void itemClicked(long id) {
         //get a reference to the frame layout that contains HeroDetailFragment
         View fragmentContainer = findViewById(R.id.fragment_container);
+
         //large layout device
         if (fragmentContainer != null) {
 

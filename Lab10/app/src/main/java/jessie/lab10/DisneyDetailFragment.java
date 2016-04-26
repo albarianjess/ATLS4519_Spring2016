@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 
 public class DisneyDetailFragment extends android.app.Fragment implements View.OnClickListener{
-// implements View.OnClickListener
+
 
     public DisneyDetailFragment() {
         // Required empty public constructor
