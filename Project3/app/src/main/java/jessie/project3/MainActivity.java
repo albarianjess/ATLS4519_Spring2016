@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -70,7 +72,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //------------------------------------
+        // ACCESS LOCATION AND ADD TO FIREBASE
+        //------------------------------------
         doStuff();
 
 
@@ -82,11 +86,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // Do something in response to button click
-                String phoneNum = "7206207466";
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
-                startActivity(intent);
+
+                // ADD ALERT
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+                //                alertDialog.setTitle("Warning");
+                builder1.setMessage("Is this an emergency?");
+                builder1.setCancelable(true);
+
+                builder1.setPositiveButton(
+                        "Yes",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getApplicationContext(), "You are calling an emergency number.", Toast.LENGTH_LONG).show();
+                                String phoneNum = "7206207466";
+                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
+                                startActivity(intent);
+                            }
+                        });
+
+                builder1.setNegativeButton(
+                        "No",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Toast.makeText(getApplicationContext(), "You are calling a non-emergency number.", Toast.LENGTH_LONG).show();
+                                String phoneNum = "7206207466";
+                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNum));
+                                startActivity(intent);
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
+
+
+
             }
         });
+
+
 
         //----------
         // ANIMATION
@@ -115,6 +153,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAnimationSet.start();
 
 
+
+
         //------------------------------------------
         // MAIN TEXT VIEW FOR WHAT SCHOOL USER IS AT
         //------------------------------------------
@@ -126,11 +166,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         schoolTxt.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
         schoolTxt.setPadding(10, 0, 10, 10);
 
-        // Change font: Work Sans
-//        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/WorkSans-Light.ttf");
-//        schoolTxt.setTypeface(typeFace);
-
         schoolTxt.setText("You are at the \n" + schoolNameData);
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -145,6 +183,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -155,6 +196,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -178,6 +221,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
