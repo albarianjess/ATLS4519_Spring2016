@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="jessie.project3">
+    package="jessie.project3" >
 
+    <!-- USER PERMISSIONS -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="BlueLight"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
 
-
-        <!--SPLASH ACTIVITY-->
-        <activity android:name=".SplashActivity">
+        <!-- SPLASH ACTIVITY -->
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,26 +31,16 @@
             </intent-filter>
         </activity>
 
-
-
-        <!--MAIN ACTIVITY-->
+        <!-- MAIN ACTIVITY -->
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme"
             android:label=""
-
-            android:screenOrientation="portrait">
-            <item android:name="android:itemTextAppearance">@style/myCustomMenuTextApearance</item>
-
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <item android:name="android:itemTextAppearance">
+@style/myCustomMenuTextApearance
+            </item>
         </activity>
     </application>
 
-    <!--USER PERMISSIONS-->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-feature android:name="android.hardware.telephony" android:required="false" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

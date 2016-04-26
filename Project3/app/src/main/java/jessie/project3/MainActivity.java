@@ -20,13 +20,46 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
+    public void doStuff(){
+        //-------------------
+        // LOCATION FUNCTIONS
+        //-------------------
+        GPSTracker tracker = new GPSTracker(MainActivity.this);
+        double latitude = 0;
+        double longitude = 0;
 
+        if (tracker.canGetLocation()) {
+            latitude = tracker.getLatitude();
+            longitude = tracker.getLongitude();
+            Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+        } else {
+            tracker.showSettingsAlert();
+        }
+
+
+        //----------
+        // FIREBASE
+        //----------
+        Firebase.setAndroidContext(MainActivity.this);
+        Firebase ref = new Firebase("https://bluelightapp.firebaseio.com/");
+
+        Firebase lat = ref.child("location").child("latitude");
+        lat.setValue(latitude);
+
+        Firebase lon = ref.child("location").child("longitude");
+        lon.setValue(longitude);
+
+//        Firebase lat = ref.child("location");
+//        lat.child("latitude").setValue(latitude);
+//        lat.child("longitude").setValue(longitude);
+    }
 
 
 
@@ -38,29 +71,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
 
-        //-------------------
-        // LOCATION FUNCTIONS
-        //-------------------
-        GPSTracker tracker = new GPSTracker(this);
-        double latitude = 0;
-        double longitude = 0;
-        if (tracker.canGetLocation()) {
-            latitude = tracker.getLatitude();
-            longitude = tracker.getLongitude();
-        } else {
-            tracker.showSettingsAlert();
-        }
+        doStuff();
 
-
-        //---------
-        // FIREBASE
-        //---------
-        Firebase.setAndroidContext(this);
-        Firebase ref = new Firebase("https://bluelightapp.firebaseio.com/");
-
-        Firebase lat = ref.child("location");
-        lat.child("latitude").setValue(latitude);
-        lat.child("longitude").setValue(longitude);
 
 
         //-----------------------
@@ -83,10 +95,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ImageView myView = (ImageView) findViewById(R.id.fadeButton);
 
         // Fade out
-        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha", 0f, 0.2f);
+        ObjectAnimator fadeOut = ObjectAnimator.ofFloat(myView, "alpha", 0f, 0.4f);
         fadeOut.setDuration(2000);
         // Fade in
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.2f, 0f);
+        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(myView, "alpha", 0.4f, 0f);
         fadeIn.setDuration(2000);
 
         final AnimatorSet mAnimationSet = new AnimatorSet();
