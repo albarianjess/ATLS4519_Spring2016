@@ -24,8 +24,8 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
     var objects = [[String:String]]()
     
     
-    @IBOutlet var searchBar: UISearchBar!
-    var searchActive : Bool = false
+//    @IBOutlet var searchBar: UISearchBar!
+//    var searchActive : Bool = false
     
     
     
@@ -53,17 +53,21 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
             
             //sets the data for the destination controller
-            if(searchActive){
-                detailVC.title = filteredNames[indexPath.row]
-                detailVC.filteredNames = filteredNames
-                detailVC.dogList = dogList
-                detailVC.selectedDog = indexPath.row
-            } else {
-                detailVC.title = dogNamelist[indexPath.row]
-                detailVC.dogNamelist = dogNamelist
-                detailVC.dogList = dogList
-                detailVC.selectedDog = indexPath.row
-            }
+//            if(searchActive){
+//                detailVC.title = filteredNames[indexPath.row]
+//                detailVC.filteredNames = filteredNames
+//                detailVC.dogList = dogList
+//                detailVC.selectedDog = indexPath.row
+//            } else {
+//                detailVC.title = dogNamelist[indexPath.row]
+//                detailVC.dogNamelist = dogNamelist
+//                detailVC.dogList = dogList
+//                detailVC.selectedDog = indexPath.row
+//            }
+            detailVC.title = dogNamelist[indexPath.row]
+            detailVC.dogNamelist = dogNamelist
+            detailVC.dogList = dogList
+            detailVC.selectedDog = indexPath.row
             
         }
     }
@@ -80,65 +84,82 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 28)
         cell.textLabel?.textAlignment = .Center
         
-        if(searchActive){
-            cell.textLabel?.text = filteredNames[indexPath.row]
-            
-            if (dogList[filteredNames[indexPath.row]]!.pic == "none") {
-                let imageName = "notavailable"
-                let image = UIImage(named: imageName)
-                //                let imageView = UIImageView(image: image!)
-                cell.imageView!.image = image
-            } else {
-                let plainString = dogList[filteredNames[indexPath.row]]!.pic
-                let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
-                let decodedimage = UIImage(data: decodedData!)
-                let image : UIImage = decodedimage! as UIImage
-                cell.imageView!.image = image
-            }
-            return cell
-            
-            
-            
-        } else {
-            cell.textLabel?.text = dogNamelist[indexPath.row]
+//        if(searchActive){
+//            cell.textLabel?.text = filteredNames[indexPath.row]
+//            
+//            if (dogList[filteredNames[indexPath.row]]!.pic == "none") {
+//                let imageName = "notavailable"
+//                let image = UIImage(named: imageName)
+//                //                let imageView = UIImageView(image: image!)
+//                cell.imageView!.image = image
+//            } else {
+//                let plainString = dogList[filteredNames[indexPath.row]]!.pic
+//                let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+//                let decodedimage = UIImage(data: decodedData!)
+//                let image : UIImage = decodedimage! as UIImage
+//                cell.imageView!.image = image
+//            }
+//            return cell
+//            
+//            
+//            
+//        } else {
+//            cell.textLabel?.text = dogNamelist[indexPath.row]
+//        
+//            
+//            
+//            if (dogList[dogNamelist[indexPath.row]]!.pic == "none") {
+//                let imageName = "notavailable"
+//                let image = UIImage(named: imageName)
+////                let imageView = UIImageView(image: image!)
+//                cell.imageView!.image = image
+//            } else {
+//            let plainString = dogList[dogNamelist[indexPath.row]]!.pic
+//            let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
+//            let decodedimage = UIImage(data: decodedData!)
+//            let image : UIImage = decodedimage! as UIImage
+//            cell.imageView!.image = image
+//            }
         
-            
-            
-            if (dogList[dogNamelist[indexPath.row]]!.pic == "none") {
-                let imageName = "notavailable"
-                let image = UIImage(named: imageName)
-//                let imageView = UIImageView(image: image!)
-                cell.imageView!.image = image
-            } else {
+        cell.textLabel?.text = dogNamelist[indexPath.row]
+        
+        
+        
+        if (dogList[dogNamelist[indexPath.row]]!.pic == "none") {
+            let imageName = "notavailable"
+            let image = UIImage(named: imageName)
+            //                let imageView = UIImageView(image: image!)
+            cell.imageView!.image = image
+        } else {
             let plainString = dogList[dogNamelist[indexPath.row]]!.pic
             let decodedData = NSData(base64EncodedString: plainString, options: NSDataBase64DecodingOptions(rawValue: 0))
             let decodedimage = UIImage(data: decodedData!)
             let image : UIImage = decodedimage! as UIImage
             cell.imageView!.image = image
-            }
-            return cell
+            
         }
+        return cell
         // Formatting table view cells source
         //http://www.appcoda.com/customize-table-view-cells-for-uitableview/
     }
     
     
     
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
+//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+//        searchActive = true;
+//    }
+//    
+//    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
+//    
+//    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
+//    
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
     
     
     //----------------------
@@ -146,11 +167,12 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
     //----------------------
     override func tableView(tableView: UITableView, numberOfRowsInSection
         section: Int) -> Int {
-        if(searchActive) {
-            return filteredNames.count
-        } else {
-            return dogNamelist.count
-        }
+//        if(searchActive) {
+//            return filteredNames.count
+//        } else {
+//            return dogNamelist.count
+//        }
+        return dogNamelist.count
     }
     
     
@@ -206,9 +228,9 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
         
         
         if(filteredNames.count == 0){
-            searchActive = false;
+//            searchActive = false;
         } else {
-            searchActive = true;
+//            searchActive = true;
         }
         self.tableView.reloadData()
 //        }
@@ -244,26 +266,26 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
             
             
             // LONGMONT
-            let longmontresults = json["longmont, CO"] as! NSArray
-            let longresults = Array(longmontresults)
-            for item in longresults {
-                let name = item["name"] as! String
-                
-                let sex = item["sex"]! as! String
-                
-                let breed = item["pedigree"]! as! String
-                
-                let age = item["age"]! as! String
-                
-                var pic = item["image"]! as! String
-                
-                if (pic.containsString("////")){
-                    pic = notAvailablePic
-                }
-                
-                dogList[name] = Dog(newName: name, newSex: sex, newBreed: breed, newAge: age, newPic: pic)
-                dogNamelist.append(name)
-            }
+//            let longmontresults = json["longmont, CO"] as! NSArray
+//            let longresults = Array(longmontresults)
+//            for item in longresults {
+//                let name = item["name"] as! String
+//                
+//                let sex = item["sex"]! as! String
+//                
+//                let breed = item["pedigree"]! as! String
+//                
+//                let age = item["age"]! as! String
+//                
+//                var pic = item["image"]! as! String
+//                
+//                if (pic.containsString("////")){
+//                    pic = notAvailablePic
+//                }
+//                
+//                dogList[name] = Dog(newName: name, newSex: sex, newBreed: breed, newAge: age, newPic: pic)
+//                dogNamelist.append(name)
+//            }
         } catch {
             print("Error with JSON: \(error)")
         }
@@ -282,7 +304,7 @@ class FirstViewController: UITableViewController, UISearchBarDelegate {
         }
         
         super.viewDidLoad()
-        searchBar.delegate = self
+//        searchBar.delegate = self
 //        self.hideKeyboardWhenTappedAround()
     }
     

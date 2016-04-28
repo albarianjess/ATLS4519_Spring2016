@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Jessie_Albarian_Final</string>
+    <string name="sign_up">Sign Up</string>
+    <string-array name="workouts">
+        <item>Cardio</item>
+        <item>Strength</item>
+        <item>Flexibility</item>
+    </string-array>
+</resources>
