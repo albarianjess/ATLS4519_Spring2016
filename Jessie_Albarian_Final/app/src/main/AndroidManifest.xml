@@ -20,8 +20,10 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".WorkoutActivity"
-            android:parentActivityName=".WorkoutCategoryActivity"></activity>
-        <activity android:name=".SignupActivitiy"></activity>
+            android:parentActivityName=".WorkoutCategoryActivity"/>
+
+        <activity android:name=".SignupActivitiy"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
