@@ -20,12 +20,12 @@ public class WorkoutCategoryActivity extends ListActivity {
 
 
         Intent i = getIntent();
-        String workout = i.getStringExtra("workout");
+        workout = i.getStringExtra("workout");
         //get the list view
         ListView myList = getListView();
         //define an array adapter
         ArrayAdapter<Sports> listAdapter;
-        //initialize the array adapter with the right list of bulbs
+        //initialize the array adapter with the right list
         switch (workout){
             case "Cardio":
                 listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Sports.cardio);

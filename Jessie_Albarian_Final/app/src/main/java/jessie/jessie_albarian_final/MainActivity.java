@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this, WorkoutCategoryActivity.class);
 
                     intent.putExtra("workout", workout);
+
                     //start intent
                     startActivity(intent);
 
