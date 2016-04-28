@@ -28,15 +28,15 @@ public class WorkoutCategoryActivity extends ListActivity {
         //initialize the array adapter with the right list of bulbs
         switch (workout){
             case "Cardio":
-                listAdapter = new ArrayAdapter<Sports>(this, android.R.layout.simple_list_item_1, Sports.cardio);
+                listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Sports.cardio);
                 break;
-//            case "Strength":
-//                listAdapter = new ArrayAdapter<Sports>(this, android.R.layout.simple_list_item_1, Sports.strength);
-//                break;
-//            case "Flexibility":
-//                listAdapter = new ArrayAdapter<Sports>(this, android.R.layout.simple_list_item_1, Sports.flex);
-//                break;
-            default: listAdapter = new ArrayAdapter<Sports>(this, android.R.layout.simple_list_item_1, Sports.cardio);
+            case "Strength":
+                listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Sports.strength);
+                break;
+            case "Flexibility":
+                listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Sports.flex);
+                break;
+            default: listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Sports.cardio);
         }
         //set the array adapter on the list view
         myList.setAdapter(listAdapter);

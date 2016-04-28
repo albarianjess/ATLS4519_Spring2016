@@ -18,6 +18,16 @@ public class Sports {
             new Sports("Biking", R.drawable.cardio)
     };
 
+    //STRENGTH IMAGES
+    public static final Sports[] strength = {
+            new Sports("Push Ups", R.drawable.strength),
+            new Sports("Leg Presses", R.drawable.strength)
+    };
+
+    //FLEXIBILITY IMAGES
+    public static final Sports[] flex = {
+            new Sports("Yoga", R.drawable.flexibility)
+    };
 
     public String getName() {
         return name;

@@ -20,7 +20,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".WorkoutActivity"
-            android:parentActivityName=".WorkoutCategoryActivity"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".SignupActivitiy"
             android:parentActivityName=".MainActivity" />

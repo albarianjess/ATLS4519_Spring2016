@@ -15,14 +15,15 @@ public class WorkoutActivity extends Activity {
         int num = (Integer)getIntent().getExtras().get("myid");
         String type = (String)getIntent().getExtras().get("workout");
 
-        Sports sports = Sports.cardio[num];
+
+        Sports card = Sports.cardio[num];
 
         //populate image
         ImageView myImage = (ImageView)findViewById(R.id.myImage);
-        myImage.setImageResource(sports.getImageResourceID());
+        myImage.setImageResource(card.getImageResourceID());
 
         //populate name
         TextView name = (TextView)findViewById(R.id.workout_name);
-        name.setText(sports.getName());
+        name.setText(card.getName());
     }
 }
